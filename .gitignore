@@ -1,0 +1,7 @@
+# System files
+.DS_Store
+dist/
+django_frontend_static.egg-info/
+
+# Python
+*.pyc

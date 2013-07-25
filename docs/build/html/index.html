@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Django Frontend Static &mdash; django-frontend-static 1.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="django-frontend-static 1.0.1 documentation" href="#" />
+    <link rel="next" title="Getting Started" href="getting_started.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="getting_started.html" title="Getting Started"
+             accesskey="N">next</a> |</li>
+        <li><a href="#">django-frontend-static 1.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="django-frontend-static">
+<h1>Django Frontend Static<a class="headerlink" href="#django-frontend-static" title="Permalink to this headline">¶</a></h1>
+<p>A basic Django application to install often used static files.</p>
+<p>With the convenience of an installable Django application, easily add some of the most widely used static files.</p>
+<p>There are no templates included. If you want a skeleton application built on HTML5 Boilerplate and Twitter Bootstrap then checkout <a class="reference external" href="https://github.com/jonfaustman/django-frontend-skeleton">django-frontend-skeleton</a>. If you want a light-weight template built on HTML5 Boilerplate without any static files then check out <a class="reference external" href="https://github.com/jonfaustman/django-frontend-template">django-frontend-template</a>.</p>
+<div class="section" id="starring">
+<h2>Starring<a class="headerlink" href="#starring" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/h5bp/html5-boilerplate">HTML5 Boilerplate (based on 4.2.0)</a></li>
+<li><a class="reference external" href="https://github.com/Modernizr/Modernizr">Modernizr (2.6.2)</a></li>
+<li><a class="reference external" href="https://github.com/jquery/jquery">jQuery (1.10.1) and (2.0.2)</a></li>
+<li><a class="reference external" href="https://github.com/jquery/jquery-ui">jQuery UI (1.10.3)</a></li>
+<li><a class="reference external" href="https://github.com/DataTables/DataTables">jQuery DataTables (1.9.4)</a></li>
+<li><a class="reference external" href="https://code.google.com/p/django-dynamic-formset">jQuery Dynamic Formset (1.2)</a></li>
+<li><a class="reference external" href="https://github.com/kswedberg/jquery-smooth-scroll">jQuery Smooth Scroll (1.4.10)</a></li>
+<li><a class="reference external" href="https://github.com/twitter/bootstrap">Twitter Bootstrap (2.3.2)</a></li>
+<li><a class="reference external" href="https://github.com/scottjehl/iOS-Orientationchange-Fix">iOS-Orientationchange-Fix</a></li>
+<li><a class="reference external" href="http://www.famfamfam.com/lab/icons/silk/">famfamfam&#8217;s Silk Icons</a></li>
+</ul>
+</div>
+<div class="section" id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#install">Install</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="template_tags.html">Template tags</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend">djfrontend</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="optional_settings.html">Optional Settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-static-url">DJFRONTEND_STATIC_URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-ga-setdomainname">DJFRONTEND_GA_SETDOMAINNAME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-ga-setallowlinker">DJFRONTEND_GA_SETALLOWLINKER</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="license.html#component-specific-licenses">Component Specific Licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">1.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">1.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.1.0</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="road_map.html">Road Map</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="road_map.html#id1">1.1.0</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Django Frontend Static</a><ul>
+<li><a class="reference internal" href="#starring">Starring</a></li>
+<li><a class="reference internal" href="#contents">Contents</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="getting_started.html"
+                        title="next chapter">Getting Started</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="getting_started.html" title="Getting Started"
+             >next</a> |</li>
+        <li><a href="#">django-frontend-static 1.0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Jon Faustman.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>
