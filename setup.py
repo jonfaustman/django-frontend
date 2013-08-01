@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
 
-version = '1.0.1'
+version = '0.1.0'
 
-setup(name='django-frontend-static',
+setup(name='django-frontend',
       version=version,
-      description="A basic Django application to install often used static files.",
+      description="Django Frontend is a collection of static files and templates to jumpstart Django front-end development.",
       long_description=open("README.rst", "r").read(),
       classifiers=[
           "Development Status :: 5 - Production/Stable",
@@ -21,7 +21,7 @@ setup(name='django-frontend-static',
       keywords='',
       author='Jon Faustman',
       author_email='jon@faustman.org',
-      url='http://github.com/jonfaustman/django-frontend-static',
+      url='http://github.com/jonfaustman/django-frontend',
       license='MIT',
       packages=find_packages(),
       install_requires = [],

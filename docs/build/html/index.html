@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Django Frontend Static &mdash; django-frontend-static 1.0.1 documentation</title>
+    <title>Django Frontend &mdash; django-frontend 0.1.0 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.0.1',
+        VERSION:     '0.1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="django-frontend-static 1.0.1 documentation" href="#" />
+    <link rel="top" title="django-frontend 0.1.0 documentation" href="#" />
     <link rel="next" title="Getting Started" href="getting_started.html" /> 
   </head>
   <body>
@@ -36,7 +36,7 @@
         <li class="right" >
           <a href="getting_started.html" title="Getting Started"
              accesskey="N">next</a> |</li>
-        <li><a href="#">django-frontend-static 1.0.1 documentation</a> &raquo;</li> 
+        <li><a href="#">django-frontend 0.1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -45,11 +45,20 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="django-frontend-static">
-<h1>Django Frontend Static<a class="headerlink" href="#django-frontend-static" title="Permalink to this headline">¶</a></h1>
-<p>A basic Django application to install often used static files.</p>
-<p>With the convenience of an installable Django application, easily add some of the most widely used static files.</p>
-<p>There are no templates included. If you want a skeleton application built on HTML5 Boilerplate and Twitter Bootstrap then checkout <a class="reference external" href="https://github.com/jonfaustman/django-frontend-skeleton">django-frontend-skeleton</a>. If you want a light-weight template built on HTML5 Boilerplate without any static files then check out <a class="reference external" href="https://github.com/jonfaustman/django-frontend-template">django-frontend-template</a>.</p>
+  <div class="section" id="django-frontend">
+<h1>Django Frontend<a class="headerlink" href="#django-frontend" title="Permalink to this headline">¶</a></h1>
+<p>Django Frontend is a collection of static files and templates to jumpstart Django front-end development.</p>
+<p>With the convenience of an installable Django application, easily add some of the most widely used static files and create custom templates built on top of one of the most well-known, widespread templates (<a class="reference external" href="https://github.com/h5bp/html5-boilerplate">HTML5 Boilerplate</a> .)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Package:</th><td class="field-body"><a class="reference external" href="https://pypi.python.org/pypi/django-frontend">https://pypi.python.org/pypi/django-frontend</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Source:</th><td class="field-body"><a class="reference external" href="https://github.com/jonfaustman/django-frontend">https://github.com/jonfaustman/django-frontend</a></td>
+</tr>
+</tbody>
+</table>
 <div class="section" id="starring">
 <h2>Starring<a class="headerlink" href="#starring" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -71,16 +80,22 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#install">Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#extend">Extend</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="template_tags.html">Template tags</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend">djfrontend</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="optional_settings.html">Optional Settings</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-static-url">DJFRONTEND_STATIC_URL</a></li>
-<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-ga-setdomainname">DJFRONTEND_GA_SETDOMAINNAME</a></li>
-<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-ga-setallowlinker">DJFRONTEND_GA_SETALLOWLINKER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template_blocks.html">Template blocks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="template_blocks.html#html">html</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_blocks.html#meta">meta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_blocks.html#head-css">head_css</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_blocks.html#head-js">head_js</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_blocks.html#body-id">body_id</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_blocks.html#body-class">body_class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_blocks.html#body-content">body_content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_blocks.html#body-js">body_js</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a><ul>
@@ -88,13 +103,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">1.0.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">1.0.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.1.0</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="road_map.html">Road Map</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="road_map.html#id1">1.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="road_map.html#id1">1.0.0</a></li>
 </ul>
 </li>
 </ul>
@@ -110,7 +123,7 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Django Frontend Static</a><ul>
+<li><a class="reference internal" href="#">Django Frontend</a><ul>
 <li><a class="reference internal" href="#starring">Starring</a></li>
 <li><a class="reference internal" href="#contents">Contents</a><ul>
 </ul>
@@ -153,7 +166,7 @@
         <li class="right" >
           <a href="getting_started.html" title="Getting Started"
              >next</a> |</li>
-        <li><a href="#">django-frontend-static 1.0.1 documentation</a> &raquo;</li> 
+        <li><a href="#">django-frontend 0.1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

@@ -2,9 +2,9 @@
 Django Frontend
 ===============
 
-A basic Django application to install often used static files.
+Django Frontend is a collection of static files and templates to jumpstart Django front-end development.
 
-With the convenience of an installable Django application, easily add some of the most widely used static files and create custom templates built on top of one of the most well-known, widespread templates (HTML5 Boilerplate.).
+With the convenience of an installable Django application, easily add some of the most widely used static files and create custom templates built on top of one of the most well-known, widespread templates (`HTML5 Boilerplate <https://github.com/h5bp/html5-boilerplate>`_ .)
 
 ---------
 Starring

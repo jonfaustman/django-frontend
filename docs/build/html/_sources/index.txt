@@ -1,11 +1,12 @@
-Django Frontend Static
-========================
+Django Frontend
+===============
 
-A basic Django application to install often used static files.
+Django Frontend is a collection of static files and templates to jumpstart Django front-end development.
 
-With the convenience of an installable Django application, easily add some of the most widely used static files.
+With the convenience of an installable Django application, easily add some of the most widely used static files and create custom templates built on top of one of the most well-known, widespread templates (`HTML5 Boilerplate <https://github.com/h5bp/html5-boilerplate>`_ .)
 
-There are no templates included. If you want a skeleton application built on HTML5 Boilerplate and Twitter Bootstrap then checkout `django-frontend-skeleton <https://github.com/jonfaustman/django-frontend-skeleton>`_. If you want a light-weight template built on HTML5 Boilerplate without any static files then check out `django-frontend-template <https://github.com/jonfaustman/django-frontend-template>`_.
+:Package: `https://pypi.python.org/pypi/django-frontend <https://pypi.python.org/pypi/django-frontend>`_
+:Source: `https://github.com/jonfaustman/django-frontend <https://github.com/jonfaustman/django-frontend>`_
 
 Starring
 ---------
@@ -20,7 +21,6 @@ Starring
 * `iOS-Orientationchange-Fix <https://github.com/scottjehl/iOS-Orientationchange-Fix>`_
 * `famfamfam's Silk Icons <http://www.famfamfam.com/lab/icons/silk/>`_
 
-
 Contents
 ---------
 
@@ -29,7 +29,7 @@ Contents
    
    getting_started
    template_tags
-   optional_settings
+   template_blocks
    license
    changelog
    road_map
