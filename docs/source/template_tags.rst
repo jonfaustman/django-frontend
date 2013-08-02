@@ -58,14 +58,14 @@ djfrontend_jquery
 Returns jQuery JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback.
 ::
 
-    <script src="/static/djfrontend/js/jquery/1.10.1/jquery.js"></script>
+    <script src="/static/djfrontend/js/jquery/1.10.2/jquery.js"></script>
 
 Or
 
 ::
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/static/djfrontend/js/jquery/1.10.1/jquery.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/static/djfrontend/js/jquery/1.10.2/jquery.min.js"><\/script>')</script>
 
 djfrontend_jqueryui
 ~~~~~~~~~~~~~~~~~~~~~
