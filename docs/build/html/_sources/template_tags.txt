@@ -129,13 +129,13 @@ djfrontend_jquery_smoothscroll
 Returns the jQuery Smooth Scroll plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.
 ::
 
-    <script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.4.10/jquery.smooth-scroll.js"></script>
+    <script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.4.11/jquery.smooth-scroll.js"></script>
 
 Or
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.4.10/jquery.smooth-scroll.min.js"></script>
+    <script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.4.11/jquery.smooth-scroll.min.js"></script>
 
 djfrontend_twbs_css
 ~~~~~~~~~~~~~~~~~~~~
