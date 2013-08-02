@@ -14,7 +14,7 @@
     {% block head_css %}
     {% endblock head_css %}
     {% block head_js %}
-        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        {% djfrontend_modernizr '2.6.2' %}
     {% endblock head_js %}
 </head>
 <body id="{% block body_id %}{% endblock body_id %}" class="{% block body_class %}{% endblock body_class %}">
@@ -26,7 +26,7 @@
     <![endif]-->
     {% endblock body_content %}
     {% block body_js %}
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        {% djfrontend_jquery '1.10.1' %}
     {% endblock body_js %}
 </body>
 </html>
