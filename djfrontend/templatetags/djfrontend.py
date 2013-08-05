@@ -50,9 +50,14 @@ def djfrontend_modernizr(v):
         return '<script src="%sdjfrontend/js/modernizr/%s/modernizr.js"></script>' % (settings.STATIC_URL, v)
     else:
         if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
-            return '<script src="%sdjfrontend/js/modernizr/%s/modernizr.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, v)
+            output=[ '<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/%s/modernizr.min.js"></script>' % v,
+            '<script>window.Modernizr || document.write(\'<script src="%sdjfrontend/js/modernizr/%s/modernizr.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, v)
+            ]
         else:
-            return '<script src="%sdjfrontend/js/modernizr/%s/modernizr.min.js"></script>' % (settings.STATIC_URL, v)
+            output=[ '<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/%s/modernizr.min.js"></script>' % v,
+            '<script>window.Modernizr || document.write(\'<script src="%sdjfrontend/js/modernizr/%s/modernizr.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
+            ]
+        return '\n'.join(output)
 
 
 @register.simple_tag
@@ -107,20 +112,26 @@ def djfrontend_jquery_datatables(v):
         return '<script src="%sdjfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.js"></script>' % (settings.STATIC_URL, v)
     else:
         if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
-            return '<script src="%sdjfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, v)
+            output=[
+                '<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/%s/jquery.dataTables.min.js"></script>' % v,
+                '<script>window.jQuery.fn.DataTable || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, v)
+            ]
         else:
-            return '<script src="%sdjfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.min.js"></script>' % (settings.STATIC_URL, v)
+            output=[
+                '<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/%s/jquery.dataTables.min.js"></script>' % v,
+                '<script>window.jQuery.fn.DataTable || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
+            ]
+        return '\n'.join(output)
 
 
 @register.simple_tag
 def djfrontend_jquery_datatables_css(v):
     """ Returns the jQuery DataTables CSS file according to version number.
     """
-    if getattr(settings, 'TEMPLATE_DEBUG',):
-        return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.STATIC_URL, v)
+    if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+        return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.DJFRONTEND_STATIC_URL, v)
     else:
-        if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
-            return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.DJFRONTEND_STATIC_URL, v)
+        return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.STATIC_URL, v)
 
 
 @register.simple_tag
@@ -146,9 +157,16 @@ def djfrontend_jquery_smoothscroll(v):
         return '<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.js"></script>' % (settings.STATIC_URL, v)
     else:
         if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
-            return '<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, v)
+            output=[
+                '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % v,
+                '<script>window.jQuery.fn.scollable || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, v)
+            ]
         else:
-            return '<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % (settings.STATIC_URL, v)
+            output=[
+                '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % v,
+                '<script>window.jQuery.fn.scollable || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
+            ]
+        return '\n'.join(output)
 
 
 @register.simple_tag
