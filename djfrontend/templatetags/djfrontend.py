@@ -181,19 +181,15 @@ def djfrontend_twbs_css(v):
 
 
 @register.simple_tag
-def djfrontend_twbs_responsive_css(v):
-    """ Returns Twitter Bootstrap responsive CSS file.
-    TEMPLATE_DEBUG returns full file, otherwise returns minified file.
+def djfrontend_twbs_glyphicons(v):
+    """ Returns Twitter Bootstrap Glyphicons CSS file.
     """
-    if getattr(settings, 'TEMPLATE_DEBUG',):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-responsive.css">' % (settings.STATIC_URL, v)
-    else:
-        return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-responsive.min.css">' % (settings.STATIC_URL, v)
+    return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-glyphicons.css">' % (settings.STATIC_URL, v)
 
 
 @register.tag(name='djfrontend_twbs_js')
 def do_djfrontend_twbs_js(parser, token):
-    """ Returns Twitter Bootstrap (2.3.2) JavaScript file(s).
+    """ Returns Twitter Bootstrap (3.0.0) JavaScript file(s).
     all returns concatenated file; full file for TEMPLATE_DEBUG, minified otherwise.
     Other choice are:
         affix,
@@ -207,14 +203,13 @@ def do_djfrontend_twbs_js(parser, token):
         scrollspy,
         tab,
         tooltip,
-        transition,
-        typeahead.
+        transition.
     Individual files are not minified.
     """
     return BootstrapJSNode(token.split_contents()[1:])
 
 
-SCRIPT_TAG = '<script src="%sdjfrontend/js/twbs/2.3.2/bootstrap-%s.js"></script>'
+SCRIPT_TAG = '<script src="%sdjfrontend/js/twbs/3.0.0/bootstrap-%s.js"></script>'
 
 class BootstrapJSNode(template.Node):
 
@@ -224,12 +219,12 @@ class BootstrapJSNode(template.Node):
     def render(self, context):
         if 'all' in self.args:
             if getattr(settings, 'TEMPLATE_DEBUG', ):
-                return '<script src="%sdjfrontend/js/twbs/2.3.2/bootstrap.js"></script>' % settings.STATIC_URL
+                return '<script src="%sdjfrontend/js/twbs/3.0.0/bootstrap.js"></script>' % settings.STATIC_URL
             else:
                 if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
-                    return '<script src="%sdjfrontend/js/twbs/2.3.2/bootstrap.min.js"></script>' % settings.DJFRONTEND_STATIC_URL
+                    return '<script src="%sdjfrontend/js/twbs/3.0.0/bootstrap.min.js"></script>' % settings.DJFRONTEND_STATIC_URL
                 else:
-                    return '<script src="%sdjfrontend/js/twbs/2.3.2/bootstrap.min.js"></script>' % settings.STATIC_URL
+                    return '<script src="%sdjfrontend/js/twbs/3.0.0/bootstrap.min.js"></script>' % settings.STATIC_URL
         else:
             # popover requires tooltip
             if 'popover' in self.args:
