@@ -164,13 +164,11 @@ def djfrontend_jquery_smoothscroll(v):
     else:
         if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
             output=[
-                '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % v,
-                '<script>window.jQuery.fn.scollable || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, v)
+                '<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, v)
             ]
         else:
             output=[
-                '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % v,
-                '<script>window.jQuery.fn.scollable || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
+                '<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % (settings.STATIC_URL, v)
             ]
         return '\n'.join(output)
 
