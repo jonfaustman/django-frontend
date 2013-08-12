@@ -79,11 +79,12 @@
 </div>
 <div class="section" id="djfrontend-modernizr">
 <h3>djfrontend_modernizr<a class="headerlink" href="#djfrontend-modernizr" title="Permalink to this headline">¶</a></h3>
-<p>Returns Modernizr JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.</p>
+<p>Returns Modernizr JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local callback. The latest &#8216;2.6.2&#8217; is included.</p>
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/modernizr/2.6.2/modernizr.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or</p>
-<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/modernizr/2.6.2/modernizr.min.js"&gt;&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/%s/modernizr.min.js"&gt;&lt;/script&gt;' % v,
+&lt;script&gt;window.Modernizr || document.write(\'&lt;script src="static/djfrontend/js/modernizr/2.6.2/modernizr.min.js"&gt;&lt;\/script&gt;\')&lt;/script&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-jquery">
@@ -102,7 +103,7 @@
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jqueryui/1.10.3/jquery-ui.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or</p>
-<div class="highlight-python"><pre>&lt;script src="/ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"&gt;&lt;/script&gt;' % v,
+<div class="highlight-python"><pre>&lt;script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"&gt;&lt;/script&gt;' % v,
 &lt;script&gt;window.jQueryUI || document.write(\'&lt;script src="/static/djfrontend/js/jquery/jqueryui/1.10.3/jquery-ui.min.js"&gt;&lt;\/script&gt;\')&lt;/script&gt;</pre>
 </div>
 </div>
@@ -171,7 +172,6 @@
 <li>tab</li>
 <li>tooltip</li>
 <li>transition</li>
-<li>typeahead</li>
 </ul>
 <p>Individual files are not minified.</p>
 <p>{% boostrap_js all %} would render</p>

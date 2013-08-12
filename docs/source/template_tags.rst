@@ -34,7 +34,7 @@ Returns Normalize CSS file according to version number.
 
 djfrontend_modernizr
 ~~~~~~~~~~~~~~~~~~~~~
-Returns Modernizr JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.
+Returns Modernizr JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local callback. The latest '2.6.2' is included.
 ::
 
     <script src="/static/djfrontend/js/modernizr/2.6.2/modernizr.js"></script>
@@ -43,7 +43,8 @@ Or
 
 ::
 
-    <script src="/static/djfrontend/js/modernizr/2.6.2/modernizr.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/%s/modernizr.min.js"></script>' % v,
+    <script>window.Modernizr || document.write(\'<script src="static/djfrontend/js/modernizr/2.6.2/modernizr.min.js"><\/script>\')</script>
 
 djfrontend_jquery
 ~~~~~~~~~~~~~~~~~~
@@ -70,7 +71,7 @@ Or
 
 ::
 
-    <script src="/ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>' % v,
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>' % v,
     <script>window.jQueryUI || document.write(\'<script src="/static/djfrontend/js/jquery/jqueryui/1.10.3/jquery-ui.min.js"><\/script>\')</script>
 
 djfrontend_jquery_datatables
@@ -156,7 +157,6 @@ Returns Twitter Bootstrap (3.0.0) JavaScript file(s). all returns concatenated f
 * tab
 * tooltip
 * transition
-* typeahead
 
 Individual files are not minified.
 
