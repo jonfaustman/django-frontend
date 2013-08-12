@@ -11,12 +11,12 @@ Starring
 ---------
 * `HTML5 Boilerplate (based on 4.2.0) <https://github.com/h5bp/html5-boilerplate>`_
 * `Modernizr (2.6.2) <https://github.com/Modernizr/Modernizr>`_
-* `jQuery (1.10.1) and (2.0.2) <https://github.com/jquery/jquery>`_
+* `jQuery (1.10.2) and (2.0.3) <https://github.com/jquery/jquery>`_
 * `jQuery UI (1.10.3) <https://github.com/jquery/jquery-ui>`_
 * `jQuery DataTables (1.9.4) <https://github.com/DataTables/DataTables>`_
 * `jQuery Dynamic Formset (1.2) <https://code.google.com/p/django-dynamic-formset>`_
-* `jQuery Smooth Scroll (1.4.10) <https://github.com/kswedberg/jquery-smooth-scroll>`_
-* `Twitter Bootstrap (2.3.2) <https://github.com/twitter/bootstrap>`_
+* `jQuery Smooth Scroll (1.4.11) <https://github.com/kswedberg/jquery-smooth-scroll>`_
+* `Twitter Bootstrap (3.0.0 RC1) <https://github.com/twbs/bootstrap>`_
 * `iOS-Orientationchange-Fix <https://github.com/scottjehl/iOS-Orientationchange-Fix>`_
 * `famfamfam's Silk Icons <http://www.famfamfam.com/lab/icons/silk/>`_
 
