@@ -29,15 +29,21 @@ def djfrontend_h5bp_css(v):
     """ Returns HTML5 Boilerplate CSS file.
     Included in HTML5 Boilerplate.
     """
-    return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.STATIC_URL, v)
-
+    if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+        return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.DJFRONTEND_STATIC_URL, v)
+    else:
+        return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.STATIC_URL, v)
+    
 
 @register.simple_tag
 def djfrontend_normalize(v):
     """ Returns Normalize CSS file.
     Included in HTML5 Boilerplate.
     """
-    return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.STATIC_URL, v)
+    if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+        return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.DJFRONTEND_STATIC_URL, v)
+    else:
+        return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.STATIC_URL, v)
 
 
 @register.simple_tag
@@ -177,14 +183,20 @@ def djfrontend_twbs_css(v):
     if getattr(settings, 'TEMPLATE_DEBUG',):
         return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap.css">' % (settings.STATIC_URL, v)
     else:
-        return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap.min.css">' % (settings.STATIC_URL, v)
+        if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+            return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap.min.css">' % (settings.DJFRONTEND_STATIC_URL, v)
+        else:
+            return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap.min.css">' % (settings.STATIC_URL, v)
 
 
 @register.simple_tag
 def djfrontend_twbs_glyphicons(v):
     """ Returns Twitter Bootstrap Glyphicons CSS file.
     """
-    return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-glyphicons.css">' % (settings.STATIC_URL, v)
+    if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+        return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-glyphicons.css">' % (settings.DJFRONTEND_STATIC_URL, v)
+    else:
+        return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-glyphicons.css">' % (settings.STATIC_URL, v)
 
 
 @register.tag(name='djfrontend_twbs_js')
