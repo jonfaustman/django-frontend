@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Template tags &mdash; django-frontend 0.1.0 documentation</title>
+    <title>Template tags &mdash; django-frontend 0.2.0 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.1.0',
+        VERSION:     '0.2.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="django-frontend 0.1.0 documentation" href="index.html" />
+    <link rel="top" title="django-frontend 0.2.0 documentation" href="index.html" />
     <link rel="next" title="Template blocks" href="template_blocks.html" />
     <link rel="prev" title="Getting Started" href="getting_started.html" /> 
   </head>
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="getting_started.html" title="Getting Started"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">django-frontend 0.1.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">django-frontend 0.2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -108,11 +108,12 @@
 </div>
 <div class="section" id="djfrontend-jquery-datatables">
 <h3>djfrontend_jquery_datatables<a class="headerlink" href="#djfrontend-jquery-datatables" title="Permalink to this headline">¶</a></h3>
-<p>Returns the jQuery DataTables plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.</p>
+<p>Returns the jQuery DataTables plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback.</p>
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.dataTables/1.9.4/jquery.dataTables.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or</p>
-<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.dataTables/1.9.4/jquery.dataTables.min.js"&gt;&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;window.jQuery.fn.DataTable || document.write('&lt;script src="/static/djfrontend/js/jquery/jquery.dataTables/1.9.4/jquery.dataTables.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-jquery-datatables-css">
@@ -277,7 +278,7 @@
         <li class="right" >
           <a href="getting_started.html" title="Getting Started"
              >previous</a> |</li>
-        <li><a href="index.html">django-frontend 0.1.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">django-frontend 0.2.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

@@ -75,7 +75,7 @@ Or
 
 djfrontend_jquery_datatables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Returns the jQuery DataTables plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.
+Returns the jQuery DataTables plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback.
 ::
 
     <script src="/static/djfrontend/js/jquery/jquery.dataTables/1.9.4/jquery.dataTables.js"></script>
@@ -84,7 +84,8 @@ Or
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
+    <script>window.jQuery.fn.DataTable || document.write('<script src="/static/djfrontend/js/jquery/jquery.dataTables/1.9.4/jquery.dataTables.min.js"><\/script>')</script>
 
 djfrontend_jquery_datatables_css
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
