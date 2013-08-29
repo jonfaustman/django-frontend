@@ -182,13 +182,16 @@ def djfrontend_twbs_css(v):
 
 
 @register.simple_tag
-def djfrontend_twbs_glyphicons(v):
-    """ Returns Twitter Bootstrap Glyphicons CSS file.
+def djfrontend_twbs_theme_css(v):
+    """ Returns Twitter Bootstrap Theme CSS file.
     """
-    if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-glyphicons.css">' % (settings.DJFRONTEND_STATIC_URL, v)
+    if getattr(settings, 'TEMPLATE_DEBUG',):
+        return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.css">' % (settings.STATIC_URL, v)
     else:
-        return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-glyphicons.css">' % (settings.STATIC_URL, v)
+        if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+            return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.min.css">' % (settings.DJFRONTEND_STATIC_URL, v)
+        else:
+            return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.min.css">' % (settings.STATIC_URL, v)
 
 
 @register.tag(name='djfrontend_twbs_js')

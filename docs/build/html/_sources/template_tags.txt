@@ -134,12 +134,18 @@ Or
 
     <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap.min.css">
 
-djfrontend_twbs_glyphicons_css
+djfrontend_twbs_theme_css
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Returns Twitter Bootstrap Glyphicons CSS file according to version number.
+Returns Twitter Bootstrap Theme CSS file according to version number.
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap-glyphicons.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap-theme.css">
+
+Or
+
+::
+
+    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap-theme.min.css">
 
 djfrontend_twbs_js
 ~~~~~~~~~~~~~~~~~~~~
