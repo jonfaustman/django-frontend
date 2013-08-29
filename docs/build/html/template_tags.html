@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Template tags &mdash; django-frontend 0.2.1 documentation</title>
+    <title>Template tags &mdash; django-frontend 0.3.0 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.2.1',
+        VERSION:     '0.3.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="django-frontend 0.2.1 documentation" href="index.html" />
+    <link rel="top" title="django-frontend 0.3.0 documentation" href="index.html" />
     <link rel="next" title="Template blocks" href="template_blocks.html" />
     <link rel="prev" title="Getting Started" href="getting_started.html" /> 
   </head>
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="getting_started.html" title="Getting Started"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">django-frontend 0.2.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">django-frontend 0.3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -132,6 +132,15 @@
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.formset/1.2/jquery.formset.min.js"&gt;&lt;/script&gt;</pre>
 </div>
 </div>
+<div class="section" id="djfrontend-jquery-scrollto">
+<h3>djfrontend_jquery_scrollto<a class="headerlink" href="#djfrontend-jquery-scrollto" title="Permalink to this headline">¶</a></h3>
+<p>Returns the jQuery ScrollTo plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.</p>
+<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.6/jquery.scrollTo.js"&gt;&lt;/script&gt;</pre>
+</div>
+<p>Or</p>
+<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.6/jquery.scrollTo.min.js"&gt;&lt;/script&gt;</pre>
+</div>
+</div>
 <div class="section" id="djfrontend-jquery-smoothscroll">
 <h3>djfrontend_jquery_smoothscroll<a class="headerlink" href="#djfrontend-jquery-smoothscroll" title="Permalink to this headline">¶</a></h3>
 <p>Returns the jQuery Smooth Scroll plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.</p>
@@ -150,10 +159,13 @@
 <div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap.min.css"&gt;</pre>
 </div>
 </div>
-<div class="section" id="djfrontend-twbs-glyphicons-css">
-<h3>djfrontend_twbs_glyphicons_css<a class="headerlink" href="#djfrontend-twbs-glyphicons-css" title="Permalink to this headline">¶</a></h3>
-<p>Returns Twitter Bootstrap Glyphicons CSS file according to version number.</p>
-<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap-glyphicons.css"&gt;</pre>
+<div class="section" id="djfrontend-twbs-theme-css">
+<h3>djfrontend_twbs_theme_css<a class="headerlink" href="#djfrontend-twbs-theme-css" title="Permalink to this headline">¶</a></h3>
+<p>Returns Twitter Bootstrap Theme CSS file according to version number.</p>
+<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap-theme.css"&gt;</pre>
+</div>
+<p>Or</p>
+<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap-theme.min.css"&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-twbs-js">
@@ -226,9 +238,10 @@
 <li><a class="reference internal" href="#djfrontend-jquery-datatables">djfrontend_jquery_datatables</a></li>
 <li><a class="reference internal" href="#djfrontend-jquery-datatables-css">djfrontend_jquery_datatables_css</a></li>
 <li><a class="reference internal" href="#djfrontend-jquery-formset">djfrontend_jquery_formset</a></li>
+<li><a class="reference internal" href="#djfrontend-jquery-scrollto">djfrontend_jquery_scrollto</a></li>
 <li><a class="reference internal" href="#djfrontend-jquery-smoothscroll">djfrontend_jquery_smoothscroll</a></li>
 <li><a class="reference internal" href="#djfrontend-twbs-css">djfrontend_twbs_css</a></li>
-<li><a class="reference internal" href="#djfrontend-twbs-glyphicons-css">djfrontend_twbs_glyphicons_css</a></li>
+<li><a class="reference internal" href="#djfrontend-twbs-theme-css">djfrontend_twbs_theme_css</a></li>
 <li><a class="reference internal" href="#djfrontend-twbs-js">djfrontend_twbs_js</a></li>
 <li><a class="reference internal" href="#djfrontend-ga">djfrontend_ga</a></li>
 <li><a class="reference internal" href="#djfrontend-ios-fix">djfrontend_ios_fix</a></li>
@@ -278,7 +291,7 @@
         <li class="right" >
           <a href="getting_started.html" title="Getting Started"
              >previous</a> |</li>
-        <li><a href="index.html">django-frontend 0.2.1 documentation</a> &raquo;</li> 
+        <li><a href="index.html">django-frontend 0.3.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
