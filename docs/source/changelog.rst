@@ -1,6 +1,10 @@
 Changelog
 ==============
 
+0.3.1
+------
+* Fixed URL to TWBS Glyphicons in bootstrap.min.css
+
 0.3.0
 ------
 * Updated Twitter Bootstrap to v3.0.0
