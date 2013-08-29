@@ -108,6 +108,19 @@ Or
 
     <script src="/static/djfrontend/js/jquery/jquery.formset/1.2/jquery.formset.min.js"></script>
 
+djfrontend_jquery_scrollto
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Returns the jQuery ScrollTo plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.
+::
+
+    <script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.6/jquery.scrollTo.js"></script>
+
+Or
+
+::
+
+    <script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.6/jquery.scrollTo.min.js"></script>
+
 djfrontend_jquery_smoothscroll
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Returns the jQuery Smooth Scroll plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.
@@ -134,12 +147,18 @@ Or
 
     <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap.min.css">
 
-djfrontend_twbs_glyphicons_css
+djfrontend_twbs_theme_css
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Returns Twitter Bootstrap Glyphicons CSS file according to version number.
+Returns Twitter Bootstrap Theme CSS file according to version number.
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap-glyphicons.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap-theme.css">
+
+Or
+
+::
+
+    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap-theme.min.css">
 
 djfrontend_twbs_js
 ~~~~~~~~~~~~~~~~~~~~
