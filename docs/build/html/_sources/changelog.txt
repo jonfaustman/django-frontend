@@ -1,7 +1,7 @@
 Changelog
 ==============
 
-0.2.2
+0.3.0
 ------
 * Updated Twitter Bootstrap to v3.0.0
 * Added djfrontend_twbs_theme_css template tag
