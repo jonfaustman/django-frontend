@@ -108,6 +108,19 @@ Or
 
     <script src="/static/djfrontend/js/jquery/jquery.formset/1.2/jquery.formset.min.js"></script>
 
+djfrontend_jquery_scrollto
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Returns the jQuery ScrollTo plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.
+::
+
+    <script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.6/jquery.scrollTo.js"></script>
+
+Or
+
+::
+
+    <script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.6/jquery.scrollTo.min.js"></script>
+
 djfrontend_jquery_smoothscroll
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Returns the jQuery Smooth Scroll plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.

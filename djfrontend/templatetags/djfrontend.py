@@ -149,6 +149,25 @@ def djfrontend_jquery_formset(v):
 
 
 @register.simple_tag
+def djfrontend_jquery_scrollto(v):
+    """ Returns the jQuery ScrollTo plugin file according to version number.
+    TEMPLATE_DEBUG returns full file, otherwise returns minified file.
+    """
+    if getattr(settings, 'TEMPLATE_DEBUG',):
+        return '<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.js"></script>' % (settings.STATIC_URL, v)
+    else:
+        if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+            output=[
+                '<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, v)
+            ]
+        else:
+            output=[
+                '<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.min.js"></script>' % (settings.STATIC_URL, v)
+            ]
+        return '\n'.join(output)
+
+
+@register.simple_tag
 def djfrontend_jquery_smoothscroll(v):
     """ Returns the jQuery Smooth Scroll plugin file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.

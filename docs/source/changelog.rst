@@ -6,6 +6,8 @@ Changelog
 * Updated Twitter Bootstrap to v3.0.0
 * Added djfrontend_twbs_theme_css template tag
 * Added bootstrap-theme.css and bootstrap-theme.min.css
+* Added djfrontend_jquery_scrollto template tag
+* Added jquery.scrollTo.js and jquery.scrollTo.min.js
 * Removed djfrontend_twbs_glyphicons template tag
 * Removed bootstrap-glyphicons.css
 
