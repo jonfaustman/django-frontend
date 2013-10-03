@@ -145,7 +145,11 @@ def djfrontend_jquery_formset(v):
         if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
             return '<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, v)
         else:
-            return '<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js"></script>' % (settings.STATIC_URL, v)
+            output=[
+                    '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.formset/%s/jquery.formset.min.js"></script>' % v,
+                    '<script>window.jQuery.fn.formset || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
+                ]
+            return '\n'.join(output)
 
 
 @register.simple_tag
@@ -162,9 +166,10 @@ def djfrontend_jquery_scrollto(v):
             ]
         else:
             output=[
-                '<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.min.js"></script>' % (settings.STATIC_URL, v)
-            ]
-        return '\n'.join(output)
+                    '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/%s/jquery.scrollTo.min.js"></script>' % v,
+                    '<script>window.jQuery.fn.scrollTo || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
+                ]
+            return '\n'.join(output)
 
 
 @register.simple_tag
@@ -181,8 +186,9 @@ def djfrontend_jquery_smoothscroll(v):
             ]
         else:
             output=[
-                '<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % (settings.STATIC_URL, v)
-            ]
+                    '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % v,
+                    '<script>window.jQuery.fn.smoothScroll || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
+                ]
         return '\n'.join(output)
 
 
