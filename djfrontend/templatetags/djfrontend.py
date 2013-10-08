@@ -41,6 +41,34 @@ def djfrontend_normalize(v):
 
 
 @register.simple_tag
+def djfrontend_fontawesome(v):
+    """ Returns Font Awesome CSS file.
+    TEMPLATE_DEBUG returns full file, otherwise returns minified file.
+    """
+    if getattr(settings, 'TEMPLATE_DEBUG',):
+        return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.css">' % (settings.STATIC_URL, v)
+    else:
+        if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+            return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.min.css">' % (settings.DJFRONTEND_STATIC_URL, v)
+        else:
+            return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.min.css">' % (settings.STATIC_URL, v)
+
+
+@register.simple_tag
+def djfrontend_fontawesome_ie(v):
+    """ Returns Font Awesome IE7 CSS file.
+    TEMPLATE_DEBUG returns full file, otherwise returns minified file.
+    """
+    if getattr(settings, 'TEMPLATE_DEBUG',):
+        return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome-ie7.css">' % (settings.STATIC_URL, v)
+    else:
+        if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+            return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome-ie7.min.css">' % (settings.DJFRONTEND_STATIC_URL, v)
+        else:
+            return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome-ie7.min.css">' % (settings.STATIC_URL, v)
+
+
+@register.simple_tag
 def djfrontend_modernizr(v):
     """ Returns Modernizr JavaScript file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
