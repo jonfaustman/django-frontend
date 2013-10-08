@@ -9,7 +9,7 @@ With the convenience of an installable Django application, easily add some of th
 ---------
 Starring
 ---------
-* `HTML5 Boilerplate (based on 4.2.0) <https://github.com/h5bp/html5-boilerplate>`_
+* `HTML5 Boilerplate (based on 4.3.0) <https://github.com/h5bp/html5-boilerplate>`_
 * `Modernizr (2.6.2) <https://github.com/Modernizr/Modernizr>`_
 * `jQuery (1.10.2) and (2.0.3) <https://github.com/jquery/jquery>`_
 * `jQuery UI (1.10.3) <https://github.com/jquery/jquery-ui>`_
