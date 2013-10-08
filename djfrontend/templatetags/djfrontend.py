@@ -41,6 +41,34 @@ def djfrontend_normalize(v):
 
 
 @register.simple_tag
+def djfrontend_fontawesome(v):
+    """ Returns Font Awesome CSS file.
+    TEMPLATE_DEBUG returns full file, otherwise returns minified file.
+    """
+    if getattr(settings, 'TEMPLATE_DEBUG',):
+        return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.css">' % (settings.STATIC_URL, v)
+    else:
+        if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+            return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.min.css">' % (settings.DJFRONTEND_STATIC_URL, v)
+        else:
+            return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.min.css">' % (settings.STATIC_URL, v)
+
+
+@register.simple_tag
+def djfrontend_fontawesome_ie(v):
+    """ Returns Font Awesome IE7 CSS file.
+    TEMPLATE_DEBUG returns full file, otherwise returns minified file.
+    """
+    if getattr(settings, 'TEMPLATE_DEBUG',):
+        return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome-ie7.css">' % (settings.STATIC_URL, v)
+    else:
+        if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+            return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome-ie7.min.css">' % (settings.DJFRONTEND_STATIC_URL, v)
+        else:
+            return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome-ie7.min.css">' % (settings.STATIC_URL, v)
+
+
+@register.simple_tag
 def djfrontend_modernizr(v):
     """ Returns Modernizr JavaScript file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
@@ -93,12 +121,12 @@ def djfrontend_jqueryui(v):
         if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
             output=[
                 '<script src="//ajax.googleapis.com/ajax/libs/jqueryui/%s/jquery-ui.min.js"></script>' % v,
-                '<script>window.jQueryUI || document.write(\'<script src="%sdjfrontend/js/jquery/jqueryui/%s/jquery-ui.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, v)
+                '<script>window.jQuery.ui || document.write(\'<script src="%sdjfrontend/js/jquery/jqueryui/%s/jquery-ui.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, v)
             ]
         else:
             output=[
                 '<script src="//ajax.googleapis.com/ajax/libs/jqueryui/%s/jquery-ui.min.js"></script>' % v,
-                '<script>window.jQueryUI || document.write(\'<script src="%sdjfrontend/js/jquery/jqueryui/%s/jquery-ui.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
+                '<script>window.jQuery.ui || document.write(\'<script src="%sdjfrontend/js/jquery/jqueryui/%s/jquery-ui.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
             ]
         return '\n'.join(output)
 
@@ -145,7 +173,11 @@ def djfrontend_jquery_formset(v):
         if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
             return '<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, v)
         else:
-            return '<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js"></script>' % (settings.STATIC_URL, v)
+            output=[
+                    '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.formset/%s/jquery.formset.min.js"></script>' % v,
+                    '<script>window.jQuery.fn.formset || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
+                ]
+            return '\n'.join(output)
 
 
 @register.simple_tag
@@ -162,9 +194,10 @@ def djfrontend_jquery_scrollto(v):
             ]
         else:
             output=[
-                '<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.min.js"></script>' % (settings.STATIC_URL, v)
-            ]
-        return '\n'.join(output)
+                    '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/%s/jquery.scrollTo.min.js"></script>' % v,
+                    '<script>window.jQuery.fn.scrollTo || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
+                ]
+            return '\n'.join(output)
 
 
 @register.simple_tag
@@ -181,8 +214,9 @@ def djfrontend_jquery_smoothscroll(v):
             ]
         else:
             output=[
-                '<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % (settings.STATIC_URL, v)
-            ]
+                    '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % v,
+                    '<script>window.jQuery.fn.smoothScroll || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
+                ]
         return '\n'.join(output)
 
 
