@@ -121,12 +121,12 @@ def djfrontend_jqueryui(v):
         if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
             output=[
                 '<script src="//ajax.googleapis.com/ajax/libs/jqueryui/%s/jquery-ui.min.js"></script>' % v,
-                '<script>window.jQueryUI || document.write(\'<script src="%sdjfrontend/js/jquery/jqueryui/%s/jquery-ui.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, v)
+                '<script>window.jQuery.ui || document.write(\'<script src="%sdjfrontend/js/jquery/jqueryui/%s/jquery-ui.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, v)
             ]
         else:
             output=[
                 '<script src="//ajax.googleapis.com/ajax/libs/jqueryui/%s/jquery-ui.min.js"></script>' % v,
-                '<script>window.jQueryUI || document.write(\'<script src="%sdjfrontend/js/jquery/jqueryui/%s/jquery-ui.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
+                '<script>window.jQuery.ui || document.write(\'<script src="%sdjfrontend/js/jquery/jqueryui/%s/jquery-ui.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
             ]
         return '\n'.join(output)
 
