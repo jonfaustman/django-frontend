@@ -20,6 +20,7 @@ Starring
 * `Twitter Bootstrap (3.0.0) <https://github.com/twbs/bootstrap>`_
 * `iOS-Orientationchange-Fix <https://github.com/scottjehl/iOS-Orientationchange-Fix>`_
 * `famfamfam's Silk Icons <http://www.famfamfam.com/lab/icons/silk/>`_
+* `Font Awesome (3.2.1) <https://github.com/FortAwesome/Font-Awesome>`_
 
 -----------------
 More Information

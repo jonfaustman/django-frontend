@@ -23,14 +23,41 @@ djfrontend_h5bp_css
 Returns HTML5 Boilerplate CSS file according to version number.
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/h5bp/4.2.0/h5bp.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/h5bp/4.3.0/h5bp.css">
 
 djfrontend_normalize
 ~~~~~~~~~~~~~~~~~~~~~
 Returns Normalize CSS file according to version number.
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/normalize/1.1.1/normalize.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/normalize/1.1.3/normalize.css">
+
+djfrontend_fontawesome
+~~~~~~~~~~~~~~~~~~~~~~~~
+Returns Font Awesome CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.
+::
+
+    <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/3.2.1/font-awesome.css">
+
+Or
+
+::
+
+    <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/3.2.1/font-awesome.min.css">
+
+
+djfrontend_fontawesome_ie
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Returns Font Awesome IE7 CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.
+::
+
+    <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/3.2.1/font-awesome-ie7.css">
+
+Or
+
+::
+
+    <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/3.2.1/font-awesome.min-ie7.css">
 
 djfrontend_modernizr
 ~~~~~~~~~~~~~~~~~~~~~
@@ -72,7 +99,7 @@ Or
 ::
 
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>' % v,
-    <script>window.jQueryUI || document.write(\'<script src="/static/djfrontend/js/jquery/jqueryui/1.10.3/jquery-ui.min.js"><\/script>\')</script>
+    <script>window.jQuery.ui || document.write(\'<script src="/static/djfrontend/js/jquery/jqueryui/1.10.3/jquery-ui.min.js"><\/script>\')</script>
 
 djfrontend_jquery_datatables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -97,7 +124,7 @@ Returns the jQuery DataTables CSS file according to version number.
 
 djfrontend_jquery_formset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Returns the jQuery Dynamic Formset plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.
+Returns the jQuery Dynamic Formset plugin JavaScript file according to version number. TTEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback.
 ::
 
     <script src="/static/djfrontend/js/jquery/jquery.formset/1.2/jquery.formset.js"></script>
@@ -106,11 +133,12 @@ Or
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/jquery.formset/1.2/jquery.formset.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2/jquery.formset.min.js"></script>
+    <script>window.jQuery.fn.formset || document.write('<script src="/static/djfrontend/js/jquery/jquery.formset/1.2/jquery.formset.min.js"><\/script>')</script>
 
 djfrontend_jquery_scrollto
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Returns the jQuery ScrollTo plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.
+Returns the jQuery ScrollTo plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback.
 ::
 
     <script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.6/jquery.scrollTo.js"></script>
@@ -119,20 +147,22 @@ Or
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.6/jquery.scrollTo.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.6/jquery.scrollTo.min.js"></script>
+    <script>window.jQuery.fn.scrollTo || document.write('<script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.6/jquery.scrollTo.min.js"><\/script>')</script>
 
 djfrontend_jquery_smoothscroll
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Returns the jQuery Smooth Scroll plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.
+Returns the jQuery Smooth Scroll plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback.
 ::
 
-    <script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.4.11/jquery.smooth-scroll.js"></script>
+    <script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.4.12/jquery.smooth-scroll.js"></script>
 
 Or
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.4.11/jquery.smooth-scroll.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.4.12/jquery.smooth-scroll.min.js"></script>
+    <script>window.jQuery.fn.smoothScroll || document.write('<script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.4.12/jquery.smooth-scroll.min.js"><\/script>')</script
 
 djfrontend_twbs_css
 ~~~~~~~~~~~~~~~~~~~~

@@ -1,6 +1,18 @@
 Changelog
 ==============
 
+0.4.0
+------
+* Updated jQuery Smooth Scroll to v1.4.12.
+* Updated h5bp.css to v4.3.0.
+* Updated normalize.css to v1.1.3.
+* Removed Chrome Frame value from meta content attribute.
+* Added initial CDNJS load for jQuery Dynamic Formset, jQuery ScrollTo and jQuery Smooth Scroll.
+* Added Font Awesome (3.2.1).
+* Added djfront_fontawesome template tag.
+* Added djfront_fontawesome_ie template tag.
+* Fixed jQuery UI initial load.
+
 0.3.1
 ------
 * Fixed URL to TWBS Glyphicons in bootstrap.min.css
