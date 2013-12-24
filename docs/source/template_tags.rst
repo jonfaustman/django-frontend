@@ -55,39 +55,19 @@ djfrontend_fontawesome
 Returns Font Awesome CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.
 ::
 
-    {% djfrontend_fontawesome '3.2.1' %}
+    {% djfrontend_fontawesome '4.0.3' %}
     
 would render
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/3.2.1/font-awesome.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/4.0.3/font-awesome.css">
 
 Or
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/3.2.1/font-awesome.min.css">
-
-
-djfrontend_fontawesome_ie
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Returns Font Awesome IE7 CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.
-::
-
-    {% djfrontend_fontawesome_ie '3.2.1' %}
-    
-would render
-
-::
-
-    <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/3.2.1/font-awesome-ie7.css">
-
-Or
-
-::
-
-    <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/3.2.1/font-awesome.min-ie7.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/4.0.3/font-awesome.min.css">
 
 djfrontend_modernizr
 ~~~~~~~~~~~~~~~~~~~~~

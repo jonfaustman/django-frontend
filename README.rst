@@ -19,7 +19,7 @@ Starring
 * `jQuery Smooth Scroll (1.4.11) <https://github.com/kswedberg/jquery-smooth-scroll>`_
 * `Twitter Bootstrap (3.0.0) <https://github.com/twbs/bootstrap>`_
 * `iOS-Orientationchange-Fix <https://github.com/scottjehl/iOS-Orientationchange-Fix>`_
-* `Font Awesome (3.2.1) <https://github.com/FortAwesome/Font-Awesome>`_
+* `Font Awesome (4.0.3) <https://github.com/FortAwesome/Font-Awesome>`_
 
 -----------------
 More Information
