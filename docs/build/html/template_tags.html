@@ -201,25 +201,25 @@
 <div class="section" id="djfrontend-twbs-css">
 <h3>djfrontend_twbs_css<a class="headerlink" href="#djfrontend-twbs-css" title="Permalink to this headline">¶</a></h3>
 <p>Returns Twitter Bootstrap CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.</p>
-<div class="highlight-python"><pre>{% djfrontend_twbs_css '3.0.0' %}</pre>
+<div class="highlight-python"><pre>{% djfrontend_twbs_css '3.0.3' %}</pre>
 </div>
 <p>would render</p>
-<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap.css"&gt;</pre>
+<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap.css"&gt;</pre>
 </div>
 <p>Or</p>
-<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap.min.css"&gt;</pre>
+<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap.min.css"&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-twbs-theme-css">
 <h3>djfrontend_twbs_theme_css<a class="headerlink" href="#djfrontend-twbs-theme-css" title="Permalink to this headline">¶</a></h3>
 <p>Returns Twitter Bootstrap Theme CSS file according to version number.</p>
-<div class="highlight-python"><pre>{% djfrontend_twbs_theme_css '3.0.0' %}</pre>
+<div class="highlight-python"><pre>{% djfrontend_twbs_theme_css '3.0.3' %}</pre>
 </div>
 <p>would render</p>
-<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap-theme.css"&gt;</pre>
+<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap-theme.css"&gt;</pre>
 </div>
 <p>Or</p>
-<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap-theme.min.css"&gt;</pre>
+<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap-theme.min.css"&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-twbs-js">
@@ -240,16 +240,19 @@
 <li>transition</li>
 </ul>
 <p>Individual files are not minified.</p>
-<div class="highlight-python"><pre>{% boostrap_js all %} would render</pre>
+<div class="highlight-python"><pre>{% boostrap_js all %}</pre>
 </div>
-<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.0.0/bootstrap.js"&gt;&lt;/script&gt;</pre>
+<p>would render</p>
+<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.0.3/bootstrap.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or</p>
-<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.0.0/bootstrap.min.js"&gt;&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.0.3/bootstrap.min.js"&gt;&lt;/script&gt;</pre>
 </div>
-<p>{% bootstrap_js alert affix %} would render</p>
-<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.0.0/bootstrap-affix.js"&gt;&lt;/script&gt;
-&lt;script src="/static/djfrontend/js/twbs/3.0.0/bootstrap-alert.js"&gt;&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>{% bootstrap_js alert affix %}</pre>
+</div>
+<p>would render</p>
+<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.0.3/bootstrap-affix.js"&gt;&lt;/script&gt;
+&lt;script src="/static/djfrontend/js/twbs/3.0.3/bootstrap-alert.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Shout out to Ryan Brady and his <a class="reference external" href="https://github.com/rbrady/django-bootstrapped">Django Bootstrapped</a> for inspiration and initial code.</p>
 </div>
