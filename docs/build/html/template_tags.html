@@ -100,15 +100,15 @@
 </div>
 <div class="section" id="djfrontend-modernizr">
 <h3>djfrontend_modernizr<a class="headerlink" href="#djfrontend-modernizr" title="Permalink to this headline">¶</a></h3>
-<p>Returns Modernizr JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local callback. The latest &#8216;2.6.2&#8217; is included.</p>
-<div class="highlight-python"><pre>{% djfrontend_modernizr '2.6.2' %}</pre>
+<p>Returns Modernizr JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local callback. The latest &#8216;2.7.1&#8217; is included.</p>
+<div class="highlight-python"><pre>{% djfrontend_modernizr '2.7.1' %}</pre>
 </div>
 <p>would render</p>
-<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/modernizr/2.6.2/modernizr.js"&gt;&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/modernizr/2.7.1/modernizr.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or</p>
-<div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/%s/modernizr.min.js"&gt;&lt;/script&gt;' % v,
-&lt;script&gt;window.Modernizr || document.write(\'&lt;script src="static/djfrontend/js/modernizr/2.6.2/modernizr.min.js"&gt;&lt;\/script&gt;\')&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"&gt;&lt;/script&gt;' % v,
+&lt;script&gt;window.Modernizr || document.write(\'&lt;script src="static/djfrontend/js/modernizr/2.7.1/modernizr.min.js"&gt;&lt;\/script&gt;\')&lt;/script&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-jquery">
