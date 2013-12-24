@@ -6,6 +6,9 @@ Django Frontend is a collection of static files and templates to jumpstart Djang
 
 With the convenience of an installable Django application, easily add some of the most widely used static files and create custom templates built on top of one of the most well-known, widespread templates (`HTML5 Boilerplate <https://github.com/h5bp/html5-boilerplate>`_ .)
 
+:Package: `https://pypi.python.org/pypi/django-frontend <https://pypi.python.org/pypi/django-frontend>`_
+:Source: `https://github.com/jonfaustman/django-frontend <https://github.com/jonfaustman/django-frontend>`_
+
 ---------
 Starring
 ---------
@@ -17,7 +20,7 @@ Starring
 * `jQuery Dynamic Formset (1.2) <https://code.google.com/p/django-dynamic-formset>`_
 * `jQuery ScrollTo (1.4.6) <https://github.com/flesler/jquery.scrollTo>`_
 * `jQuery Smooth Scroll (1.4.11) <https://github.com/kswedberg/jquery-smooth-scroll>`_
-* `Twitter Bootstrap (3.0.0) <https://github.com/twbs/bootstrap>`_
+* `Twitter Bootstrap (3.0.3) <https://github.com/twbs/bootstrap>`_
 * `iOS-Orientationchange-Fix <https://github.com/scottjehl/iOS-Orientationchange-Fix>`_
 * `Font Awesome (4.0.3) <https://github.com/FortAwesome/Font-Awesome>`_
 

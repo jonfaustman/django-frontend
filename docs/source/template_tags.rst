@@ -227,38 +227,38 @@ djfrontend_twbs_css
 Returns Twitter Bootstrap CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.
 ::
 
-    {% djfrontend_twbs_css '3.0.0' %}
+    {% djfrontend_twbs_css '3.0.3' %}
     
 would render
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap.css">
 
 Or
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap.min.css">
 
 djfrontend_twbs_theme_css
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Returns Twitter Bootstrap Theme CSS file according to version number.
 ::
 
-    {% djfrontend_twbs_theme_css '3.0.0' %}
+    {% djfrontend_twbs_theme_css '3.0.3' %}
     
 would render
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap-theme.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap-theme.css">
 
 Or
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.0/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap-theme.min.css">
 
 djfrontend_twbs_js
 ~~~~~~~~~~~~~~~~~~~~
@@ -280,24 +280,30 @@ Returns Twitter Bootstrap (3.0.0) JavaScript file(s). all returns concatenated f
 Individual files are not minified.
 ::
 
-    {% boostrap_js all %} would render
+    {% boostrap_js all %}
+    
+would render
 
 ::
 
-    <script src="/static/djfrontend/js/twbs/3.0.0/bootstrap.js"></script>
+    <script src="/static/djfrontend/js/twbs/3.0.3/bootstrap.js"></script>
 
 Or
 
 ::
 
-    <script src="/static/djfrontend/js/twbs/3.0.0/bootstrap.min.js"></script>
-
-{% bootstrap_js alert affix %} would render
+    <script src="/static/djfrontend/js/twbs/3.0.3/bootstrap.min.js"></script>
 
 ::
 
-    <script src="/static/djfrontend/js/twbs/3.0.0/bootstrap-affix.js"></script>
-    <script src="/static/djfrontend/js/twbs/3.0.0/bootstrap-alert.js"></script>
+    {% bootstrap_js alert affix %}
+
+would render
+
+::
+
+    <script src="/static/djfrontend/js/twbs/3.0.3/bootstrap-affix.js"></script>
+    <script src="/static/djfrontend/js/twbs/3.0.3/bootstrap-alert.js"></script>
 
 Shout out to Ryan Brady and his `Django Bootstrapped <https://github.com/rbrady/django-bootstrapped>`_ for inspiration and initial code.
 
