@@ -71,23 +71,23 @@ Or
 
 djfrontend_modernizr
 ~~~~~~~~~~~~~~~~~~~~~
-Returns Modernizr JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local callback. The latest '2.6.2' is included.
+Returns Modernizr JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local callback. The latest '2.7.1' is included.
 ::
 
-    {% djfrontend_modernizr '2.6.2' %}
+    {% djfrontend_modernizr '2.7.1' %}
     
 would render
 
 ::
 
-    <script src="/static/djfrontend/js/modernizr/2.6.2/modernizr.js"></script>
+    <script src="/static/djfrontend/js/modernizr/2.7.1/modernizr.js"></script>
 
 Or
 
 ::
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/%s/modernizr.min.js"></script>' % v,
-    <script>window.Modernizr || document.write(\'<script src="static/djfrontend/js/modernizr/2.6.2/modernizr.min.js"><\/script>\')</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>' % v,
+    <script>window.Modernizr || document.write(\'<script src="static/djfrontend/js/modernizr/2.7.1/modernizr.min.js"><\/script>\')</script>
 
 djfrontend_jquery
 ~~~~~~~~~~~~~~~~~~
