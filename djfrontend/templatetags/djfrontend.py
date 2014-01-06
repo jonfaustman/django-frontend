@@ -46,14 +46,22 @@ def djfrontend_h5bp_css(version=None):
     
 
 @register.simple_tag
-def djfrontend_normalize(v):
+def djfrontend_normalize(version=None):
     """ Returns Normalize CSS file.
     Included in HTML5 Boilerplate.
     """
-    if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.DJFRONTEND_STATIC_URL, v)
+    
+    default_version = '1.1.3'
+    
+    if version:
+        pass
     else:
-        return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.STATIC_URL, v)
+        version = default_version
+    
+    if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+        return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.DJFRONTEND_STATIC_URL, default_version)
+    else:
+        return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.STATIC_URL, default_version)
 
 
 @register.simple_tag
