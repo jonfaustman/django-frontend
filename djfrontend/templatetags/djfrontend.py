@@ -221,19 +221,27 @@ def djfrontend_jquery_datatables_css(version=None):
 
 
 @register.simple_tag
-def djfrontend_jquery_formset(v):
+def djfrontend_jquery_formset(version=None):
     """ Returns the jQuery Dynamic Formset plugin file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
+    
+    default_version = '1.2'
+    
+    if version:
+        pass
+    else:
+        version = default_version
+    
     if getattr(settings, 'TEMPLATE_DEBUG',):
-        return '<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.js"></script>' % (settings.STATIC_URL, v)
+        return '<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.js"></script>' % (settings.STATIC_URL, version)
     else:
         if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
-            return '<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, v)
+            return '<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
         else:
             output=[
-                    '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.formset/%s/jquery.formset.min.js"></script>' % v,
-                    '<script>window.jQuery.fn.formset || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
+                    '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.formset/%s/jquery.formset.min.js"></script>' % version,
+                    '<script>window.jQuery.fn.formset || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
                 ]
             return '\n'.join(output)
 
