@@ -93,12 +93,12 @@ def djfrontend_modernizr(version=None):
     Included in HTML5 Boilerplate.
     """
     
-    default_version = '2.7.1'
+    current_version = '2.7.1'
     
     if version:
         pass
     else:
-        version = default_version
+        version = current_version
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/modernizr/%s/modernizr.js"></script>' % (settings.STATIC_URL, version)
@@ -121,12 +121,12 @@ def djfrontend_jquery(version=None):
     Included in HTML5 Boilerplate.
     """
     
-    default_version = '1.10.2'
+    current_version = '1.10.2'
     
     if version:
         pass
     else:
-        version = default_version
+        version = current_version
         
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/%s/jquery.js"></script>' % (settings.STATIC_URL, version)
@@ -146,21 +146,20 @@ def djfrontend_jquery(version=None):
 
 @register.simple_tag
 def djfrontend_jqueryui(version=None):
-    """ Returns the jQuery UI plugin file according to version number.
+    """
+    Returns the jQuery UI plugin file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback.
     """
-    
-    default_version = '1.10.3'
     
     if version:
         pass
     else:
-        version = default_version
+        version = getattr(settings, 'DJFRONTEND_JQUERYUI', '1.10.3')
     
-    if getattr(settings, 'TEMPLATE_DEBUG',):
+    if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/jqueryui/%s/jquery-ui.js"></script>' % (settings.STATIC_URL, version)
     else:
-        if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
             output=[
                 '<script src="//ajax.googleapis.com/ajax/libs/jqueryui/%s/jquery-ui.min.js"></script>' % version,
                 '<script>window.jQuery.ui || document.write(\'<script src="%sdjfrontend/js/jquery/jqueryui/%s/jquery-ui.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
