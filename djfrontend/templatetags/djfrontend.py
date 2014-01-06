@@ -83,23 +83,31 @@ def djfrontend_modernizr(version=None):
 
 
 @register.simple_tag
-def djfrontend_jquery(v):
+def djfrontend_jquery(version=None):
     """ Returns jQuery JavaScript file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback.
     Included in HTML5 Boilerplate.
     """
-    if getattr(settings, 'TEMPLATE_DEBUG',):
-        return '<script src="%sdjfrontend/js/jquery/%s/jquery.js"></script>' % (settings.STATIC_URL, v)
+    
+    current_version = '1.10.2'
+    
+    if version:
+        pass
+    else:
+        version = current_version
+        
+    if getattr(settings, 'TEMPLATE_DEBUG', False):
+        return '<script src="%sdjfrontend/js/jquery/%s/jquery.js"></script>' % (settings.STATIC_URL, version)
     else:
         if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
             output=[
-                '<script src="//ajax.googleapis.com/ajax/libs/jquery/%s/jquery.min.js"></script>' % v,
-                '<script>window.jQuery || document.write(\'<script src="%sdjfrontend/js/jquery/%s/jquery.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, v)
+                '<script src="//ajax.googleapis.com/ajax/libs/jquery/%s/jquery.min.js"></script>' % version,
+                '<script>window.jQuery || document.write(\'<script src="%sdjfrontend/js/jquery/%s/jquery.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
             ]
         else:
             output=[
-                '<script src="//ajax.googleapis.com/ajax/libs/jquery/%s/jquery.min.js"></script>' % v,
-                '<script>window.jQuery || document.write(\'<script src="%sdjfrontend/js/jquery/%s/jquery.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
+                '<script src="//ajax.googleapis.com/ajax/libs/jquery/%s/jquery.min.js"></script>' % version,
+                '<script>window.jQuery || document.write(\'<script src="%sdjfrontend/js/jquery/%s/jquery.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
             ]
         return '\n'.join(output)
 
