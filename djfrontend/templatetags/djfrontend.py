@@ -65,17 +65,25 @@ def djfrontend_normalize(version=None):
 
 
 @register.simple_tag
-def djfrontend_fontawesome(v):
+def djfrontend_fontawesome(version=None):
     """ Returns Font Awesome CSS file.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
+    
+    default_version = '4.0.3'
+    
+    if version:
+        pass
+    else:
+        version = default_version
+    
     if getattr(settings, 'TEMPLATE_DEBUG',):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.css">' % (settings.STATIC_URL, v)
+        return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.css">' % (settings.STATIC_URL, version)
     else:
         if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
-            return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.min.css">' % (settings.DJFRONTEND_STATIC_URL, v)
+            return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.min.css">' % (settings.DJFRONTEND_STATIC_URL, version)
         else:
-            return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.min.css">' % (settings.STATIC_URL, v)
+            return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.min.css">' % (settings.STATIC_URL, version)
 
 
 @register.simple_tag
