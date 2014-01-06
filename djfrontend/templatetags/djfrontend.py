@@ -174,34 +174,50 @@ def djfrontend_jqueryui(version=None):
 
 
 @register.simple_tag
-def djfrontend_jquery_datatables(v):
+def djfrontend_jquery_datatables(version=None):
     """ Returns the jQuery DataTables plugin file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
+    
+    default_version = '1.9.4'
+    
+    if version:
+        pass
+    else:
+        version = default_version
+    
     if getattr(settings, 'TEMPLATE_DEBUG',):
-        return '<script src="%sdjfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.js"></script>' % (settings.STATIC_URL, v)
+        return '<script src="%sdjfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.js"></script>' % (settings.STATIC_URL, version)
     else:
         if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
             output=[
-                '<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/%s/jquery.dataTables.min.js"></script>' % v,
-                '<script>window.jQuery.fn.DataTable || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, v)
+                '<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/%s/jquery.dataTables.min.js"></script>' % version,
+                '<script>window.jQuery.fn.DataTable || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
             ]
         else:
             output=[
-                '<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/%s/jquery.dataTables.min.js"></script>' % v,
-                '<script>window.jQuery.fn.DataTable || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
+                '<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/%s/jquery.dataTables.min.js"></script>' % version,
+                '<script>window.jQuery.fn.DataTable || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
             ]
         return '\n'.join(output)
 
 
 @register.simple_tag
-def djfrontend_jquery_datatables_css(v):
+def djfrontend_jquery_datatables_css(version=None):
     """ Returns the jQuery DataTables CSS file according to version number.
     """
-    if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
-        return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.DJFRONTEND_STATIC_URL, v)
+    
+    default_version = '1.9.4'
+    
+    if version:
+        pass
     else:
-        return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.STATIC_URL, v)
+        version = default_version
+    
+    if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+        return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
+    else:
+        return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.STATIC_URL, version)
 
 
 @register.simple_tag
