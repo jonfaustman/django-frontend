@@ -27,14 +27,22 @@ def djfrontend_h5bp_html(language=None):
 
 
 @register.simple_tag
-def djfrontend_h5bp_css(v):
+def djfrontend_h5bp_css(version=None):
     """ Returns HTML5 Boilerplate CSS file.
     Included in HTML5 Boilerplate.
     """
-    if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.DJFRONTEND_STATIC_URL, v)
+  
+    default_version = '4.3.0'
+    
+    if version:
+        pass
     else:
-        return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.STATIC_URL, v)
+        version = default_version
+    
+    if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+        return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.DJFRONTEND_STATIC_URL, version)
+    else:
+        return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.STATIC_URL, version)
     
 
 @register.simple_tag
