@@ -93,12 +93,12 @@ def djfrontend_modernizr(version=None):
     Included in HTML5 Boilerplate.
     """
     
-    current_version = '2.7.1'
+    default_version = '2.7.1'
     
     if version:
         pass
     else:
-        version = current_version
+        version = default_version
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/modernizr/%s/modernizr.js"></script>' % (settings.STATIC_URL, version)
@@ -121,12 +121,12 @@ def djfrontend_jquery(version=None):
     Included in HTML5 Boilerplate.
     """
     
-    current_version = '1.10.2'
+    default_version = '1.10.2'
     
     if version:
         pass
     else:
-        version = current_version
+        version = default_version
         
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/%s/jquery.js"></script>' % (settings.STATIC_URL, version)
@@ -325,16 +325,24 @@ def djfrontend_twbs_css(version=None):
 
 
 @register.simple_tag
-def djfrontend_twbs_theme_css(v):
+def djfrontend_twbs_theme_css(version=None):
     """ Returns Twitter Bootstrap Theme CSS file.
     """
+    
+    default_version = '3.0.3'
+    
+    if version:
+        pass
+    else:
+        version = default_version
+    
     if getattr(settings, 'TEMPLATE_DEBUG',):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.css">' % (settings.STATIC_URL, v)
+        return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.css">' % (settings.STATIC_URL, version)
     else:
         if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
-            return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.min.css">' % (settings.DJFRONTEND_STATIC_URL, v)
+            return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.min.css">' % (settings.DJFRONTEND_STATIC_URL, version)
         else:
-            return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.min.css">' % (settings.STATIC_URL, v)
+            return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.min.css">' % (settings.STATIC_URL, version)
 
 
 @register.tag(name='djfrontend_twbs_js')
