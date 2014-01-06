@@ -5,15 +5,23 @@ register = template.Library()
 
 
 @register.simple_tag
-def djfrontend_h5bp_html(lang):
+def djfrontend_h5bp_html(language=None):
     """ Returns HTML tag according to chosen language.
     Included in HTML5 Boilerplate.
     """
+    
+    default_language = 'en'
+    
+    if language:
+        pass
+    else:
+        language = default_language
+    
     output=[
-        '<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="%s"> <![endif]-->' % lang,
-        '<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="%s"> <![endif]-->' % lang,
-        '<!--[if IE 8]>    <html class="no-js lt-ie9" lang="%s"> <![endif]-->' % lang,
-        '<!--[if gt IE 8]><!--> <html class="no-js" lang="%s"> <!--<![endif]-->' % lang,
+        '<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="%s"> <![endif]-->' % language,
+        '<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="%s"> <![endif]-->' % language,
+        '<!--[if IE 8]>    <html class="no-js lt-ie9" lang="%s"> <![endif]-->' % language,
+        '<!--[if gt IE 8]><!--> <html class="no-js" lang="%s"> <!--<![endif]-->' % language,
     ]
     return '\n'.join(output)
 
