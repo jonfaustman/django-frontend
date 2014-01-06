@@ -55,22 +55,38 @@ def djfrontend_fontawesome(v):
 
 
 @register.simple_tag
-def djfrontend_modernizr(v):
+def djfrontend_modernizr(version=None):
     """ Returns Modernizr JavaScript file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     Included in HTML5 Boilerplate.
     """
-    if getattr(settings, 'TEMPLATE_DEBUG',):
-        return '<script src="%sdjfrontend/js/modernizr/%s/modernizr.js"></script>' % (settings.STATIC_URL, v)
+    
+    current_version = '2.7.1'
+    
+    if getattr(settings, 'TEMPLATE_DEBUG', False):
+        if version is None:
+            return '<script src="%sdjfrontend/js/modernizr/current_version/modernizr.js"></script>' % (settings.STATIC_URL)
+        else:
+            return '<script src="%sdjfrontend/js/modernizr/%s/modernizr.js"></script>' % (settings.STATIC_URL, v)
     else:
         if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
-            output=[ '<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/%s/modernizr.min.js"></script>' % v,
-            '<script>window.Modernizr || document.write(\'<script src="%sdjfrontend/js/modernizr/%s/modernizr.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, v)
-            ]
+            if version is None:
+                output=[ '<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/current_version/modernizr.min.js"></script>',
+                '<script>window.Modernizr || document.write(\'<script src="%sdjfrontend/js/modernizr/current_version/modernizr.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL)
+                ]
+            else:
+                output=[ '<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/%s/modernizr.min.js"></script>' % v,
+                '<script>window.Modernizr || document.write(\'<script src="%sdjfrontend/js/modernizr/%s/modernizr.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, v)
+                ]
         else:
-            output=[ '<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/%s/modernizr.min.js"></script>' % v,
-            '<script>window.Modernizr || document.write(\'<script src="%sdjfrontend/js/modernizr/%s/modernizr.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
-            ]
+            if version is None:
+                output=[ '<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/current_version/modernizr.min.js"></script>',
+                '<script>window.Modernizr || document.write(\'<script src="%sdjfrontend/js/modernizr/current_version/modernizr.min.js"><\/script>\')</script>' % (settings.STATIC_URL)
+                ]
+            else:
+                output=[ '<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/%s/modernizr.min.js"></script>' % v,
+                '<script>window.Modernizr || document.write(\'<script src="%sdjfrontend/js/modernizr/%s/modernizr.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
+                ]
         return '\n'.join(output)
 
 
