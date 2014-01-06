@@ -275,21 +275,29 @@ def djfrontend_jquery_scrollto(version=None):
 
 
 @register.simple_tag
-def djfrontend_jquery_smoothscroll(v):
+def djfrontend_jquery_smoothscroll(version=None):
     """ Returns the jQuery Smooth Scroll plugin file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
+    
+    default_version = '1.4.13'
+    
+    if version:
+        pass
+    else:
+        version = default_version
+    
     if getattr(settings, 'TEMPLATE_DEBUG',):
-        return '<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.js"></script>' % (settings.STATIC_URL, v)
+        return '<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.js"></script>' % (settings.STATIC_URL, version)
     else:
         if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
             output=[
-                '<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, v)
+                '<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
             ]
         else:
             output=[
-                    '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % v,
-                    '<script>window.jQuery.fn.smoothScroll || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"><\/script>\')</script>' % (settings.STATIC_URL, v)
+                    '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % version,
+                    '<script>window.jQuery.fn.smoothScroll || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
                 ]
         return '\n'.join(output)
 
