@@ -351,7 +351,7 @@ def do_djfrontend_twbs_js(parser, token):
     return BootstrapJSNode(token.split_contents()[1:])
 
 
-SCRIPT_TAG = '<script src="%sdjfrontend/js/twbs/3.0.3/bootstrap-%s.js"></script>'
+SCRIPT_TAG = '<script src="%sdjfrontend/js/twbs/3.0.3/%s.js"></script>'
 
 class BootstrapJSNode(template.Node):
 
