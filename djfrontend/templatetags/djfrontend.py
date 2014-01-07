@@ -6,16 +6,15 @@ register = template.Library()
 
 @register.simple_tag
 def djfrontend_h5bp_html(language=None):
-    """ Returns HTML tag according to chosen language.
+    """
+    Returns HTML tag according to chosen language.
     Included in HTML5 Boilerplate.
     """
-    
-    default_language = 'en'
     
     if language:
         pass
     else:
-        language = default_language
+        language = getattr(settings, 'DJFRONTEND_H5BP_HTML', 'en')
     
     output=[
         '<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="%s"> <![endif]-->' % language,
@@ -28,18 +27,17 @@ def djfrontend_h5bp_html(language=None):
 
 @register.simple_tag
 def djfrontend_h5bp_css(version=None):
-    """ Returns HTML5 Boilerplate CSS file.
+    """
+    Returns HTML5 Boilerplate CSS file.
     Included in HTML5 Boilerplate.
     """
   
-    default_version = '4.3.0'
-    
     if version:
         pass
     else:
-        version = default_version
+        version = getattr(settings, 'DJFRONTEND_H5BP_CSS', '4.3.0')
     
-    if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+    if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.DJFRONTEND_STATIC_URL, version)
     else:
         return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.STATIC_URL, version)
@@ -50,37 +48,34 @@ def djfrontend_normalize(version=None):
     """ Returns Normalize CSS file.
     Included in HTML5 Boilerplate.
     """
-    
-    default_version = '1.1.3'
-    
+
     if version:
         pass
     else:
-        version = default_version
+        version = getattr(settings, 'DJFRONTEND_NORMALIZE', '1.1.3')
     
-    if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.DJFRONTEND_STATIC_URL, default_version)
+    if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
+        return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.DJFRONTEND_STATIC_URL, version)
     else:
-        return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.STATIC_URL, default_version)
+        return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.STATIC_URL, version)
 
 
 @register.simple_tag
 def djfrontend_fontawesome(version=None):
-    """ Returns Font Awesome CSS file.
+    """
+    Returns Font Awesome CSS file.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
-    
-    default_version = '4.0.3'
-    
+
     if version:
         pass
     else:
-        version = default_version
+        version = getattr(settings, 'DJFRONTEND_FONTAWESOME', '4.0.3')
     
-    if getattr(settings, 'TEMPLATE_DEBUG',):
+    if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.css">' % (settings.STATIC_URL, version)
     else:
-        if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
             return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.min.css">' % (settings.DJFRONTEND_STATIC_URL, version)
         else:
             return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.min.css">' % (settings.STATIC_URL, version)
@@ -88,22 +83,21 @@ def djfrontend_fontawesome(version=None):
 
 @register.simple_tag
 def djfrontend_modernizr(version=None):
-    """ Returns Modernizr JavaScript file according to version number.
+    """
+    Returns Modernizr JavaScript file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     Included in HTML5 Boilerplate.
     """
     
-    current_version = '2.7.1'
-    
     if version:
         pass
     else:
-        version = current_version
+        version = getattr(settings, 'DJFRONTEND_MODERNIZR', '2.7.1') 
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/modernizr/%s/modernizr.js"></script>' % (settings.STATIC_URL, version)
     else:
-        if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
             output=[ '<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/%s/modernizr.min.js"></script>' % version,
             '<script>window.Modernizr || document.write(\'<script src="%sdjfrontend/js/modernizr/%s/modernizr.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
             ]
@@ -116,22 +110,21 @@ def djfrontend_modernizr(version=None):
 
 @register.simple_tag
 def djfrontend_jquery(version=None):
-    """ Returns jQuery JavaScript file according to version number.
+    """
+    Returns jQuery JavaScript file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback.
     Included in HTML5 Boilerplate.
     """
     
-    current_version = '1.10.2'
-    
     if version:
         pass
     else:
-        version = current_version
-        
+        version = getattr(settings, 'DJFRONTEND_JQUERY', '1.10.2')
+
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/%s/jquery.js"></script>' % (settings.STATIC_URL, version)
     else:
-        if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
             output=[
                 '<script src="//ajax.googleapis.com/ajax/libs/jquery/%s/jquery.min.js"></script>' % version,
                 '<script>window.jQuery || document.write(\'<script src="%sdjfrontend/js/jquery/%s/jquery.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
@@ -174,21 +167,20 @@ def djfrontend_jqueryui(version=None):
 
 @register.simple_tag
 def djfrontend_jquery_datatables(version=None):
-    """ Returns the jQuery DataTables plugin file according to version number.
+    """
+    Returns the jQuery DataTables plugin file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
-    
-    default_version = '1.9.4'
     
     if version:
         pass
     else:
-        version = default_version
-    
-    if getattr(settings, 'TEMPLATE_DEBUG',):
+        version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES', '1.9.4')
+
+    if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.js"></script>' % (settings.STATIC_URL, version)
     else:
-        if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
             output=[
                 '<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/%s/jquery.dataTables.min.js"></script>' % version,
                 '<script>window.jQuery.fn.DataTable || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
@@ -206,14 +198,12 @@ def djfrontend_jquery_datatables_css(version=None):
     """ Returns the jQuery DataTables CSS file according to version number.
     """
     
-    default_version = '1.9.4'
-    
     if version:
         pass
     else:
-        version = default_version
+        version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES_CSS', '1.9.4')
     
-    if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+    if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
         return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
     else:
         return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.STATIC_URL, version)
@@ -221,21 +211,20 @@ def djfrontend_jquery_datatables_css(version=None):
 
 @register.simple_tag
 def djfrontend_jquery_formset(version=None):
-    """ Returns the jQuery Dynamic Formset plugin file according to version number.
+    """
+    Returns the jQuery Dynamic Formset plugin file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
-    
-    default_version = '1.2'
     
     if version:
         pass
     else:
-        version = default_version
+        version = getattr(settings, 'DJFRONTEND_JQUERY_FORMSET', '1.2')
     
-    if getattr(settings, 'TEMPLATE_DEBUG',):
+    if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.js"></script>' % (settings.STATIC_URL, version)
     else:
-        if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
             return '<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
         else:
             output=[
@@ -247,21 +236,20 @@ def djfrontend_jquery_formset(version=None):
 
 @register.simple_tag
 def djfrontend_jquery_scrollto(version=None):
-    """ Returns the jQuery ScrollTo plugin file according to version number.
+    """
+    Returns the jQuery ScrollTo plugin file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
-    
-    default_version = '1.4.7'
     
     if version:
         pass
     else:
-        version = default_version
+        version = getattr(settings, 'DJFRONTEND_JQUERY_SCROLLTO', '1.4.7')
     
-    if getattr(settings, 'TEMPLATE_DEBUG',):
+    if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.js"></script>' % (settings.STATIC_URL, version)
     else:
-        if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
             output=[
                 '<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
             ]
@@ -275,21 +263,20 @@ def djfrontend_jquery_scrollto(version=None):
 
 @register.simple_tag
 def djfrontend_jquery_smoothscroll(version=None):
-    """ Returns the jQuery Smooth Scroll plugin file according to version number.
+    """
+    Returns the jQuery Smooth Scroll plugin file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
-    
-    default_version = '1.4.13'
     
     if version:
         pass
     else:
-        version = default_version
+        version = getattr(settings, 'DJFRONTEND_JQUERY_SMOOTHSCROLL', '1.4.13')
     
-    if getattr(settings, 'TEMPLATE_DEBUG',):
+    if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.js"></script>' % (settings.STATIC_URL, version)
     else:
-        if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
             output=[
                 '<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
             ]
@@ -303,21 +290,20 @@ def djfrontend_jquery_smoothscroll(version=None):
 
 @register.simple_tag
 def djfrontend_twbs_css(version=None):
-    """ Returns Twitter Bootstrap CSS file.
+    """
+    Returns Twitter Bootstrap CSS file.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
-    
-    default_version = '3.0.3'
     
     if version:
         pass
     else:
-        version = default_version
+        version = getattr(settings, 'DJFRONTEND_TWBS_CSS', '3.0.3')
     
-    if getattr(settings, 'TEMPLATE_DEBUG',):
+    if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap.css">' % (settings.STATIC_URL, version)
     else:
-        if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
             return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap.min.css">' % (settings.DJFRONTEND_STATIC_URL, version)
         else:
             return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap.min.css">' % (settings.STATIC_URL, version)
@@ -328,17 +314,15 @@ def djfrontend_twbs_theme_css(version=None):
     """ Returns Twitter Bootstrap Theme CSS file.
     """
     
-    default_version = '3.0.3'
-    
     if version:
         pass
     else:
-        version = default_version
+        version = getattr(settings, 'DJFRONTEND_TWBS_THEME_CSS', '3.0.3')
     
-    if getattr(settings, 'TEMPLATE_DEBUG',):
+    if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.css">' % (settings.STATIC_URL, version)
     else:
-        if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
             return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.min.css">' % (settings.DJFRONTEND_STATIC_URL, version)
         else:
             return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.min.css">' % (settings.STATIC_URL, version)
@@ -346,7 +330,8 @@ def djfrontend_twbs_theme_css(version=None):
 
 @register.tag(name='djfrontend_twbs_js')
 def do_djfrontend_twbs_js(parser, token):
-    """ Returns Twitter Bootstrap (3.0.3) JavaScript file(s).
+    """
+    Returns Twitter Bootstrap (3.0.3) JavaScript file(s).
     all returns concatenated file; full file for TEMPLATE_DEBUG, minified otherwise.
     Other choice are:
         affix,
@@ -375,10 +360,10 @@ class BootstrapJSNode(template.Node):
 
     def render(self, context):
         if 'all' in self.args:
-            if getattr(settings, 'TEMPLATE_DEBUG', ):
+            if getattr(settings, 'TEMPLATE_DEBUG', False):
                 return '<script src="%sdjfrontend/js/twbs/3.0.3/bootstrap.js"></script>' % settings.STATIC_URL
             else:
-                if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+                if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
                     return '<script src="%sdjfrontend/js/twbs/3.0.3/bootstrap.min.js"></script>' % settings.DJFRONTEND_STATIC_URL
                 else:
                     return '<script src="%sdjfrontend/js/twbs/3.0.3/bootstrap.min.js"></script>' % settings.STATIC_URL
@@ -386,7 +371,7 @@ class BootstrapJSNode(template.Node):
             # popover requires tooltip
             if 'popover' in self.args:
                 self.args.add('tooltip')
-            if hasattr(settings, 'DJFRONTEND_STATIC_URL'):
+            if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
                 tags = [SCRIPT_TAG % (settings.DJFRONTEND_STATIC_URL, tag) for tag in self.args]
             else:
                 tags = [SCRIPT_TAG % (settings.STATIC_URL, tag) for tag in self.args]
@@ -395,7 +380,8 @@ class BootstrapJSNode(template.Node):
 
 @register.simple_tag
 def djfrontend_ga(ua):
-    """ Returns Google Analytics asynchronous snippet.
+    """
+    Returns Google Analytics asynchronous snippet.
     Use DJFRONTEND_GA_SETDOMAINNAME to set domain for multiple, or cross-domain tracking.
     Set DJFRONTEND_GA_SETALLOWLINKER to use _setAllowLinker method on target site for cross-domain tracking.
     Included in HTML5 Boilerplate.
@@ -403,8 +389,8 @@ def djfrontend_ga(ua):
     if getattr(settings, 'TEMPLATE_DEBUG',):
         return ''
     else:
-        if hasattr(settings, 'DJFRONTEND_GA_SETDOMAINNAME',):
-            if hasattr(settings, 'DJFRONTEND_GA_SETALLOWLINKER',):
+        if getattr(settings, 'DJFRONTEND_GA_SETDOMAINNAME', False):
+            if getattr(settings, 'DJFRONTEND_GA_SETALLOWLINKER', False):
                 return '<script>var _gaq=[["_setAccount","%s"],["_setDomainName","%s"],["_setAllowLinker", true],["_trackPageview"]];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src="//www.google-analytics.com/ga.js";s.parentNode.insertBefore(g,s)}(document,"script"));</script>' % (ua, settings.DJFRONTEND_GA_SETDOMAINNAME)
             else:
                 return '<script>var _gaq=[["_setAccount","%s"],["_setDomainName","%s"],["_trackPageview"]];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src="//www.google-analytics.com/ga.js";s.parentNode.insertBefore(g,s)}(document,"script"));</script>' % (ua, settings.DJFRONTEND_GA_SETDOMAINNAME)
@@ -414,6 +400,7 @@ def djfrontend_ga(ua):
 
 @register.simple_tag
 def djfrontend_ios_fix():
-    """ Returns the iOS-Orientationchange-Fix.
+    """
+    Returns the iOS-Orientationchange-Fix.
     """
     return '<script>/*! A fix for the iOS orientationchange zoom bug. Script by @scottjehl, rebound by @wilto.MIT / GPLv2 License.*/(function(a){function m(){d.setAttribute("content",g),h=!0}function n(){d.setAttribute("content",f),h=!1}function o(b){l=b.accelerationIncludingGravity,i=Math.abs(l.x),j=Math.abs(l.y),k=Math.abs(l.z),(!a.orientation||a.orientation===180)&&(i>7||(k>6&&j<8||k<8&&j>6)&&i>5)?h&&n():h||m()}var b=navigator.userAgent;if(!(/iPhone|iPad|iPod/.test(navigator.platform)&&/OS [1-5]_[0-9_]* like Mac OS X/i.test(b)&&b.indexOf("AppleWebKit")>-1))return;var c=a.document;if(!c.querySelector)return;var d=c.querySelector("meta[name=viewport]"),e=d&&d.getAttribute("content"),f=e+",maximum-scale=1",g=e+",maximum-scale=10",h=!0,i,j,k,l;if(!d)return;a.addEventListener("orientationchange",m,!1),a.addEventListener("devicemotion",o,!1)})(this);</script>'
