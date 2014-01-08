@@ -10,10 +10,7 @@ def djfrontend_h5bp_html(language=None):
     Returns HTML tag according to chosen language.
     Included in HTML5 Boilerplate.
     """
-    
-    if language:
-        pass
-    else:
+    if language is None:
         language = getattr(settings, 'DJFRONTEND_H5BP_HTML', 'en')
     
     output=[
@@ -31,10 +28,7 @@ def djfrontend_h5bp_css(version=None):
     Returns HTML5 Boilerplate CSS file.
     Included in HTML5 Boilerplate.
     """
-  
-    if version:
-        pass
-    else:
+    if version is None:
         version = getattr(settings, 'DJFRONTEND_H5BP_CSS', '4.3.0')
     
     if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
@@ -45,13 +39,11 @@ def djfrontend_h5bp_css(version=None):
 
 @register.simple_tag
 def djfrontend_normalize(version=None):
-    """ Returns Normalize CSS file.
+    """
+    Returns Normalize CSS file.
     Included in HTML5 Boilerplate.
     """
-
-    if version:
-        pass
-    else:
+    if version is None:
         version = getattr(settings, 'DJFRONTEND_NORMALIZE', '1.1.3')
     
     if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
@@ -66,10 +58,7 @@ def djfrontend_fontawesome(version=None):
     Returns Font Awesome CSS file.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
-
-    if version:
-        pass
-    else:
+    if version is None:
         version = getattr(settings, 'DJFRONTEND_FONTAWESOME', '4.0.3')
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
@@ -88,10 +77,7 @@ def djfrontend_modernizr(version=None):
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     Included in HTML5 Boilerplate.
     """
-    
-    if version:
-        pass
-    else:
+    if version is None:
         version = getattr(settings, 'DJFRONTEND_MODERNIZR', '2.7.1') 
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
@@ -115,10 +101,7 @@ def djfrontend_jquery(version=None):
     TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback.
     Included in HTML5 Boilerplate.
     """
-    
-    if version:
-        pass
-    else:
+    if version is None:
         version = getattr(settings, 'DJFRONTEND_JQUERY', '1.10.2')
 
     if getattr(settings, 'TEMPLATE_DEBUG', False):
@@ -143,10 +126,7 @@ def djfrontend_jqueryui(version=None):
     Returns the jQuery UI plugin file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback.
     """
-    
-    if version:
-        pass
-    else:
+    if version is None:
         version = getattr(settings, 'DJFRONTEND_JQUERYUI', '1.10.3')
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
@@ -171,10 +151,7 @@ def djfrontend_jquery_datatables(version=None):
     Returns the jQuery DataTables plugin file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
-    
-    if version:
-        pass
-    else:
+    if version is None:
         version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES', '1.9.4')
 
     if getattr(settings, 'TEMPLATE_DEBUG', False):
@@ -195,12 +172,10 @@ def djfrontend_jquery_datatables(version=None):
 
 @register.simple_tag
 def djfrontend_jquery_datatables_css(version=None):
-    """ Returns the jQuery DataTables CSS file according to version number.
     """
-    
-    if version:
-        pass
-    else:
+    Returns the jQuery DataTables CSS file according to version number.
+    """
+    if version is None:
         version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES_CSS', '1.9.4')
     
     if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
@@ -215,10 +190,7 @@ def djfrontend_jquery_formset(version=None):
     Returns the jQuery Dynamic Formset plugin file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
-    
-    if version:
-        pass
-    else:
+    if version is None:
         version = getattr(settings, 'DJFRONTEND_JQUERY_FORMSET', '1.2')
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
@@ -240,10 +212,7 @@ def djfrontend_jquery_scrollto(version=None):
     Returns the jQuery ScrollTo plugin file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
-    
-    if version:
-        pass
-    else:
+    if version is None:
         version = getattr(settings, 'DJFRONTEND_JQUERY_SCROLLTO', '1.4.7')
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
@@ -267,10 +236,7 @@ def djfrontend_jquery_smoothscroll(version=None):
     Returns the jQuery Smooth Scroll plugin file according to version number.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
-    
-    if version:
-        pass
-    else:
+    if version is None:
         version = getattr(settings, 'DJFRONTEND_JQUERY_SMOOTHSCROLL', '1.4.13')
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
@@ -294,10 +260,7 @@ def djfrontend_twbs_css(version=None):
     Returns Twitter Bootstrap CSS file.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
-    
-    if version:
-        pass
-    else:
+    if version is None:
         version = getattr(settings, 'DJFRONTEND_TWBS_CSS', '3.0.3')
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
@@ -311,12 +274,10 @@ def djfrontend_twbs_css(version=None):
 
 @register.simple_tag
 def djfrontend_twbs_theme_css(version=None):
-    """ Returns Twitter Bootstrap Theme CSS file.
     """
-    
-    if version:
-        pass
-    else:
+    Returns Twitter Bootstrap Theme CSS file.
+    """
+    if version is None:
         version = getattr(settings, 'DJFRONTEND_TWBS_THEME_CSS', '3.0.3')
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
