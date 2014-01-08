@@ -31,10 +31,11 @@ def djfrontend_h5bp_css(version=None):
     if version is None:
         version = getattr(settings, 'DJFRONTEND_H5BP_CSS', '4.3.0')
     
-    if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.DJFRONTEND_STATIC_URL, version)
-    else:
+    if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.STATIC_URL, version)
+    else:
+        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
+            return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.DJFRONTEND_STATIC_URL, version)
     
 
 @register.simple_tag
@@ -46,10 +47,11 @@ def djfrontend_normalize(version=None):
     if version is None:
         version = getattr(settings, 'DJFRONTEND_NORMALIZE', '1.1.3')
     
-    if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.DJFRONTEND_STATIC_URL, version)
-    else:
+    if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.STATIC_URL, version)
+    else:
+        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
+            return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.DJFRONTEND_STATIC_URL, version)
 
 
 @register.simple_tag
@@ -178,11 +180,12 @@ def djfrontend_jquery_datatables_css(version=None):
     if version is None:
         version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES_CSS', '1.9.4')
     
-    if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-        return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
-    else:
+    if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.STATIC_URL, version)
-
+    else:
+        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
+            return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
+        
 
 @register.simple_tag
 def djfrontend_jquery_formset(version=None):
@@ -219,9 +222,7 @@ def djfrontend_jquery_scrollto(version=None):
         return '<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.js"></script>' % (settings.STATIC_URL, version)
     else:
         if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-            output=[
-                '<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
-            ]
+            return '<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
         else:
             output=[
                     '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/%s/jquery.scrollTo.min.js"></script>' % version,
@@ -322,20 +323,20 @@ class BootstrapJSNode(template.Node):
     def render(self, context):
         if 'all' in self.args:
             if getattr(settings, 'TEMPLATE_DEBUG', False):
-                return '<script src="%sdjfrontend/js/twbs/3.0.3/bootstrap.js"></script>' % settings.STATIC_URL
+                pass
             else:
                 if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
                     return '<script src="%sdjfrontend/js/twbs/3.0.3/bootstrap.min.js"></script>' % settings.DJFRONTEND_STATIC_URL
-                else:
-                    return '<script src="%sdjfrontend/js/twbs/3.0.3/bootstrap.min.js"></script>' % settings.STATIC_URL
+            return '<script src="%sdjfrontend/js/twbs/3.0.3/bootstrap.min.js"></script>' % settings.STATIC_URL
         else:
             # popover requires tooltip
             if 'popover' in self.args:
                 self.args.add('tooltip')
-            if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-                tags = [SCRIPT_TAG % (settings.DJFRONTEND_STATIC_URL, tag) for tag in self.args]
-            else:
+            if getattr(settings, 'TEMPLATE_DEBUG', False):
                 tags = [SCRIPT_TAG % (settings.STATIC_URL, tag) for tag in self.args]
+            else:
+                if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
+                    tags = [SCRIPT_TAG % (settings.DJFRONTEND_STATIC_URL, tag) for tag in self.args]
             return '\n'.join(tags)
 
 
