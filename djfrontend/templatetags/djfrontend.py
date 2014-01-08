@@ -379,23 +379,29 @@ class BootstrapJSNode(template.Node):
 
 
 @register.simple_tag
-def djfrontend_ga(ua):
+def djfrontend_ga(account=None):
     """
     Returns Google Analytics asynchronous snippet.
     Use DJFRONTEND_GA_SETDOMAINNAME to set domain for multiple, or cross-domain tracking.
     Set DJFRONTEND_GA_SETALLOWLINKER to use _setAllowLinker method on target site for cross-domain tracking.
     Included in HTML5 Boilerplate.
     """
-    if getattr(settings, 'TEMPLATE_DEBUG',):
-        return ''
-    else:
-        if getattr(settings, 'DJFRONTEND_GA_SETDOMAINNAME', False):
-            if getattr(settings, 'DJFRONTEND_GA_SETALLOWLINKER', False):
-                return '<script>var _gaq=[["_setAccount","%s"],["_setDomainName","%s"],["_setAllowLinker", true],["_trackPageview"]];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src="//www.google-analytics.com/ga.js";s.parentNode.insertBefore(g,s)}(document,"script"));</script>' % (ua, settings.DJFRONTEND_GA_SETDOMAINNAME)
-            else:
-                return '<script>var _gaq=[["_setAccount","%s"],["_setDomainName","%s"],["_trackPageview"]];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src="//www.google-analytics.com/ga.js";s.parentNode.insertBefore(g,s)}(document,"script"));</script>' % (ua, settings.DJFRONTEND_GA_SETDOMAINNAME)
+    if account is None:
+        account = getattr(settings, 'DJFRONTEND_GA', False)
+    
+    if account:
+        if getattr(settings, 'TEMPLATE_DEBUG', False):
+            return ''
         else:
-            return '<script>var _gaq=[["_setAccount","%s"],["_trackPageview"]];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src="//www.google-analytics.com/ga.js";s.parentNode.insertBefore(g,s)}(document,"script"));</script>' % ua
+            if getattr(settings, 'DJFRONTEND_GA_SETDOMAINNAME', False):
+                if getattr(settings, 'DJFRONTEND_GA_SETALLOWLINKER', False):
+                    return '<script>var _gaq=[["_setAccount","%s"],["_setDomainName","%s"],["_setAllowLinker", true],["_trackPageview"]];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src="//www.google-analytics.com/ga.js";s.parentNode.insertBefore(g,s)}(document,"script"));</script>' % (account, settings.DJFRONTEND_GA_SETDOMAINNAME)
+                else:
+                    return '<script>var _gaq=[["_setAccount","%s"],["_setDomainName","%s"],["_trackPageview"]];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src="//www.google-analytics.com/ga.js";s.parentNode.insertBefore(g,s)}(document,"script"));</script>' % (account, settings.DJFRONTEND_GA_SETDOMAINNAME)
+            else:
+                return '<script>var _gaq=[["_setAccount","%s"],["_trackPageview"]];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src="//www.google-analytics.com/ga.js";s.parentNode.insertBefore(g,s)}(document,"script"));</script>' % account
+    else:
+        return ''
 
 
 @register.simple_tag
