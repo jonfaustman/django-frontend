@@ -290,11 +290,12 @@ def djfrontend_twbs_theme_css(version=None):
             return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.min.css">' % (settings.STATIC_URL, version)
 
 
-@register.tag(name='djfrontend_twbs_js')
-def do_djfrontend_twbs_js(parser, token):
+@register.simple_tag
+def djfrontend_twbs_js(version=None, files='all'):
     """
-    Returns Twitter Bootstrap (3.0.3) JavaScript file(s).
+    Returns Twitter Bootstrap JavaScript file(s).
     all returns concatenated file; full file for TEMPLATE_DEBUG, minified otherwise.
+    
     Other choice are:
         affix,
         alert,
@@ -308,36 +309,31 @@ def do_djfrontend_twbs_js(parser, token):
         tab,
         tooltip,
         transition.
+        
     Individual files are not minified.
     """
-    return BootstrapJSNode(token.split_contents()[1:])
-
-
-SCRIPT_TAG = '<script src="%sdjfrontend/js/twbs/3.0.3/%s.js"></script>'
-
-class BootstrapJSNode(template.Node):
-
-    def __init__(self, args):
-        self.args = set(args)
-
-    def render(self, context):
-        if 'all' in self.args:
-            if getattr(settings, 'TEMPLATE_DEBUG', False):
-                pass
-            else:
-                if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-                    return '<script src="%sdjfrontend/js/twbs/3.0.3/bootstrap.min.js"></script>' % settings.DJFRONTEND_STATIC_URL
-            return '<script src="%sdjfrontend/js/twbs/3.0.3/bootstrap.min.js"></script>' % settings.STATIC_URL
+    if version is None:
+        version = getattr(settings, 'DJFRONTEND_TWBS_JS', '3.0.3')
+    
+    if files is 'all':
+        files = getattr(settings, 'DJFRONTEND_TWBS_JS', 'all')
+        if getattr(settings, 'TEMPLATE_DEBUG', False):
+            return '<script src="%sdjfrontend/js/twbs/%s/bootstrap.js"></script>' % (settings.STATIC_URL, version)
         else:
-            # popover requires tooltip
-            if 'popover' in self.args:
-                self.args.add('tooltip')
-            if getattr(settings, 'TEMPLATE_DEBUG', False):
-                tags = [SCRIPT_TAG % (settings.STATIC_URL, tag) for tag in self.args]
+            if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
+                return '<script src="%sdjfrontend/js/twbs/%s/bootstrap.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
             else:
-                if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-                    tags = [SCRIPT_TAG % (settings.DJFRONTEND_STATIC_URL, tag) for tag in self.args]
-            return '\n'.join(tags)
+                return '<script src="%sdjfrontend/js/twbs/%s/bootstrap.js"></script>' % (settings.STATIC_URL, version)
+    else:
+        files = files.split(' ')
+        if 'popover' in files and 'tooltip' not in files:
+            files.append('tooltip')
+        for file in files:
+            if getattr(settings, 'TEMPLATE_DEBUG', False):
+                file = ['<script src="%sdjfrontend/js/twbs/%s/%s.js"></script>' % (settings.STATIC_URL, version, file) for file in files]
+            elif getattr(settings, 'DJFRONTEND_STATIC_URL', False):
+                file = ['<script src="%sdjfrontend/js/twbs/%s/%s.js"></script>' % (settings.DJFRONTEND_STATIC_URL, version, file) for file in files]
+        return '\n'.join(file)
 
 
 @register.simple_tag
