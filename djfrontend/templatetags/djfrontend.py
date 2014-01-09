@@ -3,6 +3,20 @@ from django.conf import settings
 
 register = template.Library()
 
+# Current defaults
+DJFRONTEND_H5BP_HTML_DEFAULT = 'en'
+DJFRONTEND_H5BP_CSS_DEFAULT = '4.3.0'
+DJFRONTEND_NORMALIZE_DEFAULT = '1.1.3'
+DJFRONTEND_FONTAWESOME_DEFAULT = '4.0.3'
+DJFRONTEND_MODERNIZR_DEFAULT = '2.7.1'
+DJFRONTEND_JQUERY_DEFAULT = '1.10.2'
+DJFRONTEND_JQUERYUI_DEFAULT = '1.10.3'
+DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT = '1.9.4'
+DJFRONTEND_JQUERY_FORMSET_DEFAULT = '1.2'
+DJFRONTEND_JQUERY_SCROLLTO_DEFAULT = '1.4.7'
+DJFRONTEND_JQUERY_SMOOTHSCROLL_DEFAULT = '1.4.13'
+DJFRONTEND_TWBS_VERSION_DEFAULT = '3.0.3'
+
 
 @register.simple_tag
 def djfrontend_h5bp_html(language=None):
@@ -11,7 +25,7 @@ def djfrontend_h5bp_html(language=None):
     Included in HTML5 Boilerplate.
     """
     if language is None:
-        language = getattr(settings, 'DJFRONTEND_H5BP_HTML', 'en')
+        language = getattr(settings, 'DJFRONTEND_H5BP_HTML', DJFRONTEND_H5BP_HTML_DEFAULT)
     
     output=[
         '<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="%s"> <![endif]-->' % language,
@@ -29,7 +43,7 @@ def djfrontend_h5bp_css(version=None):
     Included in HTML5 Boilerplate.
     """
     if version is None:
-        version = getattr(settings, 'DJFRONTEND_H5BP_CSS', '4.3.0')
+        version = getattr(settings, 'DJFRONTEND_H5BP_CSS', DJFRONTEND_H5BP_CSS_DEFAULT)
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.STATIC_URL, version)
@@ -45,7 +59,7 @@ def djfrontend_normalize(version=None):
     Included in HTML5 Boilerplate.
     """
     if version is None:
-        version = getattr(settings, 'DJFRONTEND_NORMALIZE', '1.1.3')
+        version = getattr(settings, 'DJFRONTEND_NORMALIZE', DJFRONTEND_NORMALIZE_DEFAULT)
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.STATIC_URL, version)
@@ -61,7 +75,7 @@ def djfrontend_fontawesome(version=None):
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
     if version is None:
-        version = getattr(settings, 'DJFRONTEND_FONTAWESOME', '4.0.3')
+        version = getattr(settings, 'DJFRONTEND_FONTAWESOME', DJFRONTEND_FONTAWESOME_DEFAULT)
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.css">' % (settings.STATIC_URL, version)
@@ -80,7 +94,7 @@ def djfrontend_modernizr(version=None):
     Included in HTML5 Boilerplate.
     """
     if version is None:
-        version = getattr(settings, 'DJFRONTEND_MODERNIZR', '2.7.1') 
+        version = getattr(settings, 'DJFRONTEND_MODERNIZR', DJFRONTEND_MODERNIZR_DEFAULT) 
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/modernizr/%s/modernizr.js"></script>' % (settings.STATIC_URL, version)
@@ -104,7 +118,7 @@ def djfrontend_jquery(version=None):
     Included in HTML5 Boilerplate.
     """
     if version is None:
-        version = getattr(settings, 'DJFRONTEND_JQUERY', '1.10.2')
+        version = getattr(settings, 'DJFRONTEND_JQUERY', DJFRONTEND_JQUERY_DEFAULT)
 
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/%s/jquery.js"></script>' % (settings.STATIC_URL, version)
@@ -129,7 +143,7 @@ def djfrontend_jqueryui(version=None):
     TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback.
     """
     if version is None:
-        version = getattr(settings, 'DJFRONTEND_JQUERYUI', '1.10.3')
+        version = getattr(settings, 'DJFRONTEND_JQUERYUI', DJFRONTEND_JQUERYUI_DEFAULT)
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/jqueryui/%s/jquery-ui.js"></script>' % (settings.STATIC_URL, version)
@@ -154,7 +168,7 @@ def djfrontend_jquery_datatables(version=None):
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
     if version is None:
-        version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES', '1.9.4')
+        version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES', DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
 
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.js"></script>' % (settings.STATIC_URL, version)
@@ -178,7 +192,7 @@ def djfrontend_jquery_datatables_css(version=None):
     Returns the jQuery DataTables CSS file according to version number.
     """
     if version is None:
-        version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES_CSS', '1.9.4')
+        version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES_CSS', DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.STATIC_URL, version)
@@ -194,7 +208,7 @@ def djfrontend_jquery_formset(version=None):
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
     if version is None:
-        version = getattr(settings, 'DJFRONTEND_JQUERY_FORMSET', '1.2')
+        version = getattr(settings, 'DJFRONTEND_JQUERY_FORMSET', DJFRONTEND_JQUERY_FORMSET_DEFAULT)
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.js"></script>' % (settings.STATIC_URL, version)
@@ -216,7 +230,7 @@ def djfrontend_jquery_scrollto(version=None):
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
     if version is None:
-        version = getattr(settings, 'DJFRONTEND_JQUERY_SCROLLTO', '1.4.7')
+        version = getattr(settings, 'DJFRONTEND_JQUERY_SCROLLTO', DJFRONTEND_JQUERY_SCROLLTO_DEFAULT)
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.js"></script>' % (settings.STATIC_URL, version)
@@ -238,7 +252,7 @@ def djfrontend_jquery_smoothscroll(version=None):
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
     if version is None:
-        version = getattr(settings, 'DJFRONTEND_JQUERY_SMOOTHSCROLL', '1.4.13')
+        version = getattr(settings, 'DJFRONTEND_JQUERY_SMOOTHSCROLL', DJFRONTEND_JQUERY_SMOOTHSCROLL_DEFAULT)
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.js"></script>' % (settings.STATIC_URL, version)
@@ -262,9 +276,9 @@ def djfrontend_twbs_css(version=None):
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
     if version is None and getattr(settings, 'DJFRONTEND_TWBS_CSS', False) is False:
-        version = getattr(settings, 'DJFRONTEND_TWBS', '3.0.3')
+        version = getattr(settings, 'DJFRONTEND_TWBS', DJFRONTEND_TWBS_VERSION_DEFAULT)
     else:
-         version = getattr(settings, 'DJFRONTEND_TWBS_CSS', '3.0.3')
+         version = getattr(settings, 'DJFRONTEND_TWBS_CSS', DJFRONTEND_TWBS_VERSION_DEFAULT)
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap.css">' % (settings.STATIC_URL, version)
@@ -281,9 +295,9 @@ def djfrontend_twbs_theme_css(version=None):
     Returns Twitter Bootstrap Theme CSS file.
     """
     if version is None and getattr(settings, 'DJFRONTEND_TWBS_THEME_CSS', False) is False:
-        version = getattr(settings, 'DJFRONTEND_TWBS', '3.0.3')
+        version = getattr(settings, 'DJFRONTEND_TWBS', DJFRONTEND_TWBS_VERSION_DEFAULT)
     else:
-         version = getattr(settings, 'DJFRONTEND_TWBS_THEME_CSS', '3.0.3')
+         version = getattr(settings, 'DJFRONTEND_TWBS_THEME_CSS', DJFRONTEND_TWBS_VERSION_DEFAULT)
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.css">' % (settings.STATIC_URL, version)
@@ -320,7 +334,7 @@ def djfrontend_twbs_js(version=None, files='all'):
         if getattr(settings, 'DJFRONTEND_TWBS_JS_VERSION', False) is False:
             version = getattr(settings, 'DJFRONTEND_TWBS_VERSION', DJFRONTEND_TWBS_VERSION_DEFAULT)
         else:
-            version = getattr(settings, 'DJFRONTEND_TWBS_JS_VERSION', '3.0.3')
+            version = getattr(settings, 'DJFRONTEND_TWBS_JS_VERSION', DJFRONTEND_TWBS_VERSION_DEFAULT)
     if files is 'all' or getattr(settings, 'DJFRONTEND_TWBS_JS_FILES', False) is 'all':
         if getattr(settings, 'TEMPLATE_DEBUG', False):
             return '<script src="%sdjfrontend/js/twbs/%s/bootstrap.js"></script>' % (settings.STATIC_URL, version)
