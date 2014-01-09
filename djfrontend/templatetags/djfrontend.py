@@ -316,13 +316,12 @@ def djfrontend_twbs_js(version=None, files='all'):
         
     Individual files are not minified.
     """
-    if version is None and getattr(settings, 'DJFRONTEND_TWBS_JS', False) is False:
-        version = getattr(settings, 'DJFRONTEND_TWBS', '3.0.3')
-    else:
-         version = getattr(settings, 'DJFRONTEND_TWBS_JS', '3.0.3')
-    
-    if files is 'all':
-        files = getattr(settings, 'DJFRONTEND_TWBS_JS', 'all')
+    if version is None:
+        if getattr(settings, 'DJFRONTEND_TWBS_JS_VERSION', False) is False:
+            version = getattr(settings, 'DJFRONTEND_TWBS_VERSION', DJFRONTEND_TWBS_VERSION_DEFAULT)
+        else:
+            version = getattr(settings, 'DJFRONTEND_TWBS_JS_VERSION', '3.0.3')
+    if files is 'all' or getattr(settings, 'DJFRONTEND_TWBS_JS_FILES', False) is 'all':
         if getattr(settings, 'TEMPLATE_DEBUG', False):
             return '<script src="%sdjfrontend/js/twbs/%s/bootstrap.js"></script>' % (settings.STATIC_URL, version)
         else:
@@ -331,7 +330,10 @@ def djfrontend_twbs_js(version=None, files='all'):
             else:
                 return '<script src="%sdjfrontend/js/twbs/%s/bootstrap.js"></script>' % (settings.STATIC_URL, version)
     else:
-        files = files.split(' ')
+        if files:
+            files = files.split(' ')
+        else:
+            files = settings.DJFRONTEND_TWBS_JS_FILES.split(' ')
         if 'popover' in files and 'tooltip' not in files:
             files.append('tooltip')
         for file in files:
