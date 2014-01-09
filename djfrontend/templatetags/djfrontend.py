@@ -261,8 +261,10 @@ def djfrontend_twbs_css(version=None):
     Returns Twitter Bootstrap CSS file.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
-    if version is None:
-        version = getattr(settings, 'DJFRONTEND_TWBS_CSS', '3.0.3')
+    if version is None and getattr(settings, 'DJFRONTEND_TWBS_CSS', False) is False:
+        version = getattr(settings, 'DJFRONTEND_TWBS', '3.0.3')
+    else:
+         version = getattr(settings, 'DJFRONTEND_TWBS_CSS', '3.0.3')
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap.css">' % (settings.STATIC_URL, version)
@@ -278,8 +280,10 @@ def djfrontend_twbs_theme_css(version=None):
     """
     Returns Twitter Bootstrap Theme CSS file.
     """
-    if version is None:
-        version = getattr(settings, 'DJFRONTEND_TWBS_THEME_CSS', '3.0.3')
+    if version is None and getattr(settings, 'DJFRONTEND_TWBS_THEME_CSS', False) is False:
+        version = getattr(settings, 'DJFRONTEND_TWBS', '3.0.3')
+    else:
+         version = getattr(settings, 'DJFRONTEND_TWBS_THEME_CSS', '3.0.3')
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.css">' % (settings.STATIC_URL, version)
@@ -312,8 +316,10 @@ def djfrontend_twbs_js(version=None, files='all'):
         
     Individual files are not minified.
     """
-    if version is None:
-        version = getattr(settings, 'DJFRONTEND_TWBS_JS', '3.0.3')
+    if version is None and getattr(settings, 'DJFRONTEND_TWBS_JS', False) is False:
+        version = getattr(settings, 'DJFRONTEND_TWBS', '3.0.3')
+    else:
+         version = getattr(settings, 'DJFRONTEND_TWBS_JS', '3.0.3')
     
     if files is 'all':
         files = getattr(settings, 'DJFRONTEND_TWBS_JS', 'all')
