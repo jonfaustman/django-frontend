@@ -3,6 +3,7 @@ from django.conf import settings
 
 register = template.Library()
 
+
 # Current defaults
 DJFRONTEND_H5BP_HTML_DEFAULT = 'en'
 DJFRONTEND_H5BP_CSS_DEFAULT = '4.3.0'
@@ -309,7 +310,7 @@ def djfrontend_twbs_theme_css(version=None):
 
 
 @register.simple_tag
-def djfrontend_twbs_js(version=None, files='all'):
+def djfrontend_twbs_js(version=None, files=None):
     """
     Returns Twitter Bootstrap JavaScript file(s).
     all returns concatenated file; full file for TEMPLATE_DEBUG, minified otherwise.
@@ -335,7 +336,16 @@ def djfrontend_twbs_js(version=None, files='all'):
             version = getattr(settings, 'DJFRONTEND_TWBS_VERSION', DJFRONTEND_TWBS_VERSION_DEFAULT)
         else:
             version = getattr(settings, 'DJFRONTEND_TWBS_JS_VERSION', DJFRONTEND_TWBS_VERSION_DEFAULT)
-    if files is 'all' or getattr(settings, 'DJFRONTEND_TWBS_JS_FILES', False) is 'all':
+    
+    if files:
+        if files != 'all':
+            files = files.split(' ')
+    elif getattr(settings, 'DJFRONTEND_TWBS_JS_FILES', False) and settings.DJFRONTEND_TWBS_JS_FILES != 'all':
+        files = settings.DJFRONTEND_TWBS_JS_FILES.split(' ')
+    else:
+        files = 'all'
+    
+    if files == 'all':
         if getattr(settings, 'TEMPLATE_DEBUG', False):
             return '<script src="%sdjfrontend/js/twbs/%s/bootstrap.js"></script>' % (settings.STATIC_URL, version)
         else:
@@ -344,10 +354,6 @@ def djfrontend_twbs_js(version=None, files='all'):
             else:
                 return '<script src="%sdjfrontend/js/twbs/%s/bootstrap.js"></script>' % (settings.STATIC_URL, version)
     else:
-        if files:
-            files = files.split(' ')
-        else:
-            files = settings.DJFRONTEND_TWBS_JS_FILES.split(' ')
         if 'popover' in files and 'tooltip' not in files:
             files.append('tooltip')
         for file in files:
