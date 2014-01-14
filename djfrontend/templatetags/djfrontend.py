@@ -46,11 +46,9 @@ def djfrontend_h5bp_css(version=None):
     if version is None:
         version = getattr(settings, 'DJFRONTEND_H5BP_CSS', DJFRONTEND_H5BP_CSS_DEFAULT)
     
-    if getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.STATIC_URL, version)
-    else:
-        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-            return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.DJFRONTEND_STATIC_URL, version)
+    if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
+        return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.DJFRONTEND_STATIC_URL, version)
+    return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.STATIC_URL, version)
     
 
 @register.simple_tag
@@ -62,11 +60,9 @@ def djfrontend_normalize(version=None):
     if version is None:
         version = getattr(settings, 'DJFRONTEND_NORMALIZE', DJFRONTEND_NORMALIZE_DEFAULT)
     
-    if getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.STATIC_URL, version)
-    else:
-        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-            return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.DJFRONTEND_STATIC_URL, version)
+    if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
+        return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.DJFRONTEND_STATIC_URL, version)
+    return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.STATIC_URL, version)
 
 
 @register.simple_tag
@@ -169,7 +165,10 @@ def djfrontend_jquery_datatables(version=None):
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
     if version is None:
-        version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES', DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
+        if not getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES', False):
+            version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES_VERSION', DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
+        else:
+            version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES', DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
 
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.js"></script>' % (settings.STATIC_URL, version)
@@ -193,13 +192,14 @@ def djfrontend_jquery_datatables_css(version=None):
     Returns the jQuery DataTables CSS file according to version number.
     """
     if version is None:
-        version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES_CSS', DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
+        if not getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES_CSS', False):
+            version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES_VERSION', DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
+        else:
+            version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES_CSS', DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
     
-    if getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.STATIC_URL, version)
-    else:
-        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-            return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
+    if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
+        return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
+    return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.STATIC_URL, version)
         
 
 @register.simple_tag
@@ -276,10 +276,11 @@ def djfrontend_twbs_css(version=None):
     Returns Twitter Bootstrap CSS file.
     TEMPLATE_DEBUG returns full file, otherwise returns minified file.
     """
-    if version is None and getattr(settings, 'DJFRONTEND_TWBS_CSS', False) is False:
-        version = getattr(settings, 'DJFRONTEND_TWBS', DJFRONTEND_TWBS_VERSION_DEFAULT)
-    else:
-         version = getattr(settings, 'DJFRONTEND_TWBS_CSS', DJFRONTEND_TWBS_VERSION_DEFAULT)
+    if version is None:
+        if not getattr(settings, 'DJFRONTEND_TWBS_CSS', False):
+            version = getattr(settings, 'DJFRONTEND_TWBS_VERSION', DJFRONTEND_TWBS_VERSION_DEFAULT)
+        else:
+             version = getattr(settings, 'DJFRONTEND_TWBS_CSS', DJFRONTEND_TWBS_VERSION_DEFAULT)
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap.css">' % (settings.STATIC_URL, version)
@@ -295,10 +296,11 @@ def djfrontend_twbs_theme_css(version=None):
     """
     Returns Twitter Bootstrap Theme CSS file.
     """
-    if version is None and getattr(settings, 'DJFRONTEND_TWBS_THEME_CSS', False) is False:
-        version = getattr(settings, 'DJFRONTEND_TWBS', DJFRONTEND_TWBS_VERSION_DEFAULT)
-    else:
-         version = getattr(settings, 'DJFRONTEND_TWBS_THEME_CSS', DJFRONTEND_TWBS_VERSION_DEFAULT)
+    if version is None:
+        if not getattr(settings, 'DJFRONTEND_TWBS_THEME_CSS', False):
+            version = getattr(settings, 'DJFRONTEND_TWBS_VERSION', DJFRONTEND_TWBS_VERSION_DEFAULT)
+        else:
+             version = getattr(settings, 'DJFRONTEND_TWBS_THEME_CSS', DJFRONTEND_TWBS_VERSION_DEFAULT)
     
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.css">' % (settings.STATIC_URL, version)
@@ -332,7 +334,7 @@ def djfrontend_twbs_js(version=None, files=None):
     Individual files are not minified.
     """
     if version is None:
-        if getattr(settings, 'DJFRONTEND_TWBS_JS_VERSION', False) is False:
+        if not getattr(settings, 'DJFRONTEND_TWBS_JS_VERSION', False):
             version = getattr(settings, 'DJFRONTEND_TWBS_VERSION', DJFRONTEND_TWBS_VERSION_DEFAULT)
         else:
             version = getattr(settings, 'DJFRONTEND_TWBS_JS_VERSION', DJFRONTEND_TWBS_VERSION_DEFAULT)
@@ -346,21 +348,17 @@ def djfrontend_twbs_js(version=None, files=None):
         files = 'all'
     
     if files == 'all':
-        if getattr(settings, 'TEMPLATE_DEBUG', False):
-            return '<script src="%sdjfrontend/js/twbs/%s/bootstrap.js"></script>' % (settings.STATIC_URL, version)
-        else:
-            if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-                return '<script src="%sdjfrontend/js/twbs/%s/bootstrap.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
-            else:
-                return '<script src="%sdjfrontend/js/twbs/%s/bootstrap.js"></script>' % (settings.STATIC_URL, version)
+        if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
+            return '<script src="%sdjfrontend/js/twbs/%s/bootstrap.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
+        return '<script src="%sdjfrontend/js/twbs/%s/bootstrap.js"></script>' % (settings.STATIC_URL, version)
     else:
         if 'popover' in files and 'tooltip' not in files:
             files.append('tooltip')
         for file in files:
-            if getattr(settings, 'TEMPLATE_DEBUG', False):
-                file = ['<script src="%sdjfrontend/js/twbs/%s/%s.js"></script>' % (settings.STATIC_URL, version, file) for file in files]
-            elif getattr(settings, 'DJFRONTEND_STATIC_URL', False):
+            if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
                 file = ['<script src="%sdjfrontend/js/twbs/%s/%s.js"></script>' % (settings.DJFRONTEND_STATIC_URL, version, file) for file in files]
+            else:
+                file = ['<script src="%sdjfrontend/js/twbs/%s/%s.js"></script>' % (settings.STATIC_URL, version, file) for file in files]
         return '\n'.join(file)
 
 
