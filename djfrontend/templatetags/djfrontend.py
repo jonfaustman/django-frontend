@@ -97,12 +97,14 @@ def djfrontend_modernizr(version=None):
         return '<script src="%sdjfrontend/js/modernizr/%s/modernizr.js"></script>' % (settings.STATIC_URL, version)
     else:
         if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-            output=[ '<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/%s/modernizr.min.js"></script>' % version,
-            '<script>window.Modernizr || document.write(\'<script src="%sdjfrontend/js/modernizr/%s/modernizr.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
+            output=[
+                '<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/%s/modernizr.min.js"></script>' % version,
+                '<script>window.Modernizr || document.write(\'<script src="%sdjfrontend/js/modernizr/%s/modernizr.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
             ]
         else:
-            output=[ '<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/%s/modernizr.min.js"></script>' % version,
-            '<script>window.Modernizr || document.write(\'<script src="%sdjfrontend/js/modernizr/%s/modernizr.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
+            output=[
+                '<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/%s/modernizr.min.js"></script>' % version,
+                '<script>window.Modernizr || document.write(\'<script src="%sdjfrontend/js/modernizr/%s/modernizr.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
             ]
         return '\n'.join(output)
 
@@ -215,13 +217,16 @@ def djfrontend_jquery_formset(version=None):
         return '<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.js"></script>' % (settings.STATIC_URL, version)
     else:
         if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-            return '<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
+            output=[
+                '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.formset/%s/jquery.formset.min.js"></script>' % version,
+                '<script>window.jQuery.fn.formset || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
+                ]
         else:
             output=[
-                    '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.formset/%s/jquery.formset.min.js"></script>' % version,
-                    '<script>window.jQuery.fn.formset || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
+                '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.formset/%s/jquery.formset.min.js"></script>' % version,
+                '<script>window.jQuery.fn.formset || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
                 ]
-            return '\n'.join(output)
+        return '\n'.join(output)
 
 
 @register.simple_tag
@@ -237,13 +242,16 @@ def djfrontend_jquery_scrollto(version=None):
         return '<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.js"></script>' % (settings.STATIC_URL, version)
     else:
         if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-            return '<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
+            output=[
+                '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/%s/jquery.scrollTo.min.js"></script>' % version,
+                '<script>window.jQuery.fn.scrollTo || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
+                ]
         else:
             output=[
-                    '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/%s/jquery.scrollTo.min.js"></script>' % version,
-                    '<script>window.jQuery.fn.scrollTo || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
+                '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/%s/jquery.scrollTo.min.js"></script>' % version,
+                '<script>window.jQuery.fn.scrollTo || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
                 ]
-            return '\n'.join(output)
+        return '\n'.join(output)
 
 
 @register.simple_tag
@@ -260,12 +268,13 @@ def djfrontend_jquery_smoothscroll(version=None):
     else:
         if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
             output=[
-                '<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
+                '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % version,
+                '<script>window.jQuery.fn.smoothScroll || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
             ]
         else:
             output=[
-                    '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % version,
-                    '<script>window.jQuery.fn.smoothScroll || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
+                '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % version,
+                '<script>window.jQuery.fn.smoothScroll || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
                 ]
         return '\n'.join(output)
 
@@ -349,8 +358,16 @@ def djfrontend_twbs_js(version=None, files=None):
     
     if files == 'all':
         if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
-            return '<script src="%sdjfrontend/js/twbs/%s/bootstrap.min.js"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
-        return '<script src="%sdjfrontend/js/twbs/%s/bootstrap.js"></script>' % (settings.STATIC_URL, version)
+            output=[
+                '<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/%s/js/bootstrap.min.js"></script>' % version,
+                '<script>window.jQuery.fn.scrollspy || document.write(\'<script src="%sdjfrontend/js/twbs/%s/bootstrap.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
+            ]
+        else:
+            output=[
+                '<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/%s/js/bootstrap.min.js"></script>' % version,
+                '<script>window.jQuery.fn.scrollspy || document.write(\'<script src="%sdjfrontend/js/twbs/%s/bootstrap.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
+            ]
+        return '\n'.join(output)
     else:
         if 'popover' in files and 'tooltip' not in files:
             files.append('tooltip')
