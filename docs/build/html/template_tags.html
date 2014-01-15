@@ -54,14 +54,17 @@
 <p>Use the included djfrontend template tags to suit your needs.</p>
 <div class="section" id="djfrontend">
 <h2>djfrontend<a class="headerlink" href="#djfrontend" title="Permalink to this headline">¶</a></h2>
+<p>Loads all the Django Frontend template tags.</p>
 <div class="highlight-python"><pre>{% load djfrontend %}</pre>
 </div>
-<div class="section" id="djfrontend-h5bp-html">
-<h3>djfrontend_h5bp_html<a class="headerlink" href="#djfrontend-h5bp-html" title="Permalink to this headline">¶</a></h3>
-<p>Returns HTML tag according to chosen language - &#8216;en&#8217; is the default.</p>
-<div class="highlight-python"><pre>{% djfrontend_h5bp_html 'en' %}</pre>
+<p><strong>Each template tag now has a default value. You only need to include an argument if you wish to change the default.</strong></p>
 </div>
-<p>would render</p>
+<div class="section" id="djfrontend-h5bp-html">
+<h2>djfrontend_h5bp_html<a class="headerlink" href="#djfrontend-h5bp-html" title="Permalink to this headline">¶</a></h2>
+<p>Returns HTML tag according to chosen language. The default, &#8216;en&#8217; is used if another language is not set.</p>
+<div class="highlight-python"><pre>{% djfrontend_h5bp_html %}</pre>
+</div>
+<p>renders</p>
 <div class="highlight-python"><pre>&lt;!--[if lt IE 7]&gt; &lt;html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"&gt; &lt;![endif]--&gt;
 &lt;!--[if IE 7]&gt;    &lt;html class="no-js lt-ie9 lt-ie8" lang="en"&gt; &lt;![endif]--&gt;
 &lt;!--[if IE 8]&gt;    &lt;html class="no-js lt-ie9" lang="en"&gt; &lt;![endif]--&gt;
@@ -69,29 +72,29 @@
 </div>
 </div>
 <div class="section" id="djfrontend-h5bp-css">
-<h3>djfrontend_h5bp_css<a class="headerlink" href="#djfrontend-h5bp-css" title="Permalink to this headline">¶</a></h3>
-<p>Returns HTML5 Boilerplate CSS file according to version number.</p>
-<div class="highlight-python"><pre>{% djfrontend_h5bp_css '4.3.0' %}</pre>
+<h2>djfrontend_h5bp_css<a class="headerlink" href="#djfrontend-h5bp-css" title="Permalink to this headline">¶</a></h2>
+<p>Returns HTML5 Boilerplate CSS file according to version number. The default version is the included &#8216;4.3.0&#8217;.</p>
+<div class="highlight-python"><pre>{% djfrontend_h5bp_css %}</pre>
 </div>
-<p>would render</p>
+<p>renders</p>
 <div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/h5bp/4.3.0/h5bp.css"&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-normalize">
-<h3>djfrontend_normalize<a class="headerlink" href="#djfrontend-normalize" title="Permalink to this headline">¶</a></h3>
-<p>Returns Normalize CSS file according to version number.</p>
-<div class="highlight-python"><pre>{% djfrontend_normalize '1.1.3' %}</pre>
+<h2>djfrontend_normalize<a class="headerlink" href="#djfrontend-normalize" title="Permalink to this headline">¶</a></h2>
+<p>Returns Normalize CSS file according to version number. The default version is the included &#8216;1.1.3&#8217;.</p>
+<div class="highlight-python"><pre>{% djfrontend_normalize %}</pre>
 </div>
-<p>would render</p>
+<p>renders</p>
 <div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/normalize/1.1.3/normalize.css"&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-fontawesome">
-<h3>djfrontend_fontawesome<a class="headerlink" href="#djfrontend-fontawesome" title="Permalink to this headline">¶</a></h3>
-<p>Returns Font Awesome CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.</p>
-<div class="highlight-python"><pre>{% djfrontend_fontawesome '4.0.3' %}</pre>
+<h2>djfrontend_fontawesome<a class="headerlink" href="#djfrontend-fontawesome" title="Permalink to this headline">¶</a></h2>
+<p>Returns Font Awesome CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file. The default version is the included &#8216;4.0.3&#8217;.</p>
+<div class="highlight-python"><pre>{% djfrontend_fontawesome %}</pre>
 </div>
-<p>would render</p>
+<p>renders</p>
 <div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/fontawesome/4.0.3/font-awesome.css"&gt;</pre>
 </div>
 <p>Or</p>
@@ -99,11 +102,11 @@
 </div>
 </div>
 <div class="section" id="djfrontend-modernizr">
-<h3>djfrontend_modernizr<a class="headerlink" href="#djfrontend-modernizr" title="Permalink to this headline">¶</a></h3>
-<p>Returns Modernizr JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local callback. The latest &#8216;2.7.1&#8217; is included.</p>
-<div class="highlight-python"><pre>{% djfrontend_modernizr '2.7.1' %}</pre>
+<h2>djfrontend_modernizr<a class="headerlink" href="#djfrontend-modernizr" title="Permalink to this headline">¶</a></h2>
+<p>Returns Modernizr JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local callback. The default version is the included &#8216;2.7.1&#8217;.</p>
+<div class="highlight-python"><pre>{% djfrontend_modernizr %}</pre>
 </div>
-<p>would render</p>
+<p>renders</p>
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/modernizr/2.7.1/modernizr.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or</p>
@@ -112,11 +115,11 @@
 </div>
 </div>
 <div class="section" id="djfrontend-jquery">
-<h3>djfrontend_jquery<a class="headerlink" href="#djfrontend-jquery" title="Permalink to this headline">¶</a></h3>
-<p>Returns jQuery JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback.</p>
-<div class="highlight-python"><pre>{% djfrontend_jquery '1.10.2' %}</pre>
+<h2>djfrontend_jquery<a class="headerlink" href="#djfrontend-jquery" title="Permalink to this headline">¶</a></h2>
+<p>Returns jQuery JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included &#8216;1.10.2&#8217;.</p>
+<div class="highlight-python"><pre>{% djfrontend_jquery %}</pre>
 </div>
-<p>would render</p>
+<p>renders</p>
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/1.10.2/jquery.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or</p>
@@ -125,11 +128,11 @@
 </div>
 </div>
 <div class="section" id="djfrontend-jqueryui">
-<h3>djfrontend_jqueryui<a class="headerlink" href="#djfrontend-jqueryui" title="Permalink to this headline">¶</a></h3>
-<p>Returns jQuery UI plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback.</p>
-<div class="highlight-python"><pre>{% djfrontend_jqueryui '1.10.3' %}</pre>
+<h2>djfrontend_jqueryui<a class="headerlink" href="#djfrontend-jqueryui" title="Permalink to this headline">¶</a></h2>
+<p>Returns jQuery UI plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included &#8216;1.10.3&#8217;.</p>
+<div class="highlight-python"><pre>{% djfrontend_jqueryui %}</pre>
 </div>
-<p>would render</p>
+<p>renders</p>
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jqueryui/1.10.3/jquery-ui.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or</p>
@@ -138,11 +141,11 @@
 </div>
 </div>
 <div class="section" id="djfrontend-jquery-datatables">
-<h3>djfrontend_jquery_datatables<a class="headerlink" href="#djfrontend-jquery-datatables" title="Permalink to this headline">¶</a></h3>
-<p>Returns the jQuery DataTables plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback.</p>
-<div class="highlight-python"><pre>{% djfrontend_jquery_datatables '1.9.4' %}</pre>
+<h2>djfrontend_jquery_datatables<a class="headerlink" href="#djfrontend-jquery-datatables" title="Permalink to this headline">¶</a></h2>
+<p>Returns the jQuery DataTables plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included &#8216;1.9.4&#8217;.</p>
+<div class="highlight-python"><pre>{% djfrontend_jquery_datatables %}</pre>
 </div>
-<p>would render</p>
+<p>renders</p>
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.dataTables/1.9.4/jquery.dataTables.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or</p>
@@ -151,20 +154,20 @@
 </div>
 </div>
 <div class="section" id="djfrontend-jquery-datatables-css">
-<h3>djfrontend_jquery_datatables_css<a class="headerlink" href="#djfrontend-jquery-datatables-css" title="Permalink to this headline">¶</a></h3>
-<p>Returns the jQuery DataTables CSS file according to version number.</p>
-<div class="highlight-python"><pre>{% djfrontend_jquery_datatables_css '1.9.4' %}</pre>
+<h2>djfrontend_jquery_datatables_css<a class="headerlink" href="#djfrontend-jquery-datatables-css" title="Permalink to this headline">¶</a></h2>
+<p>Returns the jQuery DataTables CSS file according to version number. The default version is the included &#8216;1.9.4&#8217;.</p>
+<div class="highlight-python"><pre>{% djfrontend_jquery_datatables_css %}</pre>
 </div>
-<p>would render</p>
+<p>renders</p>
 <div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.9.4/jquery.dataTables.css"&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-jquery-formset">
-<h3>djfrontend_jquery_formset<a class="headerlink" href="#djfrontend-jquery-formset" title="Permalink to this headline">¶</a></h3>
-<p>Returns the jQuery Dynamic Formset plugin JavaScript file according to version number. TTEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback.</p>
-<div class="highlight-python"><pre>{% djfrontend_jquery_formset '1.2' %}</pre>
+<h2>djfrontend_jquery_formset<a class="headerlink" href="#djfrontend-jquery-formset" title="Permalink to this headline">¶</a></h2>
+<p>Returns the jQuery Dynamic Formset plugin JavaScript file according to version number. TTEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included &#8216;1.2&#8217;.</p>
+<div class="highlight-python"><pre>{% djfrontend_jquery_formset %}</pre>
 </div>
-<p>would render</p>
+<p>renders</p>
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.formset/1.2/jquery.formset.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or</p>
@@ -173,11 +176,11 @@
 </div>
 </div>
 <div class="section" id="djfrontend-jquery-scrollto">
-<h3>djfrontend_jquery_scrollto<a class="headerlink" href="#djfrontend-jquery-scrollto" title="Permalink to this headline">¶</a></h3>
-<p>Returns the jQuery ScrollTo plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback.</p>
-<div class="highlight-python"><pre>{% djfrontend_jquery_scrollto '1.4.7' %}</pre>
+<h2>djfrontend_jquery_scrollto<a class="headerlink" href="#djfrontend-jquery-scrollto" title="Permalink to this headline">¶</a></h2>
+<p>Returns the jQuery ScrollTo plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included &#8216;1.4.7&#8217;.</p>
+<div class="highlight-python"><pre>{% djfrontend_jquery_scrollto %}</pre>
 </div>
-<p>would render</p>
+<p>renders</p>
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.7/jquery.scrollTo.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or</p>
@@ -186,11 +189,11 @@
 </div>
 </div>
 <div class="section" id="djfrontend-jquery-smoothscroll">
-<h3>djfrontend_jquery_smoothscroll<a class="headerlink" href="#djfrontend-jquery-smoothscroll" title="Permalink to this headline">¶</a></h3>
-<p>Returns the jQuery Smooth Scroll plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback.</p>
-<div class="highlight-python"><pre>{% djfrontend_jquery_smoothscroll '1.4.13' %}</pre>
+<h2>djfrontend_jquery_smoothscroll<a class="headerlink" href="#djfrontend-jquery-smoothscroll" title="Permalink to this headline">¶</a></h2>
+<p>Returns the jQuery Smooth Scroll plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included &#8216;1.4.13&#8217;.</p>
+<div class="highlight-python"><pre>{% djfrontend_jquery_smoothscroll %}</pre>
 </div>
-<p>would render</p>
+<p>renders</p>
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.4.13/jquery.smooth-scroll.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or</p>
@@ -199,11 +202,11 @@
 </div>
 </div>
 <div class="section" id="djfrontend-twbs-css">
-<h3>djfrontend_twbs_css<a class="headerlink" href="#djfrontend-twbs-css" title="Permalink to this headline">¶</a></h3>
-<p>Returns Twitter Bootstrap CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file.</p>
-<div class="highlight-python"><pre>{% djfrontend_twbs_css '3.0.3' %}</pre>
+<h2>djfrontend_twbs_css<a class="headerlink" href="#djfrontend-twbs-css" title="Permalink to this headline">¶</a></h2>
+<p>Returns Twitter Bootstrap CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file. The default version is the included &#8216;3.0.3&#8217;.</p>
+<div class="highlight-python"><pre>{% djfrontend_twbs_css %}</pre>
 </div>
-<p>would render</p>
+<p>renders</p>
 <div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap.css"&gt;</pre>
 </div>
 <p>Or</p>
@@ -211,11 +214,11 @@
 </div>
 </div>
 <div class="section" id="djfrontend-twbs-theme-css">
-<h3>djfrontend_twbs_theme_css<a class="headerlink" href="#djfrontend-twbs-theme-css" title="Permalink to this headline">¶</a></h3>
-<p>Returns Twitter Bootstrap Theme CSS file according to version number.</p>
-<div class="highlight-python"><pre>{% djfrontend_twbs_theme_css '3.0.3' %}</pre>
+<h2>djfrontend_twbs_theme_css<a class="headerlink" href="#djfrontend-twbs-theme-css" title="Permalink to this headline">¶</a></h2>
+<p>Returns Twitter Bootstrap Theme CSS file according to version number. The default version is the included &#8216;3.0.3&#8217;.</p>
+<div class="highlight-python"><pre>{% djfrontend_twbs_theme_css %}</pre>
 </div>
-<p>would render</p>
+<p>renders</p>
 <div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap-theme.css"&gt;</pre>
 </div>
 <p>Or</p>
@@ -223,8 +226,8 @@
 </div>
 </div>
 <div class="section" id="djfrontend-twbs-js">
-<h3>djfrontend_twbs_js<a class="headerlink" href="#djfrontend-twbs-js" title="Permalink to this headline">¶</a></h3>
-<p>Returns Twitter Bootstrap (3.0.0) JavaScript file(s). all returns concatenated file; full file for TEMPLATE_DEBUG, minified otherwise. Other choices include:</p>
+<h2>djfrontend_twbs_js<a class="headerlink" href="#djfrontend-twbs-js" title="Permalink to this headline">¶</a></h2>
+<p>Returns Twitter Bootstrap JavaScript file(s) according to version number and file name(s). The default &#8216;all&#8217; returns a concatenated file; full file for TEMPLATE_DEBUG, otherwise returns minified file from cdnjs with local fallback. The default version is the included &#8216;3.0.3&#8217;.</p>
 <ul class="simple">
 <li>affix</li>
 <li>alert</li>
@@ -240,24 +243,25 @@
 <li>transition</li>
 </ul>
 <p>Individual files are not minified.</p>
-<div class="highlight-python"><pre>{% boostrap_js all %}</pre>
+<div class="highlight-python"><pre>{% boostrap_js %}</pre>
 </div>
-<p>would render</p>
+<p>renders</p>
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.0.3/bootstrap.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or</p>
-<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.0.3/bootstrap.min.js"&gt;&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;window.jQuery.fn.scrollspy || document.write('&lt;script src="/static/djfrontend/js/twbs/3.0.3/bootstrap.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
 </div>
-<div class="highlight-python"><pre>{% bootstrap_js alert affix %}</pre>
+<div class="highlight-python"><pre>{% bootstrap_js files='alert affix' %}</pre>
 </div>
-<p>would render</p>
+<p>renders</p>
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.0.3/bootstrap-affix.js"&gt;&lt;/script&gt;
 &lt;script src="/static/djfrontend/js/twbs/3.0.3/bootstrap-alert.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Shout out to Ryan Brady and his <a class="reference external" href="https://github.com/rbrady/django-bootstrapped">Django Bootstrapped</a> for inspiration and initial code.</p>
 </div>
 <div class="section" id="djfrontend-ga">
-<h3>djfrontend_ga<a class="headerlink" href="#djfrontend-ga" title="Permalink to this headline">¶</a></h3>
+<h2>djfrontend_ga<a class="headerlink" href="#djfrontend-ga" title="Permalink to this headline">¶</a></h2>
 <p>Returns Google Analytics asynchronous snippet if TEMPLATE_DEBUG is not set. Use DJFRONTEND_GA_SETDOMAINNAME to set domain for multiple, or cross-domain tracking. Set DJFRONTEND_GA_SETALLOWLINKER to use _setAllowLinker method on target site for cross-domain tracking.</p>
 <div class="highlight-python"><pre>&lt;script&gt;var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src="//www.google-analytics.com/ga.js";s.parentNode.insertBefore(g,s)}(document,"script"));&lt;/script&gt;'</pre>
 </div>
@@ -269,10 +273,9 @@
 </div>
 </div>
 <div class="section" id="djfrontend-ios-fix">
-<h3>djfrontend_ios_fix<a class="headerlink" href="#djfrontend-ios-fix" title="Permalink to this headline">¶</a></h3>
+<h2>djfrontend_ios_fix<a class="headerlink" href="#djfrontend-ios-fix" title="Permalink to this headline">¶</a></h2>
 <p>Returns the iOS-Orientationchange-Fix.</p>
 <div class="highlight-python"><pre>&lt;script&gt;/*! A fix for the iOS orientationchange zoom bug. Script by @scottjehl, rebound by @wilto.MIT / GPLv2 License.*/(function(a){function m(){d.setAttribute("content",g),h=!0}function n(){d.setAttribute("content",f),h=!1}function o(b){l=b.accelerationIncludingGravity,i=Math.abs(l.x),j=Math.abs(l.y),k=Math.abs(l.z),(!a.orientation||a.orientation===180)&amp;&amp;(i&gt;7||(k&gt;6&amp;&amp;j&lt;8||k&lt;8&amp;&amp;j&gt;6)&amp;&amp;i&gt;5)?h&amp;&amp;n():h||m()}var b=navigator.userAgent;if(!(/iPhone|iPad|iPod/.test(navigator.platform)&amp;&amp;/OS [1-5]_[0-9_]* like Mac OS X/i.test(b)&amp;&amp;b.indexOf("AppleWebKit")&gt;-1))return;var c=a.document;if(!c.querySelector)return;var d=c.querySelector("meta[name=viewport]"),e=d&amp;&amp;d.getAttribute("content"),f=e+",maximum-scale=1",g=e+",maximum-scale=10",h=!0,i,j,k,l;if(!d)return;a.addEventListener("orientationchange",m,!1),a.addEventListener("devicemotion",o,!1)})(this);&lt;/script&gt;</pre>
-</div>
 </div>
 </div>
 </div>
@@ -286,7 +289,7 @@
   <h3><a href="index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Template tags</a><ul>
-<li><a class="reference internal" href="#djfrontend">djfrontend</a><ul>
+<li><a class="reference internal" href="#djfrontend">djfrontend</a></li>
 <li><a class="reference internal" href="#djfrontend-h5bp-html">djfrontend_h5bp_html</a></li>
 <li><a class="reference internal" href="#djfrontend-h5bp-css">djfrontend_h5bp_css</a></li>
 <li><a class="reference internal" href="#djfrontend-normalize">djfrontend_normalize</a></li>
@@ -304,8 +307,6 @@
 <li><a class="reference internal" href="#djfrontend-twbs-js">djfrontend_twbs_js</a></li>
 <li><a class="reference internal" href="#djfrontend-ga">djfrontend_ga</a></li>
 <li><a class="reference internal" href="#djfrontend-ios-fix">djfrontend_ios_fix</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>

@@ -29,8 +29,10 @@ Contents
    :maxdepth: 2
    
    getting_started
+   granularity
    template_tags
    template_blocks
+   optional_settings
    license
    changelog
    road_map
