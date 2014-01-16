@@ -187,7 +187,7 @@ Or
 
 djfrontend_jquery_scrollto
 --------------------------------
-Returns the jQuery ScrollTo plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included '1.4.8'.
+Returns the jQuery ScrollTo plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included '1.4.9'.
 ::
 
     {% djfrontend_jquery_scrollto %}
@@ -196,14 +196,14 @@ renders
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.8/jquery.scrollTo.js"></script>
+    <script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.9/jquery.scrollTo.js"></script>
 
 Or
 
 ::
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.8/jquery.scrollTo.min.js"></script>
-    <script>window.jQuery.fn.scrollTo || document.write('<script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.8/jquery.scrollTo.min.js"><\/script>')</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.9/jquery.scrollTo.min.js"></script>
+    <script>window.jQuery.fn.scrollTo || document.write('<script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.9/jquery.scrollTo.min.js"><\/script>')</script>
 
 djfrontend_jquery_smoothscroll
 --------------------------------
