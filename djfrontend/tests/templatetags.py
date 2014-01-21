@@ -11,12 +11,13 @@ class DjfrontendDefaultTestCase(TestCase):
     """
     
     def test_djfrontend_h5bp_html(self):
+        attr = 'lang="%s"' % DJFRONTEND_H5BP_HTML_DEFAULT
         t = Template(
             "{% load djfrontend %}"
             "{% djfrontend_h5bp_html %}"
         ).render(Context())
         
-        self.assertTrue(DJFRONTEND_H5BP_HTML_DEFAULT in t)
+        self.assertTrue(attr in t)
     
     def test_djfrontend_h5bp_css(self):
         t = Template(
