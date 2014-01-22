@@ -2,7 +2,6 @@ from djfrontend.templatetags.settings import *
 
 from django.conf import settings
 from django.test import TestCase, LiveServerTestCase
-from django.test.utils import override_settings
 from django.template import Template, Context
 
 
