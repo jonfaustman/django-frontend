@@ -1,9 +1,139 @@
 from djfrontend.templatetags.settings import *
 
 from django.conf import settings
-from django.test import TestCase
+from django.test import TestCase, LiveServerTestCase
 from django.test.utils import override_settings
 from django.template import Template, Context
+
+
+class DjfrontendStaticTest(LiveServerTestCase):
+    
+    """
+    Ensure the files actually exist.
+    """
+
+    # Change settings until StaticLiveServerCase in 1.7!
+    from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+    urlpatterns = staticfiles_urlpatterns()
+    settings.DEBUG = True
+    
+    def test_djfrontend_h5bp_css(self):
+        file = self.client.get(self.live_server_url + '/static/djfrontend/css/h5bp/%s/h5bp.css' % DJFRONTEND_H5BP_CSS_DEFAULT)
+        self.assertEqual(file.status_code, 200)
+    
+    def test_djfrontend_normalize(self):
+        file = self.client.get(self.live_server_url + '/static/djfrontend/css/normalize/%s/normalize.css' % DJFRONTEND_NORMALIZE_DEFAULT)
+        self.assertEqual(file.status_code, 200)
+        
+    def test_djfrontend_fontawesome(self):
+        file = self.client.get(self.live_server_url + '/static/djfrontend/css/fontawesome/%s/font-awesome.css' % DJFRONTEND_FONTAWESOME_DEFAULT)
+        file_min = self.client.get(self.live_server_url + '/static/djfrontend/css/fontawesome/%s/font-awesome.min.css' % DJFRONTEND_FONTAWESOME_DEFAULT)
+        file_font_eot = self.client.get(self.live_server_url + '/static/djfrontend/fonts/fontawesome/%s/fontawesome-webfont.eot' % DJFRONTEND_FONTAWESOME_DEFAULT)
+        file_font_svg = self.client.get(self.live_server_url + '/static/djfrontend/fonts/fontawesome/%s/fontawesome-webfont.svg' % DJFRONTEND_FONTAWESOME_DEFAULT)
+        file_font_ttf = self.client.get(self.live_server_url + '/static/djfrontend/fonts/fontawesome/%s/fontawesome-webfont.ttf' % DJFRONTEND_FONTAWESOME_DEFAULT)
+        file_font_woff = self.client.get(self.live_server_url + '/static/djfrontend/fonts/fontawesome/%s/fontawesome-webfont.woff' % DJFRONTEND_FONTAWESOME_DEFAULT)
+        self.assertEqual(file.status_code, 200)
+        self.assertEqual(file_min.status_code, 200)
+        self.assertEqual(file_font_eot.status_code, 200)
+        self.assertEqual(file_font_svg.status_code, 200)
+        self.assertEqual(file_font_ttf.status_code, 200)
+        self.assertEqual(file_font_woff.status_code, 200)
+        
+    def test_djfrontend_modernizr(self):
+        file = self.client.get(self.live_server_url + '/static/djfrontend/js/modernizr/%s/modernizr.js' % DJFRONTEND_MODERNIZR_DEFAULT)
+        file_min = self.client.get(self.live_server_url + '/static/djfrontend/js/modernizr/%s/modernizr.min.js' % DJFRONTEND_MODERNIZR_DEFAULT)
+        self.assertEqual(file.status_code, 200)
+        self.assertEqual(file_min.status_code, 200)
+
+    def test_djfrontend_jquery(self):
+        file = self.client.get(self.live_server_url + '/static/djfrontend/js/jquery/%s/jquery.js' % DJFRONTEND_JQUERY_DEFAULT)
+        file_min = self.client.get(self.live_server_url + '/static/djfrontend/js/jquery/%s/jquery.min.js' % DJFRONTEND_JQUERY_DEFAULT)
+        self.assertEqual(file.status_code, 200)
+        self.assertEqual(file_min.status_code, 200)
+
+    def test_djfrontend_jqueryui(self):
+        file = self.client.get(self.live_server_url + '/static/djfrontend/js/jquery/jqueryui/%s/jquery-ui.js' % DJFRONTEND_JQUERYUI_DEFAULT)
+        file_min = self.client.get(self.live_server_url + '/static/djfrontend/js/jquery/jqueryui/%s/jquery-ui.min.js' % DJFRONTEND_JQUERYUI_DEFAULT)
+        self.assertEqual(file.status_code, 200)
+        self.assertEqual(file_min.status_code, 200)
+
+    def test_djfrontend_jquery_datatables(self):
+        file = self.client.get(self.live_server_url + '/static/djfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.js' % DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
+        file_min = self.client.get(self.live_server_url + '/static/djfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.min.js' % DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
+        self.assertEqual(file.status_code, 200)
+        self.assertEqual(file_min.status_code, 200)
+
+    def test_djfrontend_jquery_datatables_css(self):
+        file = self.client.get(self.live_server_url + '/static/djfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css' % DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
+        self.assertEqual(file.status_code, 200)
+        
+    def test_djfrontend_jquery_formset(self):
+        file = self.client.get(self.live_server_url + '/static/djfrontend/js/jquery/jquery.formset/%s/jquery.formset.js' % DJFRONTEND_JQUERY_FORMSET_DEFAULT)
+        file_min = self.client.get(self.live_server_url + '/static/djfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js' % DJFRONTEND_JQUERY_FORMSET_DEFAULT)
+        self.assertEqual(file.status_code, 200)
+        self.assertEqual(file_min.status_code, 200)
+
+    def test_djfrontend_jquery_scrollto(self):
+        file = self.client.get(self.live_server_url + '/static/djfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.js' % DJFRONTEND_JQUERY_SCROLLTO_DEFAULT)
+        file_min = self.client.get(self.live_server_url + '/static/djfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.min.js' % DJFRONTEND_JQUERY_SCROLLTO_DEFAULT)
+        self.assertEqual(file.status_code, 200)
+        self.assertEqual(file_min.status_code, 200)
+        
+    def test_djfrontend_jquery_smoothscroll(self):
+        file = self.client.get(self.live_server_url + '/static/djfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.js' % DJFRONTEND_JQUERY_SMOOTHSCROLL_DEFAULT)
+        file_min = self.client.get(self.live_server_url + '/static/djfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js' % DJFRONTEND_JQUERY_SMOOTHSCROLL_DEFAULT)
+        self.assertEqual(file.status_code, 200)
+        self.assertEqual(file_min.status_code, 200)
+        
+    def test_djfrontend_twbs_css(self):
+        file = self.client.get(self.live_server_url + '/static/djfrontend/css/twbs/%s/bootstrap.css' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_min = self.client.get(self.live_server_url + '/static/djfrontend/css/twbs/%s/bootstrap.min.css' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_font_eot = self.client.get(self.live_server_url + '/static/djfrontend/fonts/twbs/%s/glyphicons-halflings-regular.eot' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_font_svg = self.client.get(self.live_server_url + '/static/djfrontend/fonts/twbs/%s/glyphicons-halflings-regular.svg' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_font_ttf = self.client.get(self.live_server_url + '/static/djfrontend/fonts/twbs/%s/glyphicons-halflings-regular.ttf' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_font_woff = self.client.get(self.live_server_url + '/static/djfrontend/fonts/twbs/%s/glyphicons-halflings-regular.woff' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        self.assertEqual(file.status_code, 200)
+        self.assertEqual(file_min.status_code, 200)
+        self.assertEqual(file_font_eot.status_code, 200)
+        self.assertEqual(file_font_svg.status_code, 200)
+        self.assertEqual(file_font_ttf.status_code, 200)
+        self.assertEqual(file_font_woff.status_code, 200)
+
+    def test_djfrontend_twbs_theme_css(self):
+        file = self.client.get(self.live_server_url + '/static/djfrontend/css/twbs/%s/bootstrap-theme.css' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_min = self.client.get(self.live_server_url + '/static/djfrontend/css/twbs/%s/bootstrap-theme.min.css' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        self.assertEqual(file.status_code, 200)
+        self.assertEqual(file_min.status_code, 200)
+
+    def test_djfrontend_twbs_js(self):
+        file = self.client.get(self.live_server_url + '/static/djfrontend/js/twbs/%s/bootstrap.js' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_min = self.client.get(self.live_server_url + '/static/djfrontend/js/twbs/%s/bootstrap.min.js' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_affix = self.client.get(self.live_server_url + '/static/djfrontend/js/twbs/%s/affix.js' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_alert = self.client.get(self.live_server_url + '/static/djfrontend/js/twbs/%s/alert.js' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_button = self.client.get(self.live_server_url + '/static/djfrontend/js/twbs/%s/button.js' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_carousel = self.client.get(self.live_server_url + '/static/djfrontend/js/twbs/%s/carousel.js' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_collapse = self.client.get(self.live_server_url + '/static/djfrontend/js/twbs/%s/collapse.js' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_dropdown = self.client.get(self.live_server_url + '/static/djfrontend/js/twbs/%s/dropdown.js' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_modal = self.client.get(self.live_server_url + '/static/djfrontend/js/twbs/%s/modal.js' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_popover = self.client.get(self.live_server_url + '/static/djfrontend/js/twbs/%s/popover.js' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_scrollspy = self.client.get(self.live_server_url + '/static/djfrontend/js/twbs/%s/scrollspy.js' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_tab = self.client.get(self.live_server_url + '/static/djfrontend/js/twbs/%s/tab.js' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_tooltip = self.client.get(self.live_server_url + '/static/djfrontend/js/twbs/%s/tooltip.js' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        file_transition = self.client.get(self.live_server_url + '/static/djfrontend/js/twbs/%s/transition.js' % DJFRONTEND_TWBS_VERSION_DEFAULT)
+        self.assertEqual(file.status_code, 200)
+        self.assertEqual(file_min.status_code, 200)
+        self.assertEqual(file_affix.status_code, 200)
+        self.assertEqual(file_alert.status_code, 200)
+        self.assertEqual(file_button.status_code, 200)
+        self.assertEqual(file_carousel.status_code, 200)
+        self.assertEqual(file_collapse.status_code, 200)
+        self.assertEqual(file_dropdown.status_code, 200)
+        self.assertEqual(file_modal.status_code, 200)
+        self.assertEqual(file_popover.status_code, 200)
+        self.assertEqual(file_scrollspy.status_code, 200)
+        self.assertEqual(file_tab.status_code, 200)
+        self.assertEqual(file_tooltip.status_code, 200)
+        self.assertEqual(file_transition.status_code, 200)
 
 
 class DjfrontendDefaultTestCase(TestCase):
