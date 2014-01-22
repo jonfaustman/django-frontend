@@ -1,0 +1,34 @@
+languague: python
+
+python:
+    - "2.6"
+    - "2.7"
+    - "3.3"
+
+env:
+    - DJANGO=1.4
+    - DJANGO=1.4.1
+    - DJANGO=1.4.2
+    - DJANGO=1.4.3
+    - DJANGO=1.4.4
+    - DJANGO=1.4.5
+    - DJANGO=1.4.6
+    - DJANGO=1.4.7
+    - DJANGO=1.4.8
+    - DJANGO=1.4.9
+    - DJANGO=1.4.10
+    - DJANGO=1.5
+    - DJANGO=1.5.1
+    - DJANGO=1.5.2
+    - DJANGO=1.5.3
+    - DJANGO=1.5.4
+    - DJANGO=1.5.5
+    - DJANGO=1.6
+
+
+install:
+    - pip install -q Django==$DJANGO --use-mirrors
+    - pip install -q -e . --user-mirrors
+
+script:
+    - python manage.py test
