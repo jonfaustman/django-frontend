@@ -262,6 +262,15 @@ class DjfrontendDefaultTestCase(TestCase):
         ).render(Context())
         
         self.assertTrue(DJFRONTEND_TWBS_VERSION_DEFAULT in t)
+        
+    def test_djfrontend_twbs_js_popover(self):
+        t = Template(
+            "{% load djfrontend %}"
+            "{% djfrontend_twbs_js files='popover' %}"
+        ).render(Context())
+        
+        self.assertTrue('popover.js' in t)    
+        self.assertTrue('tooltip.js' in t)
 
 
 class DjfrontendSettingsTestCase(TestCase):
