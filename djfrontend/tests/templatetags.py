@@ -148,7 +148,6 @@ class DjfrontendDefaultTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_h5bp_html %}"
         ).render(Context())
-        
         self.assertTrue(attr in t)
     
     def test_djfrontend_h5bp_css(self):
@@ -156,7 +155,6 @@ class DjfrontendDefaultTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_h5bp_css %}"
         ).render(Context())
-        
         self.assertTrue(DJFRONTEND_H5BP_CSS_DEFAULT in t)
         
     def test_djfrontend_normalize(self):
@@ -164,7 +162,6 @@ class DjfrontendDefaultTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_normalize %}"
         ).render(Context())
-        
         self.assertTrue(DJFRONTEND_NORMALIZE_DEFAULT in t)
         
     def test_djfrontend_fontawesome(self):
@@ -172,7 +169,6 @@ class DjfrontendDefaultTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_fontawesome %}"
         ).render(Context())
-        
         self.assertTrue(DJFRONTEND_FONTAWESOME_DEFAULT in t)
 
     def test_djfrontend_modernizr(self):
@@ -180,7 +176,6 @@ class DjfrontendDefaultTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_modernizr %}"
         ).render(Context())
-        
         self.assertTrue(DJFRONTEND_MODERNIZR_DEFAULT in t)
         
     def test_djfrontend_jquery(self):
@@ -188,7 +183,6 @@ class DjfrontendDefaultTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jquery %}"
         ).render(Context())
-        
         self.assertTrue(DJFRONTEND_JQUERY_DEFAULT in t)
         
     def test_djfrontend_jqueryui(self):
@@ -196,7 +190,6 @@ class DjfrontendDefaultTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jqueryui %}"
         ).render(Context())
-        
         self.assertTrue(DJFRONTEND_JQUERYUI_DEFAULT in t)
         
     def test_djfrontend_jquery_datatables(self):
@@ -204,7 +197,6 @@ class DjfrontendDefaultTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jquery_datatables %}"
         ).render(Context())
-        
         self.assertTrue(DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT in t)
         
     def test_djfrontend_jquery_datatables_css(self):
@@ -212,7 +204,6 @@ class DjfrontendDefaultTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jquery_datatables_css %}"
         ).render(Context())
-        
         self.assertTrue(DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT in t)
         
     def test_djfrontend_jquery_formset(self):
@@ -220,7 +211,6 @@ class DjfrontendDefaultTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jquery_formset %}"
         ).render(Context())
-        
         self.assertTrue(DJFRONTEND_JQUERY_FORMSET_DEFAULT in t)
         
     def test_djfrontend_jquery_scrollto(self):
@@ -228,7 +218,6 @@ class DjfrontendDefaultTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jquery_scrollto %}"
         ).render(Context())
-        
         self.assertTrue(DJFRONTEND_JQUERY_SCROLLTO_DEFAULT in t)
         
     def test_djfrontend_jquery_smoothscroll(self):
@@ -236,7 +225,6 @@ class DjfrontendDefaultTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jquery_smoothscroll %}"
         ).render(Context())
-        
         self.assertTrue(DJFRONTEND_JQUERY_SMOOTHSCROLL_DEFAULT in t)
         
     def test_djfrontend_twbs_css(self):
@@ -244,7 +232,6 @@ class DjfrontendDefaultTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_twbs_css %}"
         ).render(Context())
-        
         self.assertTrue(DJFRONTEND_TWBS_VERSION_DEFAULT in t)
         
     def test_djfrontend_twbs_theme_css(self):
@@ -252,7 +239,6 @@ class DjfrontendDefaultTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_twbs_theme_css %}"
         ).render(Context())
-        
         self.assertTrue(DJFRONTEND_TWBS_VERSION_DEFAULT in t)
         
     def test_djfrontend_twbs_js(self):
@@ -260,7 +246,6 @@ class DjfrontendDefaultTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_twbs_js %}"
         ).render(Context())
-        
         self.assertTrue(DJFRONTEND_TWBS_VERSION_DEFAULT in t)
         
     def test_djfrontend_twbs_js_popover(self):
@@ -268,7 +253,6 @@ class DjfrontendDefaultTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_twbs_js files='popover' %}"
         ).render(Context())
-        
         self.assertTrue('popover.js' in t)    
         self.assertTrue('tooltip.js' in t)
 
@@ -286,7 +270,6 @@ class DjfrontendSettingsTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_h5bp_html %}"
         ).render(Context())
-        
         self.assertFalse(attr in t)
         
     def test_djfrontend_h5bp_css(self):
@@ -295,7 +278,6 @@ class DjfrontendSettingsTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_h5bp_css %}"
         ).render(Context())
-    
         self.assertFalse(DJFRONTEND_H5BP_CSS_DEFAULT in t)
         
     def test_djfrontend_normalize(self):
@@ -304,7 +286,6 @@ class DjfrontendSettingsTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_normalize %}"
         ).render(Context())
-    
         self.assertFalse(DJFRONTEND_NORMALIZE_DEFAULT in t)
         
     def test_djfrontend_fontawesome(self):
@@ -313,7 +294,6 @@ class DjfrontendSettingsTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_fontawesome %}"
         ).render(Context())
-    
         self.assertFalse(DJFRONTEND_FONTAWESOME_DEFAULT in t)
 
     def test_djfrontend_modernizr(self):
@@ -322,7 +302,6 @@ class DjfrontendSettingsTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_modernizr %}"
         ).render(Context())
-    
         self.assertFalse(DJFRONTEND_MODERNIZR_DEFAULT in t)
     
     def test_djfrontend_jquery(self):
@@ -331,7 +310,6 @@ class DjfrontendSettingsTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jquery %}"
         ).render(Context())
-    
         self.assertFalse(DJFRONTEND_JQUERY_DEFAULT in t)
     
     def test_djfrontend_jqueryui(self):
@@ -340,7 +318,6 @@ class DjfrontendSettingsTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jqueryui %}"
         ).render(Context())
-    
         self.assertFalse(DJFRONTEND_JQUERYUI_DEFAULT in t)
     
     def test_djfrontend_jquery_datatables(self):
@@ -349,7 +326,6 @@ class DjfrontendSettingsTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jquery_datatables %}"
         ).render(Context())
-    
         self.assertFalse(DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT in t)
     
     def test_djfrontend_jquery_datatables_css(self):
@@ -358,7 +334,6 @@ class DjfrontendSettingsTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jquery_datatables_css %}"
         ).render(Context())
-    
         self.assertFalse(DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT in t)
     
     def test_djfrontend_jquery_formset(self):
@@ -367,7 +342,6 @@ class DjfrontendSettingsTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jquery_formset %}"
         ).render(Context())
-    
         self.assertFalse(DJFRONTEND_JQUERY_FORMSET_DEFAULT in t)
     
     def test_djfrontend_jquery_scrollto(self):
@@ -376,7 +350,6 @@ class DjfrontendSettingsTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jquery_scrollto %}"
         ).render(Context())
-    
         self.assertFalse(DJFRONTEND_JQUERY_SCROLLTO_DEFAULT in t)
     
     def test_djfrontend_jquery_smoothscroll(self):
@@ -385,7 +358,6 @@ class DjfrontendSettingsTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jquery_smoothscroll %}"
         ).render(Context())
-    
         self.assertFalse(DJFRONTEND_JQUERY_SMOOTHSCROLL_DEFAULT in t)
     
     def test_djfrontend_twbs_css(self):
@@ -394,7 +366,6 @@ class DjfrontendSettingsTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_twbs_css %}"
         ).render(Context())
-    
         self.assertFalse(DJFRONTEND_TWBS_VERSION_DEFAULT in t)
     
     def test_djfrontend_twbs_theme_css(self):
@@ -403,7 +374,6 @@ class DjfrontendSettingsTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_twbs_theme_css %}"
         ).render(Context())
-    
         self.assertFalse(DJFRONTEND_TWBS_VERSION_DEFAULT in t)
     
     def test_djfrontend_twbs_js(self):
@@ -412,7 +382,6 @@ class DjfrontendSettingsTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_twbs_js %}"
         ).render(Context())
-    
         self.assertFalse(DJFRONTEND_TWBS_VERSION_DEFAULT in t)
 
 
@@ -430,7 +399,6 @@ class DjfrontendSettingsGranularityTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_h5bp_html 'de' %}"
         ).render(Context())
-        
         self.assertFalse(attr_default in t)
         self.assertTrue(attr in t)
         
@@ -440,7 +408,6 @@ class DjfrontendSettingsGranularityTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_h5bp_css 'x.x.x' %}"
         ).render(Context())
-
         self.assertFalse(DJFRONTEND_H5BP_CSS_DEFAULT in t)
         self.assertTrue('x.x.x' in t)
         
@@ -450,7 +417,6 @@ class DjfrontendSettingsGranularityTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_normalize 'x.x.x' %}"
         ).render(Context())
-
         self.assertFalse(DJFRONTEND_NORMALIZE_DEFAULT in t)
         self.assertTrue('x.x.x' in t)
     
@@ -460,7 +426,6 @@ class DjfrontendSettingsGranularityTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_fontawesome 'x.x.x' %}"
         ).render(Context())
-
         self.assertFalse(DJFRONTEND_FONTAWESOME_DEFAULT in t)
         self.assertTrue('x.x.x' in t)
 
@@ -470,7 +435,6 @@ class DjfrontendSettingsGranularityTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_modernizr 'x.x.x' %}"
         ).render(Context())
-
         self.assertFalse(DJFRONTEND_MODERNIZR_DEFAULT in t)
         self.assertTrue('x.x.x' in t)
 
@@ -480,7 +444,6 @@ class DjfrontendSettingsGranularityTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jquery 'x.x.x' %}"
         ).render(Context())
-
         self.assertFalse(DJFRONTEND_JQUERY_DEFAULT in t)
         self.assertTrue('x.x.x' in t)
 
@@ -490,7 +453,6 @@ class DjfrontendSettingsGranularityTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jqueryui 'x.x.x' %}"
         ).render(Context())
-
         self.assertFalse(DJFRONTEND_JQUERYUI_DEFAULT in t)
         self.assertTrue('x.x.x' in t)
 
@@ -500,7 +462,6 @@ class DjfrontendSettingsGranularityTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jquery_datatables 'x.x.x' %}"
         ).render(Context())
-
         self.assertFalse(DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT in t)
         self.assertTrue('x.x.x' in t)
 
@@ -510,7 +471,6 @@ class DjfrontendSettingsGranularityTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jquery_datatables_css 'x.x.x' %}"
         ).render(Context())
-
         self.assertFalse(DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT in t)
         self.assertTrue('x.x.x' in t)
 
@@ -520,7 +480,6 @@ class DjfrontendSettingsGranularityTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jquery_formset 'x.x.x' %}"
         ).render(Context())
-
         self.assertFalse(DJFRONTEND_JQUERY_FORMSET_DEFAULT in t)
         self.assertTrue('x.x.x' in t)
 
@@ -530,7 +489,6 @@ class DjfrontendSettingsGranularityTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jquery_scrollto 'x.x.x' %}"
         ).render(Context())
-
         self.assertFalse(DJFRONTEND_JQUERY_SCROLLTO_DEFAULT in t)
         self.assertTrue('x.x.x' in t)
 
@@ -540,7 +498,6 @@ class DjfrontendSettingsGranularityTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_jquery_smoothscroll 'x.x.x' %}"
         ).render(Context())
-
         self.assertFalse(DJFRONTEND_JQUERY_SMOOTHSCROLL_DEFAULT in t)
         self.assertTrue('x.x.x' in t)
 
@@ -550,7 +507,6 @@ class DjfrontendSettingsGranularityTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_twbs_css 'x.x.x' %}"
         ).render(Context())
-
         self.assertFalse(DJFRONTEND_TWBS_VERSION_DEFAULT in t)
         self.assertTrue('x.x.x' in t)
 
@@ -560,7 +516,6 @@ class DjfrontendSettingsGranularityTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_twbs_theme_css 'x.x.x' %}"
         ).render(Context())
-
         self.assertFalse(DJFRONTEND_TWBS_VERSION_DEFAULT in t)
         self.assertTrue('x.x.x' in t)
 
@@ -570,6 +525,5 @@ class DjfrontendSettingsGranularityTestCase(TestCase):
             "{% load djfrontend %}"
             "{% djfrontend_twbs_js 'x.x.x' %}"
         ).render(Context())
-
         self.assertFalse(DJFRONTEND_TWBS_VERSION_DEFAULT in t)
         self.assertTrue('x.x.x' in t)
