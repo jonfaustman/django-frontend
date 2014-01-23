@@ -26,8 +26,8 @@ env:
     - DJANGO=1.6
 
 install:
-    - pip install -q Django==$DJANGO
-    - pip install -q -e .
+    - pip install Django==$DJANGO
+    - pip install -e .
 
 script:
     - python run_tests.py
