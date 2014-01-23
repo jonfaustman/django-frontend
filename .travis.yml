@@ -30,4 +30,4 @@ install:
     - pip install -q -e .
 
 script:
-    - python manage.py test
+    - python setup.py test
