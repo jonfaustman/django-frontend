@@ -8,31 +8,31 @@ if django.VERSION[1] < 4:
     # If the version is NOT django 4 or greater
     # then remove the TZ setting.
 
-    settings.configure(DEBUG=True,
-                       STATIC_URL = '/static/',
-                       DATABASES={
+    settings.configure(
+                        DATABASES={
                            'default': {
                                'ENGINE': 'django.db.backends.sqlite3',
                                }
                        },
-                       INSTALLED_APPS=('django.contrib.auth',
-                                       'django.contrib.contenttypes',
-                                       'django.contrib.sessions',
-                                       'django.contrib.admin',
-                                       'djfrontend',))
+                       ROOT_URLCONF = 'djfrontend.tests.urls',
+                       STATIC_URL = '/static/',
+                       INSTALLED_APPS = (
+                           'django.contrib.staticfiles',
+                           'djfrontend',
+                           )
+                       )
 else:
-    settings.configure(DEBUG=True,
-                       STATIC_URL = '/static/',
-                       DATABASES={
+    settings.configure(DATABASES={
                            'default': {
                                'ENGINE': 'django.db.backends.sqlite3',
                                }
                        },
-                       INSTALLED_APPS=('django.contrib.auth',
-                                       'django.contrib.contenttypes',
-                                       'django.contrib.sessions',
-                                       'django.contrib.admin',
-                                       'djfrontend',),
+                       ROOT_URLCONF = 'djfrontend.tests.urls',
+                       STATIC_URL = '/static/',
+                       INSTALLED_APPS = (
+                           'django.contrib.staticfiles',
+                           'djfrontend',
+                           ),
                        USE_TZ=True)
 
 
