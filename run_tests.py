@@ -15,7 +15,8 @@ if django.VERSION[1] < 4:
                                }
                        },
                        STATIC_URL = '/static/',
-                       INSTALLED_APPS=('djfrontend',))
+                       INSTALLED_APPS = ('djfrontend',)
+                       )
 else:
     settings.configure(DATABASES={
                            'default': {
@@ -23,7 +24,7 @@ else:
                                }
                        },
                        STATIC_URL = '/static/'
-                       INSTALLED_APPS=('djfrontend',),
+                       INSTALLED_APPS = ('djfrontend',)
                        USE_TZ=True)
 
 
