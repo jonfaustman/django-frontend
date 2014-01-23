@@ -8,33 +8,19 @@ if django.VERSION[1] < 4:
     # If the version is NOT django 4 or greater
     # then remove the TZ setting.
 
-    settings.configure(DEBUG=True,
-                       ROOT_URLCONF = 'urls',
-                       STATIC_URL = '/static/',
-                       DATABASES={
+    settings.configure(DATABASES={
                            'default': {
                                'ENGINE': 'django.db.backends.sqlite3',
                                }
                        },
-                       INSTALLED_APPS=('django.contrib.auth',
-                                       'django.contrib.contenttypes',
-                                       'django.contrib.sessions',
-                                       'django.contrib.admin',
-                                       'djfrontend',))
+                       INSTALLED_APPS=('djfrontend',))
 else:
-    settings.configure(DEBUG=True,
-                       ROOT_URLCONF = 'urls',
-                       STATIC_URL = '/static/',
-                       DATABASES={
+    settings.configure(DATABASES={
                            'default': {
                                'ENGINE': 'django.db.backends.sqlite3',
                                }
                        },
-                       INSTALLED_APPS=('django.contrib.auth',
-                                       'django.contrib.contenttypes',
-                                       'django.contrib.sessions',
-                                       'django.contrib.admin',
-                                       'djfrontend',),
+                       INSTALLED_APPS=('djfrontend',),
                        USE_TZ=True)
 
 
