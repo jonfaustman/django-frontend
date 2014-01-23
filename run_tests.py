@@ -9,6 +9,7 @@ if django.VERSION[1] < 4:
     # then remove the TZ setting.
 
     settings.configure(DEBUG=True,
+                       STATIC_URL = '/static/',
                        DATABASES={
                            'default': {
                                'ENGINE': 'django.db.backends.sqlite3',
@@ -22,6 +23,7 @@ if django.VERSION[1] < 4:
                                        'djfrontend',))
 else:
     settings.configure(DEBUG=True,
+                       STATIC_URL = '/static/',
                        DATABASES={
                            'default': {
                                'ENGINE': 'django.db.backends.sqlite3',

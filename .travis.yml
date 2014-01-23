@@ -31,3 +31,10 @@ install:
 
 script:
     - python run_tests.py
+
+notifications:
+    email:
+        recipients:
+          - jon@faustman.org
+        on_success: never
+        on_failure: always
