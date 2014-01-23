@@ -9,6 +9,7 @@ if django.VERSION[1] < 4:
     # then remove the TZ setting.
 
     settings.configure(DEBUG=True,
+                       ROOT_URLCONF = 'urls',
                        STATIC_URL = '/static/',
                        DATABASES={
                            'default': {
@@ -22,6 +23,7 @@ if django.VERSION[1] < 4:
                                        'djfrontend',))
 else:
     settings.configure(DEBUG=True,
+                       ROOT_URLCONF = 'urls',
                        STATIC_URL = '/static/',
                        DATABASES={
                            'default': {
