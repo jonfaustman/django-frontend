@@ -24,7 +24,7 @@ else:
                                }
                        },
                        STATIC_URL = '/static/',
-                       INSTALLED_APPS = ('djfrontend',)
+                       INSTALLED_APPS = ('djfrontend',),
                        USE_TZ=True)
 
 
