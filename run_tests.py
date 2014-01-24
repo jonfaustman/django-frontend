@@ -23,7 +23,7 @@ else:
                                'ENGINE': 'django.db.backends.sqlite3',
                                }
                        },
-                       STATIC_URL = '/static/'
+                       STATIC_URL = '/static/',
                        INSTALLED_APPS = ('djfrontend',)
                        USE_TZ=True)
 
