@@ -16,7 +16,10 @@ if django.VERSION[1] < 4:
                        },
                        ROOT_URLCONF = 'djfrontend.tests.urls',
                        STATIC_URL = '/static/',
-                       INSTALLED_APPS = ('djfrontend',)
+                       INSTALLED_APPS = (
+                           'django.contrib.staticfiles',
+                           'djfrontend',
+                           )
                        )
 else:
     settings.configure(DATABASES={
@@ -26,7 +29,10 @@ else:
                        },
                        ROOT_URLCONF = 'djfrontend.tests.urls',
                        STATIC_URL = '/static/',
-                       INSTALLED_APPS = ('djfrontend',),
+                       INSTALLED_APPS = (
+                           'django.contrib.staticfiles',
+                           'djfrontend',
+                           ),
                        USE_TZ=True)
 
 
