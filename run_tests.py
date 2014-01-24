@@ -14,6 +14,7 @@ if django.VERSION[1] < 4:
                                'ENGINE': 'django.db.backends.sqlite3',
                                }
                        },
+                       ROOT_URLCONF = 'djfrontend.tests.urls',
                        STATIC_URL = '/static/',
                        INSTALLED_APPS = ('djfrontend',)
                        )
@@ -23,6 +24,7 @@ else:
                                'ENGINE': 'django.db.backends.sqlite3',
                                }
                        },
+                       ROOT_URLCONF = 'djfrontend.tests.urls',
                        STATIC_URL = '/static/',
                        INSTALLED_APPS = ('djfrontend',),
                        USE_TZ=True)
