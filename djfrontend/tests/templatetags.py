@@ -12,12 +12,11 @@ class DjfrontendStaticTest(LiveServerTestCase):
     """
 
     # Change settings until StaticLiveServerCase in 1.7!
-    from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-    urlpatterns = staticfiles_urlpatterns()
     settings.DEBUG = True
     
     def test_djfrontend_h5bp_css(self):
         file = self.client.get(self.live_server_url + '/static/djfrontend/css/h5bp/%s/h5bp.css' % DJFRONTEND_H5BP_CSS_DEFAULT)
+        print self.live_server_url
         self.assertEqual(file.status_code, 200)
     
     def test_djfrontend_normalize(self):
