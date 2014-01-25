@@ -36,27 +36,27 @@ script:
 matrix:
     exclude:
         - python: "3.3"
-          env: DJANGO=Django==1.4
+          env: $DJANGO=Django==1.4
         - python: "3.3"
-          env: DJANGO=Django==1.4.1
+          env: $DJANGO=Django==1.4.1
         - python: "3.3"
-          env: DJANGO=Django==1.4.2
+          env: $DJANGO=Django==1.4.2
         - python: "3.3"
-          env: DJANGO=Django==1.4.3
+          env: $DJANGO=Django==1.4.3
         - python: "3.3"
-          env: DJANGO=Django==1.4.4
+          env: $DJANGO=Django==1.4.4
         - python: "3.3"
-          env: DJANGO=Django==1.4.5
+          env: $DJANGO=Django==1.4.5
         - python: "3.3"
-          env: DJANGO=Django==1.4.6
+          env: $DJANGO=Django==1.4.6
         - python: "3.3"
-          env: DJANGO=Django==1.4.7
+          env: $DJANGO=Django==1.4.7
         - python: "3.3"
-          env: DJANGO=Django==1.4.8
+          env: $DJANGO=Django==1.4.8
         - python: "3.3"
-          env: DJANGO=Django==1.4.9
+          env: $DJANGO=Django==1.4.9
         - python: "3.3"
-          env: DJANGO=Django==1.4.10
+          env: $DJANGO=Django==1.4.10
 
 notifications:
     email:
