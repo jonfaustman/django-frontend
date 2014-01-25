@@ -12,3 +12,10 @@ Extend djfrontend's base template in your template(s)
 ::
 
     {% extends 'djfrontend/base.html' %}
+
+Load
+-----
+Load all the djfrontend tags if you want to add or change the template's defaults.
+::
+
+    {% load djfrontend %}

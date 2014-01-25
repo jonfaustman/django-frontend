@@ -1,7 +1,7 @@
 {% load djfrontend %}
 {% block html %}
 <!DOCTYPE html>
-{% djfrontend_h5bp_html 'en' %}
+{% djfrontend_h5bp_html %}
 {% endblock html %}
 <head>
     {% block meta %}
@@ -14,7 +14,7 @@
     {% block head_css %}
     {% endblock head_css %}
     {% block head_js %}
-        {% djfrontend_modernizr '2.6.2' %}
+        {% djfrontend_modernizr %}
     {% endblock head_js %}
 </head>
 <body id="{% block body_id %}{% endblock body_id %}" class="{% block body_class %}{% endblock body_class %}">
@@ -26,7 +26,7 @@
     <![endif]-->
     {% endblock body_content %}
     {% block body_js %}
-        {% djfrontend_jquery '1.10.2' %}
+        {% djfrontend_jquery %}
     {% endblock body_js %}
 </body>
 </html>

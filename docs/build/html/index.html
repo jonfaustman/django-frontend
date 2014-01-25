@@ -47,6 +47,7 @@
             
   <div class="section" id="django-frontend">
 <h1>Django Frontend<a class="headerlink" href="#django-frontend" title="Permalink to this headline">¶</a></h1>
+<a class="reference external image-reference" href="https://travis-ci.org/jonfaustman/django-frontend"><img alt="https://travis-ci.org/jonfaustman/django-frontend.png?branch=feature/wip-tests" src="https://travis-ci.org/jonfaustman/django-frontend.png?branch=feature/wip-tests" /></a>
 <p>Django Frontend is a collection of static files and templates to jumpstart Django front-end development.</p>
 <p>With the convenience of an installable Django application, easily add some of the most widely used static files and create custom templates built on top of one of the most well-known, widespread templates (<a class="reference external" href="https://github.com/h5bp/html5-boilerplate">HTML5 Boilerplate</a> .)</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -63,17 +64,16 @@
 <h2>Starring<a class="headerlink" href="#starring" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/h5bp/html5-boilerplate">HTML5 Boilerplate (based on 4.3.0)</a></li>
-<li><a class="reference external" href="https://github.com/Modernizr/Modernizr">Modernizr (2.6.2)</a></li>
-<li><a class="reference external" href="https://github.com/jquery/jquery">jQuery (1.10.2) and (2.0.3)</a></li>
+<li><a class="reference external" href="https://github.com/Modernizr/Modernizr">Modernizr (2.7.1)</a></li>
+<li><a class="reference external" href="https://github.com/jquery/jquery">jQuery (1.11.0) and (2.1.0)</a></li>
 <li><a class="reference external" href="https://github.com/jquery/jquery-ui">jQuery UI (1.10.3)</a></li>
 <li><a class="reference external" href="https://github.com/DataTables/DataTables">jQuery DataTables (1.9.4)</a></li>
 <li><a class="reference external" href="https://code.google.com/p/django-dynamic-formset">jQuery Dynamic Formset (1.2)</a></li>
-<li><a class="reference external" href="https://github.com/flesler/jquery.scrollTo">jQuery ScrollTo (1.4.6)</a></li>
-<li><a class="reference external" href="https://github.com/kswedberg/jquery-smooth-scroll">jQuery Smooth Scroll (1.4.12)</a></li>
-<li><a class="reference external" href="https://github.com/twbs/bootstrap">Twitter Bootstrap (3.0.0)</a></li>
+<li><a class="reference external" href="https://github.com/flesler/jquery.scrollTo">jQuery ScrollTo (1.4.9)</a></li>
+<li><a class="reference external" href="https://github.com/kswedberg/jquery-smooth-scroll">jQuery Smooth Scroll (1.4.13)</a></li>
+<li><a class="reference external" href="https://github.com/twbs/bootstrap">Twitter Bootstrap (3.0.3)</a></li>
 <li><a class="reference external" href="https://github.com/scottjehl/iOS-Orientationchange-Fix">iOS-Orientationchange-Fix</a></li>
-<li><a class="reference external" href="http://www.famfamfam.com/lab/icons/silk/">famfamfam&#8217;s Silk Icons</a></li>
-<li><a class="reference external" href="https://github.com/FortAwesome/Font-Awesome">Font Awesome (3.2.1)</a></li>
+<li><a class="reference external" href="https://github.com/FortAwesome/Font-Awesome">Font Awesome (4.0.3)</a></li>
 </ul>
 </div>
 <div class="section" id="contents">
@@ -83,10 +83,29 @@
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#install">Install</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#extend">Extend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#load">Load</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="granularity.html">Granularity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="template_tags.html">Template tags</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend">djfrontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend-h5bp-html">djfrontend_h5bp_html</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend-h5bp-css">djfrontend_h5bp_css</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend-normalize">djfrontend_normalize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend-fontawesome">djfrontend_fontawesome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend-modernizr">djfrontend_modernizr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend-jquery">djfrontend_jquery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend-jqueryui">djfrontend_jqueryui</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend-jquery-datatables">djfrontend_jquery_datatables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend-jquery-datatables-css">djfrontend_jquery_datatables_css</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend-jquery-formset">djfrontend_jquery_formset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend-jquery-scrollto">djfrontend_jquery_scrollto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend-jquery-smoothscroll">djfrontend_jquery_smoothscroll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend-twbs-css">djfrontend_twbs_css</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend-twbs-theme-css">djfrontend_twbs_theme_css</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend-twbs-js">djfrontend_twbs_js</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend-ga">djfrontend_ga</a></li>
+<li class="toctree-l2"><a class="reference internal" href="template_tags.html#djfrontend-ios-fix">djfrontend_ios_fix</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="template_blocks.html">Template blocks</a><ul>
@@ -98,6 +117,31 @@
 <li class="toctree-l2"><a class="reference internal" href="template_blocks.html#body-class">body_class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="template_blocks.html#body-content">body_content</a></li>
 <li class="toctree-l2"><a class="reference internal" href="template_blocks.html#body-js">body_js</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="optional_settings.html">Optional Settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-static-url">DJFRONTEND_STATIC_URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-h5bp-html">DJFRONTEND_H5BP_HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-h5bp-css">DJFRONTEND_H5BP_CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-normalize">DJFRONTEND_NORMALIZE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-fontawesome">DJFRONTEND_FONTAWESOME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-modernizr">DJFRONTEND_MODERNIZR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-jquery">DJFRONTEND_JQUERY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-jqueryui">DJFRONTEND_JQUERYUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-jquery-datatables-version">DJFRONTEND_JQUERY_DATATABLES_VERSION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-jquery-datatables">DJFRONTEND_JQUERY_DATATABLES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-jquery-datatables-css">DJFRONTEND_JQUERY_DATATABLES_CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-jquery-formset">DJFRONTEND_JQUERY_FORMSET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-jquery-scrollto">DJFRONTEND_JQUERY_SCROLLTO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-jquery-smoothscroll">DJFRONTEND_JQUERY_SMOOTHSCROLL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-twbs-version">DJFRONTEND_TWBS_VERSION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-twbs-css">DJFRONTEND_TWBS_CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-twbs-theme-css">DJFRONTEND_TWBS_THEME_CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-twbs-js-version">DJFRONTEND_TWBS_JS_VERSION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-twbs-js-files">DJFRONTEND_TWBS_JS_FILES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-ga">DJFRONTEND_GA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-ga-setdomainname">DJFRONTEND_GA_SETDOMAINNAME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional_settings.html#djfrontend-ga-setallowlinker">DJFRONTEND_GA_SETALLOWLINKER</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a><ul>
