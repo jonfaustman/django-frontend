@@ -24,6 +24,7 @@ env:
     - DJANGO=1.5.4
     - DJANGO=1.5.5
     - DJANGO=1.6
+    - DJANGO=1.6.1
 
 install:
     - pip install Django==$DJANGO
@@ -31,6 +32,31 @@ install:
 
 script:
     - python run_tests.py
+
+matrix:
+    exclude:
+        - python: "3.3"
+        env: DJANGO=Django==1.4
+        - python: "3.3"
+        env: DJANGO=Django==1.4.1
+        - python: "3.3"
+        env: DJANGO=Django==1.4.2
+        - python: "3.3"
+        env: DJANGO=Django==1.4.3
+        - python: "3.3"
+        env: DJANGO=Django==1.4.4
+        - python: "3.3"
+        env: DJANGO=Django==1.4.5
+        - python: "3.3"
+        env: DJANGO=Django==1.4.6
+        - python: "3.3"
+        env: DJANGO=Django==1.4.7
+        - python: "3.3"
+        env: DJANGO=Django==1.4.8
+        - python: "3.3"
+        env: DJANGO=Django==1.4.9
+        - python: "3.3"
+        env: DJANGO=Django==1.4.10
 
 notifications:
     email:
