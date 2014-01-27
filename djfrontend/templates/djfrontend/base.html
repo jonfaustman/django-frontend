@@ -19,9 +19,9 @@
 </head>
 <body id="{% block body_id %}{% endblock body_id %}" class="{% block body_class %}{% endblock body_class %}">
     {% block body_content %}
-    <!--[if lt IE 7]>
-        <div class="alert alert-warning">
-            <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <!--[if lte IE 8]>
+        <div class="alert alert-warning ie-warning">
+            <p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         </div>
     <![endif]-->
     {% endblock body_content %}
