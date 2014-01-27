@@ -18,7 +18,7 @@ Returns HTML tag according to chosen language. The default, 'en' is used if anot
 
     {% djfrontend_h5bp_html %}
     
-renders
+renders:
 
 ::
 
@@ -31,7 +31,7 @@ Returns HTML5 Boilerplate CSS file according to version number. The default vers
 
     {% djfrontend_h5bp_css %}
     
-renders
+renders:
 
 ::
 
@@ -44,7 +44,7 @@ Returns Normalize CSS file according to version number. The default version is t
 
     {% djfrontend_normalize %}
     
-renders
+renders:
 
 ::
 
@@ -57,13 +57,13 @@ Returns Font Awesome CSS file according to version number. TEMPLATE_DEBUG return
 
     {% djfrontend_fontawesome %}
     
-renders
+renders:
 
 ::
 
     <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/4.0.3/font-awesome.css">
 
-Or
+Or without TEMPLATE_DEBUG:
 
 ::
 
@@ -76,13 +76,13 @@ Returns Modernizr JavaScript file according to version number. TEMPLATE_DEBUG re
 
     {% djfrontend_modernizr %}
     
-renders
+renders:
 
 ::
 
     <script src="/static/djfrontend/js/modernizr/2.7.1/modernizr.js"></script>
 
-Or
+Or without TEMPLATE_DEBUG:
 
 ::
 
@@ -91,43 +91,43 @@ Or
 
 djfrontend_jquery
 ------------------
-Returns jQuery JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included '1.10.2'.
+Returns jQuery JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included '1.11.0'.
 ::
 
     {% djfrontend_jquery %}
     
-renders
+renders:
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/1.10.2/jquery.js"></script>
+    <script src="/static/djfrontend/js/jquery/1.11.0/jquery.js"></script>
 
-Or
+Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/static/djfrontend/js/jquery/1.10.2/jquery.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/static/djfrontend/js/jquery/1.11.0/jquery.min.js"><\/script>')</script>
 
 djfrontend_jqueryui
 ---------------------
-Returns jQuery UI plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included '1.10.3'.
+Returns jQuery UI plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included '1.10.4'.
 ::
 
     {% djfrontend_jqueryui %}
     
-renders
+renders:
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/jqueryui/1.10.3/jquery-ui.js"></script>
+    <script src="/static/djfrontend/js/jquery/jqueryui/1.10.4/jquery-ui.js"></script>
 
-Or
+Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>' % v,
-    <script>window.jQuery.ui || document.write(\'<script src="/static/djfrontend/js/jquery/jqueryui/1.10.3/jquery-ui.min.js"><\/script>\')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>' % v,
+    <script>window.jQuery.ui || document.write(\'<script src="/static/djfrontend/js/jquery/jqueryui/1.10.4/jquery-ui.min.js"><\/script>\')</script>
 
 djfrontend_jquery_datatables
 -----------------------------
@@ -136,13 +136,13 @@ Returns the jQuery DataTables plugin JavaScript file according to version number
 
     {% djfrontend_jquery_datatables %}
     
-renders
+renders:
 
 ::
 
     <script src="/static/djfrontend/js/jquery/jquery.dataTables/1.9.4/jquery.dataTables.js"></script>
 
-Or
+Or without TEMPLATE_DEBUG:
 
 ::
 
@@ -156,7 +156,7 @@ Returns the jQuery DataTables CSS file according to version number. The default 
 
     {% djfrontend_jquery_datatables_css %}
     
-renders
+renders:
 
 ::
 
@@ -169,13 +169,13 @@ Returns the jQuery Dynamic Formset plugin JavaScript file according to version n
 
     {% djfrontend_jquery_formset %}
     
-renders
+renders:
 
 ::
 
     <script src="/static/djfrontend/js/jquery/jquery.formset/1.2/jquery.formset.js"></script>
 
-Or
+Or without TEMPLATE_DEBUG:
 
 ::
 
@@ -189,13 +189,13 @@ Returns the jQuery ScrollTo plugin JavaScript file according to version number. 
 
     {% djfrontend_jquery_scrollto %}
     
-renders
+renders:
 
 ::
 
     <script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.9/jquery.scrollTo.js"></script>
 
-Or
+Or without TEMPLATE_DEBUG:
 
 ::
 
@@ -209,13 +209,13 @@ Returns the jQuery Smooth Scroll plugin JavaScript file according to version num
 
     {% djfrontend_jquery_smoothscroll %}
     
-renders
+renders:
 
 ::
 
     <script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.4.13/jquery.smooth-scroll.js"></script>
 
-Or
+Or without TEMPLATE_DEBUG:
 
 ::
 
@@ -229,13 +229,13 @@ Returns Twitter Bootstrap CSS file according to version number. TEMPLATE_DEBUG r
 
     {% djfrontend_twbs_css %}
     
-renders
+renders:
 
 ::
 
     <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap.css">
 
-Or
+Or without TEMPLATE_DEBUG:
 
 ::
 
@@ -248,13 +248,13 @@ Returns Twitter Bootstrap Theme CSS file according to version number. The defaul
 
     {% djfrontend_twbs_theme_css %}
     
-renders
+renders:
 
 ::
 
     <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap-theme.css">
 
-Or
+Or without TEMPLATE_DEBUG:
 
 ::
 
@@ -283,13 +283,13 @@ Individual files are not minified.
 
     {% boostrap_js %}
     
-renders
+renders:
 
 ::
 
     <script src="/static/djfrontend/js/twbs/3.0.3/bootstrap.js"></script>
 
-Or
+Or without TEMPLATE_DEBUG:
 
 ::
 
@@ -300,7 +300,7 @@ Or
 
     {% bootstrap_js files='alert affix' %}
 
-renders
+renders:
 
 ::
 
@@ -311,20 +311,18 @@ Shout out to Ryan Brady and his `Django Bootstrapped <https://github.com/rbrady/
 
 djfrontend_ga
 --------------
-Returns Google Analytics Universal Analytics snippet if TEMPLATE_DEBUG is not set.
-Use DJFRONTEND_GA_SETDOMAINNAME to set domain for multiple, or cross-domain tracking.
-Set DJFRONTEND_GA_SETALLOWLINKER to use _setAllowLinker method on target site for cross-domain tracking.
+Returns Google Analytics Universal Analytics snippet if TEMPLATE_DEBUG is not set. Use DJFRONTEND_GA_SETDOMAINNAME to set domain for multiple, or cross-domain tracking. Set DJFRONTEND_GA_SETALLOWLINKER to use _setAllowLinker method on target site for cross-domain tracking.
 ::
 
     <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-XXXXX-X", "auto");ga("send", "pageview");</script>
 
-Or
+Or with DJFRONTEND_GA_SETDOMAINNAME set:
 
 ::
 
     <script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-XXXXX-X", "example.com");ga("send", "pageview");</script>
 
-Or
+Or with DJFRONTEND_GA_SETDOMAINNAME and DJFRONTEND_GA_SETALLOWLINKER set:
 
 ::
 

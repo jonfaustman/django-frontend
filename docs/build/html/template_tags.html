@@ -64,7 +64,7 @@
 <p>Returns HTML tag according to chosen language. The default, &#8216;en&#8217; is used if another language is not set.</p>
 <div class="highlight-python"><pre>{% djfrontend_h5bp_html %}</pre>
 </div>
-<p>renders</p>
+<p>renders:</p>
 <div class="highlight-python"><pre>&lt;html class="no-js" lang="en"&gt;</pre>
 </div>
 </div>
@@ -73,7 +73,7 @@
 <p>Returns HTML5 Boilerplate CSS file according to version number. The default version is the included &#8216;4.3.0&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_h5bp_css %}</pre>
 </div>
-<p>renders</p>
+<p>renders:</p>
 <div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/h5bp/4.3.0/h5bp.css"&gt;</pre>
 </div>
 </div>
@@ -82,7 +82,7 @@
 <p>Returns Normalize CSS file according to version number. The default version is the included &#8216;2.1.3&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_normalize %}</pre>
 </div>
-<p>renders</p>
+<p>renders:</p>
 <div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/normalize/2.1.3/normalize.css"&gt;</pre>
 </div>
 </div>
@@ -91,10 +91,10 @@
 <p>Returns Font Awesome CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file. The default version is the included &#8216;4.0.3&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_fontawesome %}</pre>
 </div>
-<p>renders</p>
+<p>renders:</p>
 <div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/fontawesome/4.0.3/font-awesome.css"&gt;</pre>
 </div>
-<p>Or</p>
+<p>Or without TEMPLATE_DEBUG:</p>
 <div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/fontawesome/4.0.3/font-awesome.min.css"&gt;</pre>
 </div>
 </div>
@@ -103,38 +103,38 @@
 <p>Returns Modernizr JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local callback. The default version is the included &#8216;2.7.1&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_modernizr %}</pre>
 </div>
-<p>renders</p>
+<p>renders:</p>
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/modernizr/2.7.1/modernizr.js"&gt;&lt;/script&gt;</pre>
 </div>
-<p>Or</p>
+<p>Or without TEMPLATE_DEBUG:</p>
 <div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"&gt;&lt;/script&gt;' % v,
 &lt;script&gt;window.Modernizr || document.write(\'&lt;script src="static/djfrontend/js/modernizr/2.7.1/modernizr.min.js"&gt;&lt;\/script&gt;\')&lt;/script&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-jquery">
 <h2>djfrontend_jquery<a class="headerlink" href="#djfrontend-jquery" title="Permalink to this headline">¶</a></h2>
-<p>Returns jQuery JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included &#8216;1.10.2&#8217;.</p>
+<p>Returns jQuery JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included &#8216;1.11.0&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_jquery %}</pre>
 </div>
-<p>renders</p>
-<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/1.10.2/jquery.js"&gt;&lt;/script&gt;</pre>
+<p>renders:</p>
+<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/1.11.0/jquery.js"&gt;&lt;/script&gt;</pre>
 </div>
-<p>Or</p>
-<div class="highlight-python"><pre>&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"&gt;&lt;/script&gt;
-&lt;script&gt;window.jQuery || document.write('&lt;script src="/static/djfrontend/js/jquery/1.10.2/jquery.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
+<p>Or without TEMPLATE_DEBUG:</p>
+<div class="highlight-python"><pre>&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;window.jQuery || document.write('&lt;script src="/static/djfrontend/js/jquery/1.11.0/jquery.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-jqueryui">
 <h2>djfrontend_jqueryui<a class="headerlink" href="#djfrontend-jqueryui" title="Permalink to this headline">¶</a></h2>
-<p>Returns jQuery UI plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included &#8216;1.10.3&#8217;.</p>
+<p>Returns jQuery UI plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included &#8216;1.10.4&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_jqueryui %}</pre>
 </div>
-<p>renders</p>
-<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jqueryui/1.10.3/jquery-ui.js"&gt;&lt;/script&gt;</pre>
+<p>renders:</p>
+<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jqueryui/1.10.4/jquery-ui.js"&gt;&lt;/script&gt;</pre>
 </div>
-<p>Or</p>
-<div class="highlight-python"><pre>&lt;script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"&gt;&lt;/script&gt;' % v,
-&lt;script&gt;window.jQuery.ui || document.write(\'&lt;script src="/static/djfrontend/js/jquery/jqueryui/1.10.3/jquery-ui.min.js"&gt;&lt;\/script&gt;\')&lt;/script&gt;</pre>
+<p>Or without TEMPLATE_DEBUG:</p>
+<div class="highlight-python"><pre>&lt;script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"&gt;&lt;/script&gt;' % v,
+&lt;script&gt;window.jQuery.ui || document.write(\'&lt;script src="/static/djfrontend/js/jquery/jqueryui/1.10.4/jquery-ui.min.js"&gt;&lt;\/script&gt;\')&lt;/script&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-jquery-datatables">
@@ -142,10 +142,10 @@
 <p>Returns the jQuery DataTables plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included &#8216;1.9.4&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_jquery_datatables %}</pre>
 </div>
-<p>renders</p>
+<p>renders:</p>
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.dataTables/1.9.4/jquery.dataTables.js"&gt;&lt;/script&gt;</pre>
 </div>
-<p>Or</p>
+<p>Or without TEMPLATE_DEBUG:</p>
 <div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;window.jQuery.fn.DataTable || document.write('&lt;script src="/static/djfrontend/js/jquery/jquery.dataTables/1.9.4/jquery.dataTables.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
 </div>
@@ -155,7 +155,7 @@
 <p>Returns the jQuery DataTables CSS file according to version number. The default version is the included &#8216;1.9.4&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_jquery_datatables_css %}</pre>
 </div>
-<p>renders</p>
+<p>renders:</p>
 <div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.9.4/jquery.dataTables.css"&gt;</pre>
 </div>
 </div>
@@ -164,10 +164,10 @@
 <p>Returns the jQuery Dynamic Formset plugin JavaScript file according to version number. TTEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included &#8216;1.2&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_jquery_formset %}</pre>
 </div>
-<p>renders</p>
+<p>renders:</p>
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.formset/1.2/jquery.formset.js"&gt;&lt;/script&gt;</pre>
 </div>
-<p>Or</p>
+<p>Or without TEMPLATE_DEBUG:</p>
 <div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2/jquery.formset.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;window.jQuery.fn.formset || document.write('&lt;script src="/static/djfrontend/js/jquery/jquery.formset/1.2/jquery.formset.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
 </div>
@@ -177,10 +177,10 @@
 <p>Returns the jQuery ScrollTo plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included &#8216;1.4.9&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_jquery_scrollto %}</pre>
 </div>
-<p>renders</p>
+<p>renders:</p>
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.9/jquery.scrollTo.js"&gt;&lt;/script&gt;</pre>
 </div>
-<p>Or</p>
+<p>Or without TEMPLATE_DEBUG:</p>
 <div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.9/jquery.scrollTo.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;window.jQuery.fn.scrollTo || document.write('&lt;script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.9/jquery.scrollTo.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
 </div>
@@ -190,10 +190,10 @@
 <p>Returns the jQuery Smooth Scroll plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included &#8216;1.4.13&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_jquery_smoothscroll %}</pre>
 </div>
-<p>renders</p>
+<p>renders:</p>
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.4.13/jquery.smooth-scroll.js"&gt;&lt;/script&gt;</pre>
 </div>
-<p>Or</p>
+<p>Or without TEMPLATE_DEBUG:</p>
 <div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.4.13/jquery.smooth-scroll.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;window.jQuery.fn.smoothScroll || document.write('&lt;script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.4.13/jquery.smooth-scroll.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
 </div>
@@ -203,10 +203,10 @@
 <p>Returns Twitter Bootstrap CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file. The default version is the included &#8216;3.0.3&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_twbs_css %}</pre>
 </div>
-<p>renders</p>
+<p>renders:</p>
 <div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap.css"&gt;</pre>
 </div>
-<p>Or</p>
+<p>Or without TEMPLATE_DEBUG:</p>
 <div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap.min.css"&gt;</pre>
 </div>
 </div>
@@ -215,10 +215,10 @@
 <p>Returns Twitter Bootstrap Theme CSS file according to version number. The default version is the included &#8216;3.0.3&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_twbs_theme_css %}</pre>
 </div>
-<p>renders</p>
+<p>renders:</p>
 <div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap-theme.css"&gt;</pre>
 </div>
-<p>Or</p>
+<p>Or without TEMPLATE_DEBUG:</p>
 <div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap-theme.min.css"&gt;</pre>
 </div>
 </div>
@@ -242,16 +242,16 @@
 <p>Individual files are not minified.</p>
 <div class="highlight-python"><pre>{% boostrap_js %}</pre>
 </div>
-<p>renders</p>
+<p>renders:</p>
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.0.3/bootstrap.js"&gt;&lt;/script&gt;</pre>
 </div>
-<p>Or</p>
+<p>Or without TEMPLATE_DEBUG:</p>
 <div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;window.jQuery.fn.scrollspy || document.write('&lt;script src="/static/djfrontend/js/twbs/3.0.3/bootstrap.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
 </div>
 <div class="highlight-python"><pre>{% bootstrap_js files='alert affix' %}</pre>
 </div>
-<p>renders</p>
+<p>renders:</p>
 <div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.0.3/bootstrap-affix.js"&gt;&lt;/script&gt;
 &lt;script src="/static/djfrontend/js/twbs/3.0.3/bootstrap-alert.js"&gt;&lt;/script&gt;</pre>
 </div>
@@ -259,15 +259,13 @@
 </div>
 <div class="section" id="djfrontend-ga">
 <h2>djfrontend_ga<a class="headerlink" href="#djfrontend-ga" title="Permalink to this headline">¶</a></h2>
-<p>Returns Google Analytics Universal Analytics snippet if TEMPLATE_DEBUG is not set.
-Use DJFRONTEND_GA_SETDOMAINNAME to set domain for multiple, or cross-domain tracking.
-Set DJFRONTEND_GA_SETALLOWLINKER to use _setAllowLinker method on target site for cross-domain tracking.</p>
+<p>Returns Google Analytics Universal Analytics snippet if TEMPLATE_DEBUG is not set. Use DJFRONTEND_GA_SETDOMAINNAME to set domain for multiple, or cross-domain tracking. Set DJFRONTEND_GA_SETALLOWLINKER to use _setAllowLinker method on target site for cross-domain tracking.</p>
 <div class="highlight-python"><pre>&lt;script&gt;(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-XXXXX-X", "auto");ga("send", "pageview");&lt;/script&gt;</pre>
 </div>
-<p>Or</p>
+<p>Or with DJFRONTEND_GA_SETDOMAINNAME set:</p>
 <div class="highlight-python"><pre>&lt;script&gt;(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-XXXXX-X", "example.com");ga("send", "pageview");&lt;/script&gt;</pre>
 </div>
-<p>Or</p>
+<p>Or with DJFRONTEND_GA_SETDOMAINNAME and DJFRONTEND_GA_SETALLOWLINKER set:</p>
 <div class="highlight-python"><pre>&lt;script&gt;(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("require", "linker");ga("linker:autoLink", ["example.com"]);ga("create", "UA-XXXXX-X", "auto", {"allowLinker": true});ga("send", "pageview");&lt;/script&gt;</pre>
 </div>
 </div>

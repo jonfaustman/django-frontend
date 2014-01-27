@@ -23,6 +23,7 @@ Changelog
 * Added meta_viewport block.
 * Updated H5BP CSS to master.
 * Updated normalize.css to v2.1.3.
+* Updated Google Analytics snippets to Universal Analytics.
 
 0.4.0
 ------
