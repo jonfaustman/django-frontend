@@ -6,6 +6,7 @@ Component Specific Licenses
 ----------------------------
 * HTML5 Boilerplate: MIT License
 * Modernizr: MIT License
+* normalize.css: MIT License
 * jQuery: MIT License
 * jQuery UI: MIT License
 * jQuery DataTables: Dual GPL v2.0 and BSD License
