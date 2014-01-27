@@ -15,13 +15,7 @@ def djfrontend_h5bp_html(language=None):
     if language is None:
         language = getattr(settings, 'DJFRONTEND_H5BP_HTML', DJFRONTEND_H5BP_HTML_DEFAULT)
     
-    output=[
-        '<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="%s"> <![endif]-->' % language,
-        '<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="%s"> <![endif]-->' % language,
-        '<!--[if IE 8]>    <html class="no-js lt-ie9" lang="%s"> <![endif]-->' % language,
-        '<!--[if gt IE 8]><!--> <html class="no-js" lang="%s"> <!--<![endif]-->' % language,
-    ]
-    return '\n'.join(output)
+    return '<html class="no-js" lang="%s">' % language
 
 
 @register.simple_tag
