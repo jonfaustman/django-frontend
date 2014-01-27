@@ -1,7 +1,7 @@
 Django Frontend
 ===============
 
-.. image:: https://travis-ci.org/jonfaustman/django-frontend.png?branch=feature/wip
+.. image:: https://travis-ci.org/jonfaustman/django-frontend.png?branch=master
     :target: https://travis-ci.org/jonfaustman/django-frontend
 
 Django Frontend is a collection of static files and templates to jumpstart Django front-end development.
