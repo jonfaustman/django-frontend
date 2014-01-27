@@ -22,10 +22,7 @@ renders
 
 ::
 
-    <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-    <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-    <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-    <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <html class="no-js" lang="en">
 
 djfrontend_h5bp_css
 ---------------------
@@ -42,7 +39,7 @@ renders
 
 djfrontend_normalize
 ---------------------
-Returns Normalize CSS file according to version number. The default version is the included '1.1.3'.
+Returns Normalize CSS file according to version number. The default version is the included '2.1.3'.
 ::
 
     {% djfrontend_normalize %}
@@ -51,7 +48,7 @@ renders
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/normalize/1.1.3/normalize.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/normalize/2.1.3/normalize.css">
 
 djfrontend_fontawesome
 ------------------------

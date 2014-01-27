@@ -1,7 +1,7 @@
 Django Frontend
 ===============
 
-.. image:: https://travis-ci.org/jonfaustman/django-frontend.png?branch=feature/wip-tests
+.. image:: https://travis-ci.org/jonfaustman/django-frontend.png?branch=feature/wip
     :target: https://travis-ci.org/jonfaustman/django-frontend
 
 Django Frontend is a collection of static files and templates to jumpstart Django front-end development.
@@ -13,8 +13,9 @@ With the convenience of an installable Django application, easily add some of th
 
 Starring
 ---------
-* `HTML5 Boilerplate (based on 4.3.0) <https://github.com/h5bp/html5-boilerplate>`_
+* `HTML5 Boilerplate (based on 4.3.0/master) <https://github.com/h5bp/html5-boilerplate>`_
 * `Modernizr (2.7.1) <https://github.com/Modernizr/Modernizr>`_
+* `normalize.css (2.1.3) <https://github.com/necolas/normalize.css>`_
 * `jQuery (1.11.0) and (2.1.0) <https://github.com/jquery/jquery>`_
 * `jQuery UI (1.10.4) <https://github.com/jquery/jquery-ui>`_
 * `jQuery DataTables (1.9.4) <https://github.com/DataTables/DataTables>`_
