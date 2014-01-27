@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Granularity &mdash; django-frontend 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="django-frontend 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="Template tags" href="template_tags.html" />
+    <link rel="prev" title="Getting Started" href="getting_started.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="template_tags.html" title="Template tags"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="getting_started.html" title="Getting Started"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">django-frontend 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="granularity">
+<h1>Granularity<a class="headerlink" href="#granularity" title="Permalink to this headline">¶</a></h1>
+<p>Version 1.0.0 introduced a new level of granularity by including template tags with a default value, which can be overriden in settings, which in turn can be overridden by passing the template tag an argument. This allows you to change default values within settings, while giving a template tag final word.</p>
+<p>If you use an optional value other than the ones listed, you will have to add the files into the same directory structure as djfrontend.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="36%" />
+<col width="14%" />
+<col width="18%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Template tag</th>
+<th class="head">Setting</th>
+<th class="head">Default Value</th>
+<th class="head">Optional Value(s)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&nbsp;</td>
+<td>DJFRONTEND_STATIC_URL</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>djfrontend_h5bp_html</td>
+<td>DJFRONTEND_H5BP_HTML</td>
+<td>en</td>
+<td>ISO 639-1 codes</td>
+</tr>
+<tr class="row-even"><td>djfrontend_h5bp_css</td>
+<td>DJFRONTEND_H5BP_CSS</td>
+<td>4.0.3</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>djfrontend_normalize</td>
+<td>DJFRONTEND_NORMALIZE</td>
+<td>2.1.3</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>djfrontend_fontawesome</td>
+<td>DJFRONTEND_FONTAWESOME</td>
+<td>4.0.3</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>djfrontend_modernizr</td>
+<td>DJFRONTEND_MODERNIZR</td>
+<td>2.7.1</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>djfrontend_jquery</td>
+<td>DJFRONTEND_JQUERY</td>
+<td>1.11.0</td>
+<td>2.1.0</td>
+</tr>
+<tr class="row-odd"><td>djfrontend_jqueryui</td>
+<td>DJFRONTEND_JQUERYUI</td>
+<td>1.10.4</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>DJFRONTEND_JQUERY_DATATABLES_VERSION</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>djfrontend_jquery_datatables</td>
+<td>DJFRONTEND_JQUERY_DATATABLES</td>
+<td>1.9.4</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>djfrontend_jquery_datatables_css</td>
+<td>DJFRONTEND_JQUERY_DATATABLES_CSS</td>
+<td>1.9.4</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>djfrontend_jquery_formset</td>
+<td>DJFRONTEND_JQUERY_FORMSET</td>
+<td>1.2</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>djfrontend_jquery_scrollto</td>
+<td>DJFRONTEND_JQUERY_SCROLLTO</td>
+<td>1.4.9</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>djfrontend_jquery_smoothscroll</td>
+<td>DJFRONTEND_JQUERY_SMOOTHSCROLL</td>
+<td>1.4.13</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>DJFRONTEND_TWBS_VERSION</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>djfrontend_twbs_css</td>
+<td>DJFRONTEND_TWBS_CSS</td>
+<td>3.0.3</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>djfrontend_twbs_theme_css</td>
+<td>DJFRONTEND_TWBS_THEME_CSS</td>
+<td>3.0.3</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>djfrontend_twbs_js</td>
+<td>DJFRONTEND_TWBS_JS_VERSION
+DJFRONTEND_TWBS_JS_FILES</td>
+<td>3.0.3
+all</td>
+<td><ul class="first last simple">
+<li>affix</li>
+<li>alert</li>
+<li>button</li>
+<li>carousel</li>
+<li>collapse</li>
+<li>dropdown</li>
+<li>modal</li>
+<li>popover</li>
+<li>scrollspy</li>
+<li>tab</li>
+<li>tooltip</li>
+<li>transition</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>djfrontend_ga</td>
+<td>DJFRONTEND_GA</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>&nbsp;</td>
+<td>DJFRONTEND_GA_SETDOMAINNAME</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>&nbsp;</td>
+<td>DJFRONTEND_GA_SETALLOWLINKER</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>djfrontend_ios_fix</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="getting_started.html"
+                        title="previous chapter">Getting Started</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="template_tags.html"
+                        title="next chapter">Template tags</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/granularity.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="template_tags.html" title="Template tags"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="getting_started.html" title="Getting Started"
+             >previous</a> |</li>
+        <li><a href="index.html">django-frontend 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Jon Faustman.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

@@ -6,16 +6,16 @@ html
 -----
 Override the HTML doctype, or use in conjunction with {% djfrontend_h5bp_html '' %} to change the HTML lang attribute.
 
-meta
------
-Override or extend meta tags and the title tag.
-
 title
-~~~~~~
+------
 Add your application specific title to the title tag.
 
+meta_viewport
+--------------
+Override the default meta viewport's content attribute.
+
 meta_description
-~~~~~~~~~~~~~~~~~~
+------------------
 Add your application specific information to the meta description.
 
 head_css

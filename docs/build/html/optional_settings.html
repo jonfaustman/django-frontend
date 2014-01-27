@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Optional Settings &mdash; django-frontend 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="django-frontend 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="License" href="license.html" />
+    <link rel="prev" title="Template blocks" href="template_blocks.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="license.html" title="License"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="template_blocks.html" title="Template blocks"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">django-frontend 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="optional-settings">
+<h1>Optional Settings<a class="headerlink" href="#optional-settings" title="Permalink to this headline">¶</a></h1>
+<p>For greater granularity, you can optionally set versions of included files through your settings.</p>
+<p>Settings are overridden if also set within a template.</p>
+<div class="section" id="djfrontend-static-url">
+<h2>DJFRONTEND_STATIC_URL<a class="headerlink" href="#djfrontend-static-url" title="Permalink to this headline">¶</a></h2>
+<p>Set a dedicated static server or CDN for serving static files.</p>
+</div>
+<div class="section" id="djfrontend-h5bp-html">
+<h2>DJFRONTEND_H5BP_HTML<a class="headerlink" href="#djfrontend-h5bp-html" title="Permalink to this headline">¶</a></h2>
+<p>Sets the lang attribute value.</p>
+</div>
+<div class="section" id="djfrontend-h5bp-css">
+<h2>DJFRONTEND_H5BP_CSS<a class="headerlink" href="#djfrontend-h5bp-css" title="Permalink to this headline">¶</a></h2>
+<p>Sets the version of the HTML5 Boilerplate CSS file.</p>
+</div>
+<div class="section" id="djfrontend-normalize">
+<h2>DJFRONTEND_NORMALIZE<a class="headerlink" href="#djfrontend-normalize" title="Permalink to this headline">¶</a></h2>
+<p>Sets the version of the Normalize CSS file.</p>
+</div>
+<div class="section" id="djfrontend-fontawesome">
+<h2>DJFRONTEND_FONTAWESOME<a class="headerlink" href="#djfrontend-fontawesome" title="Permalink to this headline">¶</a></h2>
+<p>Sets the version of the Font Awesome CSS file.</p>
+</div>
+<div class="section" id="djfrontend-modernizr">
+<h2>DJFRONTEND_MODERNIZR<a class="headerlink" href="#djfrontend-modernizr" title="Permalink to this headline">¶</a></h2>
+<p>Sets the version of the Modernizr JavaScript file.</p>
+</div>
+<div class="section" id="djfrontend-jquery">
+<h2>DJFRONTEND_JQUERY<a class="headerlink" href="#djfrontend-jquery" title="Permalink to this headline">¶</a></h2>
+<p>Sets the version of the jQuery JavaScript file.</p>
+</div>
+<div class="section" id="djfrontend-jqueryui">
+<h2>DJFRONTEND_JQUERYUI<a class="headerlink" href="#djfrontend-jqueryui" title="Permalink to this headline">¶</a></h2>
+<p>Sets the version of the jQuery UI file.</p>
+</div>
+<div class="section" id="djfrontend-jquery-datatables-version">
+<h2>DJFRONTEND_JQUERY_DATATABLES_VERSION<a class="headerlink" href="#djfrontend-jquery-datatables-version" title="Permalink to this headline">¶</a></h2>
+<p>Sets the version of the jQuery DataTables JavaScript and CSS file. Can be overridden by &#8216;DJFRONTEND_JQUERY_DATATABLES&#8217; or &#8216;DJFRONTEND_JQUERY_DATATABLES_CSS&#8217;.</p>
+</div>
+<div class="section" id="djfrontend-jquery-datatables">
+<h2>DJFRONTEND_JQUERY_DATATABLES<a class="headerlink" href="#djfrontend-jquery-datatables" title="Permalink to this headline">¶</a></h2>
+<p>Sets the version of the jQuery DataTables JavaScript file.</p>
+</div>
+<div class="section" id="djfrontend-jquery-datatables-css">
+<h2>DJFRONTEND_JQUERY_DATATABLES_CSS<a class="headerlink" href="#djfrontend-jquery-datatables-css" title="Permalink to this headline">¶</a></h2>
+<p>Sets the version of the jQuery DataTables CSS file.</p>
+</div>
+<div class="section" id="djfrontend-jquery-formset">
+<h2>DJFRONTEND_JQUERY_FORMSET<a class="headerlink" href="#djfrontend-jquery-formset" title="Permalink to this headline">¶</a></h2>
+<p>Sets the version of the jQuery Dynamic Formset JavaScript file.</p>
+</div>
+<div class="section" id="djfrontend-jquery-scrollto">
+<h2>DJFRONTEND_JQUERY_SCROLLTO<a class="headerlink" href="#djfrontend-jquery-scrollto" title="Permalink to this headline">¶</a></h2>
+<p>Sets the version of the jQuery ScrollTo JavaScript file.</p>
+</div>
+<div class="section" id="djfrontend-jquery-smoothscroll">
+<h2>DJFRONTEND_JQUERY_SMOOTHSCROLL<a class="headerlink" href="#djfrontend-jquery-smoothscroll" title="Permalink to this headline">¶</a></h2>
+<p>Sets the version of the jQuery SmoothScroll JavaScript file.</p>
+</div>
+<div class="section" id="djfrontend-twbs-version">
+<h2>DJFRONTEND_TWBS_VERSION<a class="headerlink" href="#djfrontend-twbs-version" title="Permalink to this headline">¶</a></h2>
+<p>Sets the version of Twitter Bootstrap&#8217;s JavaScript and CSS file(s). Can be overridden by &#8216;DJFRONTEND_TWBS_CSS&#8217;, &#8216;DJFRONTEND_TWBS_THEME_CSS&#8217; or &#8216;DJFRONTEND_TWBS_JS_VERSION&#8217;.</p>
+</div>
+<div class="section" id="djfrontend-twbs-css">
+<h2>DJFRONTEND_TWBS_CSS<a class="headerlink" href="#djfrontend-twbs-css" title="Permalink to this headline">¶</a></h2>
+<p>Sets the version of the Twitter Bootstrap CSS file.</p>
+</div>
+<div class="section" id="djfrontend-twbs-theme-css">
+<h2>DJFRONTEND_TWBS_THEME_CSS<a class="headerlink" href="#djfrontend-twbs-theme-css" title="Permalink to this headline">¶</a></h2>
+<p>Sets the version of the Twitter Bootstrap Theme CSS file.</p>
+</div>
+<div class="section" id="djfrontend-twbs-js-version">
+<h2>DJFRONTEND_TWBS_JS_VERSION<a class="headerlink" href="#djfrontend-twbs-js-version" title="Permalink to this headline">¶</a></h2>
+<p>Sets the version of the Twitter Bootstrap JavaScript file(s).</p>
+</div>
+<div class="section" id="djfrontend-twbs-js-files">
+<h2>DJFRONTEND_TWBS_JS_FILES<a class="headerlink" href="#djfrontend-twbs-js-files" title="Permalink to this headline">¶</a></h2>
+<p>Sets the Twitter Bootstrap JavaScript file(s).</p>
+</div>
+<div class="section" id="djfrontend-ga">
+<h2>DJFRONTEND_GA<a class="headerlink" href="#djfrontend-ga" title="Permalink to this headline">¶</a></h2>
+<p>Sets the Google Analtyics account.</p>
+</div>
+<div class="section" id="djfrontend-ga-setdomainname">
+<h2>DJFRONTEND_GA_SETDOMAINNAME<a class="headerlink" href="#djfrontend-ga-setdomainname" title="Permalink to this headline">¶</a></h2>
+<p>Set domain for multiple, or cross-domain tracking with Google Analytics.</p>
+</div>
+<div class="section" id="djfrontend-ga-setallowlinker">
+<h2>DJFRONTEND_GA_SETALLOWLINKER<a class="headerlink" href="#djfrontend-ga-setallowlinker" title="Permalink to this headline">¶</a></h2>
+<p>To use _setAllowLinker method on target site for cross-domain tracking with Google Analytics. Set to &#8216;True&#8217; to enable. Requires H5BP_GA_SETDOMAINNAME to be set.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Optional Settings</a><ul>
+<li><a class="reference internal" href="#djfrontend-static-url">DJFRONTEND_STATIC_URL</a></li>
+<li><a class="reference internal" href="#djfrontend-h5bp-html">DJFRONTEND_H5BP_HTML</a></li>
+<li><a class="reference internal" href="#djfrontend-h5bp-css">DJFRONTEND_H5BP_CSS</a></li>
+<li><a class="reference internal" href="#djfrontend-normalize">DJFRONTEND_NORMALIZE</a></li>
+<li><a class="reference internal" href="#djfrontend-fontawesome">DJFRONTEND_FONTAWESOME</a></li>
+<li><a class="reference internal" href="#djfrontend-modernizr">DJFRONTEND_MODERNIZR</a></li>
+<li><a class="reference internal" href="#djfrontend-jquery">DJFRONTEND_JQUERY</a></li>
+<li><a class="reference internal" href="#djfrontend-jqueryui">DJFRONTEND_JQUERYUI</a></li>
+<li><a class="reference internal" href="#djfrontend-jquery-datatables-version">DJFRONTEND_JQUERY_DATATABLES_VERSION</a></li>
+<li><a class="reference internal" href="#djfrontend-jquery-datatables">DJFRONTEND_JQUERY_DATATABLES</a></li>
+<li><a class="reference internal" href="#djfrontend-jquery-datatables-css">DJFRONTEND_JQUERY_DATATABLES_CSS</a></li>
+<li><a class="reference internal" href="#djfrontend-jquery-formset">DJFRONTEND_JQUERY_FORMSET</a></li>
+<li><a class="reference internal" href="#djfrontend-jquery-scrollto">DJFRONTEND_JQUERY_SCROLLTO</a></li>
+<li><a class="reference internal" href="#djfrontend-jquery-smoothscroll">DJFRONTEND_JQUERY_SMOOTHSCROLL</a></li>
+<li><a class="reference internal" href="#djfrontend-twbs-version">DJFRONTEND_TWBS_VERSION</a></li>
+<li><a class="reference internal" href="#djfrontend-twbs-css">DJFRONTEND_TWBS_CSS</a></li>
+<li><a class="reference internal" href="#djfrontend-twbs-theme-css">DJFRONTEND_TWBS_THEME_CSS</a></li>
+<li><a class="reference internal" href="#djfrontend-twbs-js-version">DJFRONTEND_TWBS_JS_VERSION</a></li>
+<li><a class="reference internal" href="#djfrontend-twbs-js-files">DJFRONTEND_TWBS_JS_FILES</a></li>
+<li><a class="reference internal" href="#djfrontend-ga">DJFRONTEND_GA</a></li>
+<li><a class="reference internal" href="#djfrontend-ga-setdomainname">DJFRONTEND_GA_SETDOMAINNAME</a></li>
+<li><a class="reference internal" href="#djfrontend-ga-setallowlinker">DJFRONTEND_GA_SETALLOWLINKER</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="template_blocks.html"
+                        title="previous chapter">Template blocks</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="license.html"
+                        title="next chapter">License</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/optional_settings.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="license.html" title="License"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="template_blocks.html" title="Template blocks"
+             >previous</a> |</li>
+        <li><a href="index.html">django-frontend 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Jon Faustman.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

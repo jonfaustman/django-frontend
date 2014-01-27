@@ -1,6 +1,30 @@
 Changelog
 ==============
 
+1.0.0
+------
+* Removed famfamfam Silk Icons.
+* Updated Fontawesome to v4.0.3.
+* Removed Fontawesome's IE7 CSS.
+* Removed djfrontend_fontawesome_ie template tag.
+* Updated Twitter Bootstrap to v3.0.3.
+* Updated Modernizr to v2.7.1.
+* Updated jQuery.ScrollTo to v1.4.9.
+* Updated jQuery.smooth-scroll to v1.4.13.
+* Updated jQuery v1.10.3 to v1.11.0.
+* Updated jQuery v2.0.3 to v2.1.0.
+* Updated jQuery UI v1.10.3 to v1.10.4.
+* Changed template arguments to optional arguments.
+* Allow settings to override defaults.
+* Load CDN for all non-local JavaScript
+* Included tests and Travis CI integration.
+* Removed conditional HTML classes.
+* Updated IE warning and added ie-warning class.
+* Added meta_viewport block.
+* Updated H5BP CSS to master.
+* Updated normalize.css to v2.1.3.
+* Updated Google Analytics snippets to Universal Analytics.
+
 0.4.0
 ------
 * Updated jQuery Smooth Scroll to v1.4.12.
