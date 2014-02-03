@@ -38,11 +38,11 @@ If you use an optional value other than the ones listed, you will have to add th
 +-----------------------------------+---------------------------------------+---------------+-------------------+
 |                                   |DJFRONTEND_TWBS_VERSION                |               |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_twbs_css                |DJFRONTEND_TWBS_CSS                    |3.0.3          |                   |
+|djfrontend_twbs_css                |DJFRONTEND_TWBS_CSS                    |3.1.0          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_twbs_theme_css          |DJFRONTEND_TWBS_THEME_CSS              |3.0.3          |                   |
+|djfrontend_twbs_theme_css          |DJFRONTEND_TWBS_THEME_CSS              |3.1.0          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_twbs_js                 |DJFRONTEND_TWBS_JS_VERSION             |3.0.3          |                   |
+|djfrontend_twbs_js                 |DJFRONTEND_TWBS_JS_VERSION             |3.1.0          |                   |
 |                                   |DJFRONTEND_TWBS_JS_FILES               |all            |* affix            |
 |                                   |                                       |               |* alert            |
 |                                   |                                       |               |* button           |

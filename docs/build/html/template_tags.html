@@ -200,31 +200,31 @@
 </div>
 <div class="section" id="djfrontend-twbs-css">
 <h2>djfrontend_twbs_css<a class="headerlink" href="#djfrontend-twbs-css" title="Permalink to this headline">¶</a></h2>
-<p>Returns Twitter Bootstrap CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file. The default version is the included &#8216;3.0.3&#8217;.</p>
+<p>Returns Twitter Bootstrap CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file. The default version is the included &#8216;3.1.0&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_twbs_css %}</pre>
 </div>
 <p>renders:</p>
-<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap.css"&gt;</pre>
+<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.1.0/bootstrap.css"&gt;</pre>
 </div>
 <p>Or without TEMPLATE_DEBUG:</p>
-<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap.min.css"&gt;</pre>
+<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.1.0/bootstrap.min.css"&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-twbs-theme-css">
 <h2>djfrontend_twbs_theme_css<a class="headerlink" href="#djfrontend-twbs-theme-css" title="Permalink to this headline">¶</a></h2>
-<p>Returns Twitter Bootstrap Theme CSS file according to version number. The default version is the included &#8216;3.0.3&#8217;.</p>
+<p>Returns Twitter Bootstrap Theme CSS file according to version number. The default version is the included &#8216;3.1.0&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_twbs_theme_css %}</pre>
 </div>
 <p>renders:</p>
-<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap-theme.css"&gt;</pre>
+<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.1.0/bootstrap-theme.css"&gt;</pre>
 </div>
 <p>Or without TEMPLATE_DEBUG:</p>
-<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.0.3/bootstrap-theme.min.css"&gt;</pre>
+<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.1.0/bootstrap-theme.min.css"&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-twbs-js">
 <h2>djfrontend_twbs_js<a class="headerlink" href="#djfrontend-twbs-js" title="Permalink to this headline">¶</a></h2>
-<p>Returns Twitter Bootstrap JavaScript file(s) according to version number and file name(s). The default &#8216;all&#8217; returns a concatenated file; full file for TEMPLATE_DEBUG, otherwise returns minified file from cdnjs with local fallback. The default version is the included &#8216;3.0.3&#8217;.</p>
+<p>Returns Twitter Bootstrap JavaScript file(s) according to version number and file name(s). The default &#8216;all&#8217; returns a concatenated file; full file for TEMPLATE_DEBUG, otherwise returns minified file from cdnjs with local fallback. The default version is the included &#8216;3.1.0&#8217;.</p>
 <ul class="simple">
 <li>affix</li>
 <li>alert</li>
@@ -243,17 +243,17 @@
 <div class="highlight-python"><pre>{% boostrap_js %}</pre>
 </div>
 <p>renders:</p>
-<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.0.3/bootstrap.js"&gt;&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.1.0/bootstrap.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or without TEMPLATE_DEBUG:</p>
-<div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"&gt;&lt;/script&gt;
-&lt;script&gt;window.jQuery.fn.scrollspy || document.write('&lt;script src="/static/djfrontend/js/twbs/3.0.3/bootstrap.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.0/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;window.jQuery.fn.scrollspy || document.write('&lt;script src="/static/djfrontend/js/twbs/3.1.0/bootstrap.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
 </div>
 <div class="highlight-python"><pre>{% bootstrap_js files='alert affix' %}</pre>
 </div>
 <p>renders:</p>
-<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.0.3/bootstrap-affix.js"&gt;&lt;/script&gt;
-&lt;script src="/static/djfrontend/js/twbs/3.0.3/bootstrap-alert.js"&gt;&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.1.0/bootstrap-affix.js"&gt;&lt;/script&gt;
+&lt;script src="/static/djfrontend/js/twbs/3.1.0/bootstrap-alert.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Shout out to Ryan Brady and his <a class="reference external" href="https://github.com/rbrady/django-bootstrapped">Django Bootstrapped</a> for inspiration and initial code.</p>
 </div>
