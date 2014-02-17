@@ -1,6 +1,12 @@
 Changelog
 ==============
 
+1.1.0
+------
+* Updated Twitter Bootstrap to v3.1.1
+* Updated normalize.css to v3.0.0
+* Updated jquery.scrollTo to v1.4.11
+
 1.0.0
 ------
 * Removed famfamfam Silk Icons.
