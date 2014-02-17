@@ -14,7 +14,7 @@ If you use an optional value other than the ones listed, you will have to add th
 +-----------------------------------+---------------------------------------+---------------+-------------------+
 |djfrontend_h5bp_css                |DJFRONTEND_H5BP_CSS                    |4.0.3          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_normalize               |DJFRONTEND_NORMALIZE                   |2.1.3          |                   |
+|djfrontend_normalize               |DJFRONTEND_NORMALIZE                   |3.0.0          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
 |djfrontend_fontawesome             |DJFRONTEND_FONTAWESOME                 |4.0.3          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
@@ -32,17 +32,17 @@ If you use an optional value other than the ones listed, you will have to add th
 +-----------------------------------+---------------------------------------+---------------+-------------------+
 |djfrontend_jquery_formset          |DJFRONTEND_JQUERY_FORMSET              |1.2            |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_jquery_scrollto         |DJFRONTEND_JQUERY_SCROLLTO             |1.4.9          |                   |
+|djfrontend_jquery_scrollto         |DJFRONTEND_JQUERY_SCROLLTO             |1.4.11         |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
 |djfrontend_jquery_smoothscroll     |DJFRONTEND_JQUERY_SMOOTHSCROLL         |1.4.13         |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
 |                                   |DJFRONTEND_TWBS_VERSION                |               |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_twbs_css                |DJFRONTEND_TWBS_CSS                    |3.0.3          |                   |
+|djfrontend_twbs_css                |DJFRONTEND_TWBS_CSS                    |3.1.1          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_twbs_theme_css          |DJFRONTEND_TWBS_THEME_CSS              |3.0.3          |                   |
+|djfrontend_twbs_theme_css          |DJFRONTEND_TWBS_THEME_CSS              |3.1.1          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_twbs_js                 |DJFRONTEND_TWBS_JS_VERSION             |3.0.3          |                   |
+|djfrontend_twbs_js                 |DJFRONTEND_TWBS_JS_VERSION             |3.1.1          |                   |
 |                                   |DJFRONTEND_TWBS_JS_FILES               |all            |* affix            |
 |                                   |                                       |               |* alert            |
 |                                   |                                       |               |* button           |
