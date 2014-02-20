@@ -281,7 +281,7 @@ Returns Twitter Bootstrap JavaScript file(s) according to version number and fil
 Individual files are not minified.
 ::
 
-    {% boostrap_js %}
+    {% djfrontend_twbs_js %}
     
 renders:
 
