@@ -14,7 +14,7 @@ def djfrontend_h5bp_html(language=None):
     """
     if language is None:
         language = getattr(settings, 'DJFRONTEND_H5BP_HTML', DJFRONTEND_H5BP_HTML_DEFAULT)
-    
+
     return '<html class="no-js" lang="%s">' % language
 
 
@@ -26,11 +26,11 @@ def djfrontend_h5bp_css(version=None):
     """
     if version is None:
         version = getattr(settings, 'DJFRONTEND_H5BP_CSS', DJFRONTEND_H5BP_CSS_DEFAULT)
-    
+
     if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.DJFRONTEND_STATIC_URL, version)
     return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.STATIC_URL, version)
-    
+
 
 @register.simple_tag
 def djfrontend_normalize(version=None):
@@ -40,7 +40,7 @@ def djfrontend_normalize(version=None):
     """
     if version is None:
         version = getattr(settings, 'DJFRONTEND_NORMALIZE', DJFRONTEND_NORMALIZE_DEFAULT)
-    
+
     if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.DJFRONTEND_STATIC_URL, version)
     return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.STATIC_URL, version)
@@ -54,7 +54,7 @@ def djfrontend_fontawesome(version=None):
     """
     if version is None:
         version = getattr(settings, 'DJFRONTEND_FONTAWESOME', DJFRONTEND_FONTAWESOME_DEFAULT)
-    
+
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.css">' % (settings.STATIC_URL, version)
     else:
@@ -72,8 +72,8 @@ def djfrontend_modernizr(version=None):
     Included in HTML5 Boilerplate.
     """
     if version is None:
-        version = getattr(settings, 'DJFRONTEND_MODERNIZR', DJFRONTEND_MODERNIZR_DEFAULT) 
-    
+        version = getattr(settings, 'DJFRONTEND_MODERNIZR', DJFRONTEND_MODERNIZR_DEFAULT)
+
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/modernizr/%s/modernizr.js"></script>' % (settings.STATIC_URL, version)
     else:
@@ -124,7 +124,7 @@ def djfrontend_jqueryui(version=None):
     """
     if version is None:
         version = getattr(settings, 'DJFRONTEND_JQUERYUI', DJFRONTEND_JQUERYUI_DEFAULT)
-    
+
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/jqueryui/%s/jquery-ui.js"></script>' % (settings.STATIC_URL, version)
     else:
@@ -179,11 +179,11 @@ def djfrontend_jquery_datatables_css(version=None):
             version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES_VERSION', DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
         else:
             version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES_CSS', DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
-    
+
     if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.DJFRONTEND_STATIC_URL, version)
-    return '<script src="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css"></script>' % (settings.STATIC_URL, version)
-        
+        return '<link rel="stylesheet" href="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css">' % (settings.DJFRONTEND_STATIC_URL, version)
+    return '<link rel="stylesheet" href="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css">' % (settings.STATIC_URL, version)
+
 
 @register.simple_tag
 def djfrontend_jquery_formset(version=None):
@@ -193,7 +193,7 @@ def djfrontend_jquery_formset(version=None):
     """
     if version is None:
         version = getattr(settings, 'DJFRONTEND_JQUERY_FORMSET', DJFRONTEND_JQUERY_FORMSET_DEFAULT)
-    
+
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.js"></script>' % (settings.STATIC_URL, version)
     else:
@@ -218,7 +218,7 @@ def djfrontend_jquery_scrollto(version=None):
     """
     if version is None:
         version = getattr(settings, 'DJFRONTEND_JQUERY_SCROLLTO', DJFRONTEND_JQUERY_SCROLLTO_DEFAULT)
-    
+
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.js"></script>' % (settings.STATIC_URL, version)
     else:
@@ -243,7 +243,7 @@ def djfrontend_jquery_smoothscroll(version=None):
     """
     if version is None:
         version = getattr(settings, 'DJFRONTEND_JQUERY_SMOOTHSCROLL', DJFRONTEND_JQUERY_SMOOTHSCROLL_DEFAULT)
-    
+
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.js"></script>' % (settings.STATIC_URL, version)
     else:
@@ -271,7 +271,7 @@ def djfrontend_twbs_css(version=None):
             version = getattr(settings, 'DJFRONTEND_TWBS_VERSION', DJFRONTEND_TWBS_VERSION_DEFAULT)
         else:
              version = getattr(settings, 'DJFRONTEND_TWBS_CSS', DJFRONTEND_TWBS_VERSION_DEFAULT)
-    
+
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap.css">' % (settings.STATIC_URL, version)
     else:
@@ -291,7 +291,7 @@ def djfrontend_twbs_theme_css(version=None):
             version = getattr(settings, 'DJFRONTEND_TWBS_VERSION', DJFRONTEND_TWBS_VERSION_DEFAULT)
         else:
              version = getattr(settings, 'DJFRONTEND_TWBS_THEME_CSS', DJFRONTEND_TWBS_VERSION_DEFAULT)
-    
+
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.css">' % (settings.STATIC_URL, version)
     else:
@@ -306,7 +306,7 @@ def djfrontend_twbs_js(version=None, files=None):
     """
     Returns Twitter Bootstrap JavaScript file(s).
     all returns concatenated file; full file for TEMPLATE_DEBUG, minified otherwise.
-    
+
     Other choice are:
         affix,
         alert,
@@ -320,7 +320,7 @@ def djfrontend_twbs_js(version=None, files=None):
         tab,
         tooltip,
         transition.
-        
+
     Individual files are not minified.
     """
     if version is None:
@@ -328,7 +328,7 @@ def djfrontend_twbs_js(version=None, files=None):
             version = getattr(settings, 'DJFRONTEND_TWBS_VERSION', DJFRONTEND_TWBS_VERSION_DEFAULT)
         else:
             version = getattr(settings, 'DJFRONTEND_TWBS_JS_VERSION', DJFRONTEND_TWBS_VERSION_DEFAULT)
-    
+
     if files:
         if files != 'all':
             files = files.split(' ')
@@ -336,7 +336,7 @@ def djfrontend_twbs_js(version=None, files=None):
         files = settings.DJFRONTEND_TWBS_JS_FILES.split(' ')
     else:
         files = 'all'
-    
+
     if files == 'all':
         if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
             output=[
@@ -370,7 +370,7 @@ def djfrontend_ga(account=None):
     """
     if account is None:
         account = getattr(settings, 'DJFRONTEND_GA', False)
-    
+
     if account:
         if getattr(settings, 'TEMPLATE_DEBUG', False):
             return ''
