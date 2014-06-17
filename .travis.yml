@@ -20,7 +20,7 @@ env:
     - DJANGO=1.6.2
     - DJANGO=1.6.3
     - DJANGO=1.6.4
-    - DJANGO=1.6.6
+    - DJANGO=1.6.5
 
 install:
     - pip install Django==$DJANGO
