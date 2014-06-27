@@ -22,7 +22,7 @@ If you use an optional value other than the ones listed, you will have to add th
 +-----------------------------------+---------------------------------------+---------------+-------------------+
 |djfrontend_jquery                  |DJFRONTEND_JQUERY                      |1.11.1         |2.1.1              |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_jqueryui                |DJFRONTEND_JQUERYUI                    |1.10.4         |                   |
+|djfrontend_jqueryui                |DJFRONTEND_JQUERYUI                    |1.11.0         |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
 |                                   |DJFRONTEND_JQUERY_DATATABLES_VERSION   |               |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
@@ -38,11 +38,11 @@ If you use an optional value other than the ones listed, you will have to add th
 +-----------------------------------+---------------------------------------+---------------+-------------------+
 |                                   |DJFRONTEND_TWBS_VERSION                |               |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_twbs_css                |DJFRONTEND_TWBS_CSS                    |3.1.1          |                   |
+|djfrontend_twbs_css                |DJFRONTEND_TWBS_CSS                    |3.2.0          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_twbs_theme_css          |DJFRONTEND_TWBS_THEME_CSS              |3.1.1          |                   |
+|djfrontend_twbs_theme_css          |DJFRONTEND_TWBS_THEME_CSS              |3.2.0          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_twbs_js                 |DJFRONTEND_TWBS_JS_VERSION             |3.1.1          |                   |
+|djfrontend_twbs_js                 |DJFRONTEND_TWBS_JS_VERSION             |3.2.0          |                   |
 |                                   |DJFRONTEND_TWBS_JS_FILES               |all            |* affix            |
 |                                   |                                       |               |* alert            |
 |                                   |                                       |               |* button           |

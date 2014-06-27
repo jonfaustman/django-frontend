@@ -1,6 +1,11 @@
 Changelog
 ==============
 
+1.3.0
+------
+* Updated jQuery UI to v1.11.0
+* Updated TWBS to v3.2.0
+
 1.2.0
 ------
 * Fixed jquery.dataTables CSS loading as a script.
