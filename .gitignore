@@ -5,3 +5,5 @@ django_frontend.egg-info/
 
 # Python
 *.pyc
+
+/.idea
