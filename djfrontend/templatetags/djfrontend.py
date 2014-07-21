@@ -180,9 +180,13 @@ def djfrontend_jquery_datatables_css(version=None):
         else:
             version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES_CSS', DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
 
-    if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css">' % (settings.DJFRONTEND_STATIC_URL, version)
-    return '<link rel="stylesheet" href="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css">' % (settings.STATIC_URL, version)
+
+    if getattr(settings, 'TEMPLATE_DEBUG', False):
+        return '<link rel="stylesheet" href="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css">' % (settings.STATIC_URL, version)
+    else:
+        if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
+            return '<link rel="stylesheet" href="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.min.css">' % (settings.DJFRONTEND_STATIC_URL, version)
+        return '<link rel="stylesheet" href="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.min.css">' % (settings.STATIC_URL, version)
 
 
 @register.simple_tag
