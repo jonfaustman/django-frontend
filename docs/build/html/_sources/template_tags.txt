@@ -71,7 +71,7 @@ Or without TEMPLATE_DEBUG:
 
 djfrontend_modernizr
 ---------------------
-Returns Modernizr JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local callback. The default version is the included '2.8.2'.
+Returns Modernizr JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local callback. The default version is the included '2.8.3'.
 ::
 
     {% djfrontend_modernizr %}
@@ -80,14 +80,14 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/modernizr/2.8.2/modernizr.js"></script>
+    <script src="/static/djfrontend/js/modernizr/2.8.3/modernizr.js"></script>
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>' % v,
-    <script>window.Modernizr || document.write(\'<script src="static/djfrontend/js/modernizr/2.8.2/modernizr.min.js"><\/script>\')</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>' % v,
+    <script>window.Modernizr || document.write(\'<script src="static/djfrontend/js/modernizr/2.8.3/modernizr.min.js"><\/script>\')</script>
 
 djfrontend_jquery
 ------------------
@@ -131,7 +131,7 @@ Or without TEMPLATE_DEBUG:
 
 djfrontend_jquery_datatables
 -----------------------------
-Returns the jQuery DataTables plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included '1.9.4'.
+Returns the jQuery DataTables plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included '1.10.1'.
 ::
 
     {% djfrontend_jquery_datatables %}
@@ -140,18 +140,18 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.0/jquery.dataTables.js"></script>
+    <script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.1/jquery.dataTables.js"></script>
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.0/jquery.dataTables.min.js"></script>
-    <script>window.jQuery.fn.DataTable || document.write('<script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.0/jquery.dataTables.min.js"><\/script>')</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.1/jquery.dataTables.min.js"></script>
+    <script>window.jQuery.fn.DataTable || document.write('<script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.1/jquery.dataTables.min.js"><\/script>')</script>
 
 djfrontend_jquery_datatables_css
 ----------------------------------
-Returns the jQuery DataTables CSS file according to version number. The default version is the included '1.10.0'.
+Returns the jQuery DataTables CSS file according to version number. The default version is the included '1.10.1'.
 ::
 
     {% djfrontend_jquery_datatables_css %}
@@ -160,7 +160,13 @@ renders:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.0/jquery.dataTables.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.1/jquery.dataTables.css">
+
+Or without TEMPLATE_DEBUG:
+
+::
+
+    <link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.1/jquery.dataTables.min.css">
 
 djfrontend_jquery_formset
 ---------------------------
