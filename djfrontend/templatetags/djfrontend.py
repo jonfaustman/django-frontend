@@ -190,6 +190,22 @@ def djfrontend_jquery_datatables_css(version=None):
 
 
 @register.simple_tag
+def djfrontend_jquery_datatables_themeroller(version=None):
+    """
+    Returns the jQuery DataTables ThemeRoller CSS file according to version number.
+    """
+    if version is None:
+        if not getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES_THEMEROLLER', False):
+            version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES_VERSION', DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
+        else:
+            version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES_THEMEROLLER', DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
+
+    if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
+        return '<link rel="stylesheet" href="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables_themeroller.min.css">' % (settings.DJFRONTEND_STATIC_URL, version)
+    return '<link rel="stylesheet" href="href="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables_themeroller.min.css">' % (settings.STATIC_URL, version)
+
+
+@register.simple_tag
 def djfrontend_jquery_formset(version=None):
     """
     Returns the jQuery Dynamic Formset plugin file according to version number.

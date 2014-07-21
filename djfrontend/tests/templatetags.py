@@ -66,6 +66,10 @@ class DjfrontendStaticTest(LiveServerTestCase):
         self.assertEqual(file.status_code, 200)
         self.assertEqual(file.status_code, 200)
 
+    def test_djfrontend_jquery_datatables_themeroller(self):
+        file = self.client.get(self.live_server_url + '/static/djfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables_themeroller.css' % DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
+        self.assertEqual(file.status_code, 200)
+
     def test_djfrontend_jquery_formset(self):
         file = self.client.get(self.live_server_url + '/static/djfrontend/js/jquery/jquery.formset/%s/jquery.formset.js' % DJFRONTEND_JQUERY_FORMSET_DEFAULT)
         file_min = self.client.get(self.live_server_url + '/static/djfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js' % DJFRONTEND_JQUERY_FORMSET_DEFAULT)
@@ -466,6 +470,15 @@ class DjfrontendSettingsGranularityTestCase(TestCase):
 
     def test_djfrontend_jquery_datatables_css(self):
         settings.DJFRONTEND_JQUERY_DATATABLES_CSS = '0.0.0'
+        t = Template(
+            "{% load djfrontend %}"
+            "{% djfrontend_jquery_datatables_css 'x.x.x' %}"
+        ).render(Context())
+        self.assertFalse(DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT in t)
+        self.assertTrue('x.x.x' in t)
+
+    def test_djfrontend_jquery_datatables_themeroller(self):
+        settings.DJFRONTEND_JQUERY_DATATABLES_THEMEROLLER = '0.0.0'
         t = Template(
             "{% load djfrontend %}"
             "{% djfrontend_jquery_datatables_css 'x.x.x' %}"
