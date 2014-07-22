@@ -16,11 +16,11 @@ With the convenience of an installable Django application, easily add some of th
 Starring
 ---------
 * `HTML5 Boilerplate (based on 4.3.0/master) <https://github.com/h5bp/html5-boilerplate>`_
-* `Modernizr (2.8.2) <https://github.com/Modernizr/Modernizr>`_
+* `Modernizr (2.8.3) <https://github.com/Modernizr/Modernizr>`_
 * `normalize.css (3.0.1) <https://github.com/necolas/normalize.css>`_
 * `jQuery (1.11.1) and (2.1.1) <https://github.com/jquery/jquery>`_
 * `jQuery UI (1.11.0) <https://github.com/jquery/jquery-ui>`_
-* `jQuery DataTables (1.10.0) <https://github.com/DataTables/DataTables>`_
+* `jQuery DataTables (1.10.1) <https://github.com/DataTables/DataTables>`_
 * `jQuery Dynamic Formset (1.2) <https://github.com/elo80ka/django-dynamic-formset>`_
 * `jQuery ScrollTo (1.4.12) <https://github.com/flesler/jquery.scrollTo>`_
 * `jQuery Smooth Scroll (1.4.13) <https://github.com/kswedberg/jquery-smooth-scroll>`_
