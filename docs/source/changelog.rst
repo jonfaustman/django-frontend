@@ -1,6 +1,13 @@
 Changelog
 ==============
 
+1.4.0
+------
+* Updated Modernizr to v2.8.3
+* Updated jquery.dataTables to v1.10.1
+* Added jquery.dataTables minified CSS.
+* Added djfrontend_jquery_datatables_themeroller template tag.
+
 1.3.0
 ------
 * Updated jQuery UI to v1.11.0
