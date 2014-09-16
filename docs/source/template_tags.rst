@@ -219,14 +219,14 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.4.13/jquery.smooth-scroll.js"></script>
+    <script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.5.0/jquery.smooth-scroll.js"></script>
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.4.13/jquery.smooth-scroll.min.js"></script>
-    <script>window.jQuery.fn.smoothScroll || document.write('<script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.4.13/jquery.smooth-scroll.min.js"><\/script>')</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.5.0/jquery.smooth-scroll.min.js"></script>
+    <script>window.jQuery.fn.smoothScroll || document.write('<script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.5.0/jquery.smooth-scroll.min.js"><\/script>')</script>
 
 djfrontend_twbs_css
 --------------------

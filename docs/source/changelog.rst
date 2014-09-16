@@ -6,6 +6,7 @@ Changelog
 * Updated jQuery UI to v1.11.1.
 * Updated jquery.dataTables to v1.10.2.
 * Updated jquery.scrollTo to v1.4.13.
+* Updated jquery.smooth-scroll to v.1.5.0.
 
 1.4.0
 ------
