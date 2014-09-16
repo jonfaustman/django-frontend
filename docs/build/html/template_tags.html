@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Template tags &mdash; django-frontend 1.4.0 documentation</title>
+    <title>Template tags &mdash; django-frontend 1.5.0 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.4.0',
+        VERSION:     '1.5.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="django-frontend 1.4.0 documentation" href="index.html" />
+    <link rel="top" title="django-frontend 1.5.0 documentation" href="index.html" />
     <link rel="next" title="Template blocks" href="template_blocks.html" />
     <link rel="prev" title="Granularity" href="granularity.html" /> 
   </head>
@@ -40,7 +40,7 @@
         <li class="right" >
           <a href="granularity.html" title="Granularity"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">django-frontend 1.4.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">django-frontend 1.5.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -88,14 +88,14 @@
 </div>
 <div class="section" id="djfrontend-fontawesome">
 <h2>djfrontend_fontawesome<a class="headerlink" href="#djfrontend-fontawesome" title="Permalink to this headline">¶</a></h2>
-<p>Returns Font Awesome CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file. The default version is the included &#8216;4.1.0&#8217;.</p>
+<p>Returns Font Awesome CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file. The default version is the included &#8216;4.2.0&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_fontawesome %}</pre>
 </div>
 <p>renders:</p>
-<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/fontawesome/4.1.0/font-awesome.css"&gt;</pre>
+<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/fontawesome/4.2.0/font-awesome.css"&gt;</pre>
 </div>
 <p>Or without TEMPLATE_DEBUG:</p>
-<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/fontawesome/4.1.0/font-awesome.min.css"&gt;</pre>
+<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/fontawesome/4.2.0/font-awesome.min.css"&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-modernizr">
@@ -130,36 +130,36 @@
 <div class="highlight-python"><pre>{% djfrontend_jqueryui %}</pre>
 </div>
 <p>renders:</p>
-<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jqueryui/1.10.4/jquery-ui.js"&gt;&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jqueryui/1.11.1/jquery-ui.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or without TEMPLATE_DEBUG:</p>
-<div class="highlight-python"><pre>&lt;script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"&gt;&lt;/script&gt;' % v,
-&lt;script&gt;window.jQuery.ui || document.write(\'&lt;script src="/static/djfrontend/js/jquery/jqueryui/1.10.4/jquery-ui.min.js"&gt;&lt;\/script&gt;\')&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"&gt;&lt;/script&gt;' % v,
+&lt;script&gt;window.jQuery.ui || document.write(\'&lt;script src="/static/djfrontend/js/jquery/jqueryui/1.11.1/jquery-ui.min.js"&gt;&lt;\/script&gt;\')&lt;/script&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-jquery-datatables">
 <h2>djfrontend_jquery_datatables<a class="headerlink" href="#djfrontend-jquery-datatables" title="Permalink to this headline">¶</a></h2>
-<p>Returns the jQuery DataTables plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included &#8216;1.10.1&#8217;.</p>
+<p>Returns the jQuery DataTables plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included &#8216;1.10.2&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_jquery_datatables %}</pre>
 </div>
 <p>renders:</p>
-<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.1/jquery.dataTables.js"&gt;&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.2/jquery.dataTables.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or without TEMPLATE_DEBUG:</p>
-<div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.1/jquery.dataTables.min.js"&gt;&lt;/script&gt;
-&lt;script&gt;window.jQuery.fn.DataTable || document.write('&lt;script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.1/jquery.dataTables.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.2/jquery.dataTables.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;window.jQuery.fn.DataTable || document.write('&lt;script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.2/jquery.dataTables.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-jquery-datatables-css">
 <h2>djfrontend_jquery_datatables_css<a class="headerlink" href="#djfrontend-jquery-datatables-css" title="Permalink to this headline">¶</a></h2>
-<p>Returns the jQuery DataTables CSS file according to version number. The default version is the included &#8216;1.10.1&#8217;.</p>
+<p>Returns the jQuery DataTables CSS file according to version number. The default version is the included &#8216;1.10.2&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_jquery_datatables_css %}</pre>
 </div>
 <p>renders:</p>
-<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.1/jquery.dataTables.css"&gt;</pre>
+<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.2/jquery.dataTables.css"&gt;</pre>
 </div>
 <p>Or without TEMPLATE_DEBUG:</p>
-<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.1/jquery.dataTables.min.css"&gt;</pre>
+<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.2/jquery.dataTables.min.css"&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-jquery-formset">
@@ -177,15 +177,15 @@
 </div>
 <div class="section" id="djfrontend-jquery-scrollto">
 <h2>djfrontend_jquery_scrollto<a class="headerlink" href="#djfrontend-jquery-scrollto" title="Permalink to this headline">¶</a></h2>
-<p>Returns the jQuery ScrollTo plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included &#8216;1.4.12&#8217;.</p>
+<p>Returns the jQuery ScrollTo plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included &#8216;1.4.13&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_jquery_scrollto %}</pre>
 </div>
 <p>renders:</p>
-<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.12/jquery.scrollTo.js"&gt;&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.13/jquery.scrollTo.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or without TEMPLATE_DEBUG:</p>
-<div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.12/jquery.scrollTo.min.js"&gt;&lt;/script&gt;
-&lt;script&gt;window.jQuery.fn.scrollTo || document.write('&lt;script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.12/jquery.scrollTo.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.13/jquery.scrollTo.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;window.jQuery.fn.scrollTo || document.write('&lt;script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.13/jquery.scrollTo.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-jquery-smoothscroll">
@@ -194,11 +194,11 @@
 <div class="highlight-python"><pre>{% djfrontend_jquery_smoothscroll %}</pre>
 </div>
 <p>renders:</p>
-<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.4.13/jquery.smooth-scroll.js"&gt;&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.5.0/jquery.smooth-scroll.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or without TEMPLATE_DEBUG:</p>
-<div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.4.13/jquery.smooth-scroll.min.js"&gt;&lt;/script&gt;
-&lt;script&gt;window.jQuery.fn.smoothScroll || document.write('&lt;script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.4.13/jquery.smooth-scroll.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.5.0/jquery.smooth-scroll.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;window.jQuery.fn.smoothScroll || document.write('&lt;script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.5.0/jquery.smooth-scroll.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-twbs-css">
@@ -215,19 +215,19 @@
 </div>
 <div class="section" id="djfrontend-twbs-theme-css">
 <h2>djfrontend_twbs_theme_css<a class="headerlink" href="#djfrontend-twbs-theme-css" title="Permalink to this headline">¶</a></h2>
-<p>Returns Twitter Bootstrap Theme CSS file according to version number. The default version is the included &#8216;3.1.1&#8217;.</p>
+<p>Returns Twitter Bootstrap Theme CSS file according to version number. The default version is the included &#8216;3.2.0&#8217;.</p>
 <div class="highlight-python"><pre>{% djfrontend_twbs_theme_css %}</pre>
 </div>
 <p>renders:</p>
-<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.1.1/bootstrap-theme.css"&gt;</pre>
+<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.2.0/bootstrap-theme.css"&gt;</pre>
 </div>
 <p>Or without TEMPLATE_DEBUG:</p>
-<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.1.1/bootstrap-theme.min.css"&gt;</pre>
+<div class="highlight-python"><pre>&lt;link rel="stylesheet" href="/static/djfrontend/css/twbs/3.2.0/bootstrap-theme.min.css"&gt;</pre>
 </div>
 </div>
 <div class="section" id="djfrontend-twbs-js">
 <h2>djfrontend_twbs_js<a class="headerlink" href="#djfrontend-twbs-js" title="Permalink to this headline">¶</a></h2>
-<p>Returns Twitter Bootstrap JavaScript file(s) according to version number and file name(s). The default &#8216;all&#8217; returns a concatenated file; full file for TEMPLATE_DEBUG, otherwise returns minified file from cdnjs with local fallback. The default version is the included &#8216;3.1.1&#8217;.</p>
+<p>Returns Twitter Bootstrap JavaScript file(s) according to version number and file name(s). The default &#8216;all&#8217; returns a concatenated file; full file for TEMPLATE_DEBUG, otherwise returns minified file from cdnjs with local fallback. The default version is the included &#8216;3.2.0&#8217;.</p>
 <ul class="simple">
 <li>affix</li>
 <li>alert</li>
@@ -246,17 +246,17 @@
 <div class="highlight-python"><pre>{% djfrontend_twbs_js %}</pre>
 </div>
 <p>renders:</p>
-<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.1.1/bootstrap.js"&gt;&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.2.0/bootstrap.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Or without TEMPLATE_DEBUG:</p>
-<div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"&gt;&lt;/script&gt;
-&lt;script&gt;window.jQuery.fn.scrollspy || document.write('&lt;script src="/static/djfrontend/js/twbs/3.1.1/bootstrap.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;window.jQuery.fn.scrollspy || document.write('&lt;script src="/static/djfrontend/js/twbs/3.2.0/bootstrap.min.js"&gt;&lt;\/script&gt;')&lt;/script&gt;</pre>
 </div>
 <div class="highlight-python"><pre>{% bootstrap_js files='alert affix' %}</pre>
 </div>
 <p>renders:</p>
-<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.1.1/bootstrap-affix.js"&gt;&lt;/script&gt;
-&lt;script src="/static/djfrontend/js/twbs/3.1.1/bootstrap-alert.js"&gt;&lt;/script&gt;</pre>
+<div class="highlight-python"><pre>&lt;script src="/static/djfrontend/js/twbs/3.2.0/bootstrap-affix.js"&gt;&lt;/script&gt;
+&lt;script src="/static/djfrontend/js/twbs/3.2.0/bootstrap-alert.js"&gt;&lt;/script&gt;</pre>
 </div>
 <p>Shout out to Ryan Brady and his <a class="reference external" href="https://github.com/rbrady/django-bootstrapped">Django Bootstrapped</a> for inspiration and initial code.</p>
 </div>
@@ -351,7 +351,7 @@
         <li class="right" >
           <a href="granularity.html" title="Granularity"
              >previous</a> |</li>
-        <li><a href="index.html">django-frontend 1.4.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">django-frontend 1.5.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

@@ -19,14 +19,14 @@ Starring
 * `Modernizr (2.8.3) <https://github.com/Modernizr/Modernizr>`_
 * `normalize.css (3.0.1) <https://github.com/necolas/normalize.css>`_
 * `jQuery (1.11.1) and (2.1.1) <https://github.com/jquery/jquery>`_
-* `jQuery UI (1.11.0) <https://github.com/jquery/jquery-ui>`_
-* `jQuery DataTables (1.10.1) <https://github.com/DataTables/DataTables>`_
+* `jQuery UI (1.11.1) <https://github.com/jquery/jquery-ui>`_
+* `jQuery DataTables (1.10.2) <https://github.com/DataTables/DataTables>`_
 * `jQuery Dynamic Formset (1.2) <https://github.com/elo80ka/django-dynamic-formset>`_
-* `jQuery ScrollTo (1.4.12) <https://github.com/flesler/jquery.scrollTo>`_
-* `jQuery Smooth Scroll (1.4.13) <https://github.com/kswedberg/jquery-smooth-scroll>`_
+* `jQuery ScrollTo (1.4.13) <https://github.com/flesler/jquery.scrollTo>`_
+* `jQuery Smooth Scroll (1.5.0) <https://github.com/kswedberg/jquery-smooth-scroll>`_
 * `Twitter Bootstrap (3.2.0) <https://github.com/twbs/bootstrap>`_
 * `iOS-Orientationchange-Fix <https://github.com/scottjehl/iOS-Orientationchange-Fix>`_
-* `Font Awesome (4.1.0) <https://github.com/FortAwesome/Font-Awesome>`_
+* `Font Awesome (4.2.0) <https://github.com/FortAwesome/Font-Awesome>`_
 
 -----------------
 More Information
