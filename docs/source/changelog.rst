@@ -7,6 +7,7 @@ Changelog
 * Updated jquery.dataTables to v1.10.2.
 * Updated jquery.scrollTo to v1.4.13.
 * Updated jquery.smooth-scroll to v.1.5.0.
+* Updated Font Awesome to v4.2.0.
 
 1.4.0
 ------
