@@ -4,6 +4,7 @@ Changelog
 1.5.0
 ------
 * Updated jQuery UI to v1.11.1.
+* Updated jquery.dataTables to v1.10.2.
 
 1.4.0
 ------
