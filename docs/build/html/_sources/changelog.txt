@@ -1,10 +1,18 @@
 Changelog
 ==============
 
+1.5.0
+------
+* Updated jQuery UI to v1.11.1.
+* Updated jquery.dataTables to v1.10.2.
+* Updated jquery.scrollTo to v1.4.13.
+* Updated jquery.smooth-scroll to v.1.5.0.
+* Updated Font Awesome to v4.2.0.
+
 1.4.0
 ------
-* Updated Modernizr to v2.8.3
-* Updated jquery.dataTables to v1.10.1
+* Updated Modernizr to v2.8.3.
+* Updated jquery.dataTables to v1.10.1.
 * Added jquery.dataTables minified CSS.
 * Added djfrontend_jquery_datatables_themeroller template tag.
 
