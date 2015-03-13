@@ -111,7 +111,7 @@ Or without TEMPLATE_DEBUG:
 
 djfrontend_jqueryui
 ---------------------
-Returns jQuery UI plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included '1.10.4'.
+Returns jQuery UI plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included '1.11.4'.
 ::
 
     {% djfrontend_jqueryui %}
@@ -120,7 +120,7 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/jqueryui/1.11.1/jquery-ui.js"></script>
+    <script src="/static/djfrontend/js/jquery/jqueryui/1.11.4/jquery-ui.js"></script>
 
 Or without TEMPLATE_DEBUG:
 
