@@ -18,7 +18,7 @@ Starring
 * `normalize.css (3.0.1) <https://github.com/necolas/normalize.css>`_
 * `jQuery (1.11.1) and (2.1.1) <https://github.com/jquery/jquery>`_
 * `jQuery UI (1.11.1) <https://github.com/jquery/jquery-ui>`_
-* `jQuery DataTables (1.10.2) <https://github.com/DataTables/DataTables>`_
+* `jQuery DataTables (1.10.5) <https://github.com/DataTables/DataTables>`_
 * `jQuery Dynamic Formset (1.2) <https://github.com/elo80ka/django-dynamic-formset>`_
 * `jQuery ScrollTo (1.4.13) <https://github.com/flesler/jquery.scrollTo>`_
 * `jQuery Smooth Scroll (1.5.0) <https://github.com/kswedberg/jquery-smooth-scroll>`_
