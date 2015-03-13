@@ -21,7 +21,7 @@ Starring
 * `jQuery DataTables (1.10.2) <https://github.com/DataTables/DataTables>`_
 * `jQuery Dynamic Formset (1.2) <https://github.com/elo80ka/django-dynamic-formset>`_
 * `jQuery ScrollTo (1.4.13) <https://github.com/flesler/jquery.scrollTo>`_
-* `jQuery Smooth Scroll (1.5.0) <https://github.com/kswedberg/jquery-smooth-scroll>`_
+* `jQuery Smooth Scroll (1.5.5) <https://github.com/kswedberg/jquery-smooth-scroll>`_
 * `Twitter Bootstrap (3.2.0) <https://github.com/twbs/bootstrap>`_
 * `iOS-Orientationchange-Fix <https://github.com/scottjehl/iOS-Orientationchange-Fix>`_
 * `Font Awesome (4.2.0) <https://github.com/FortAwesome/Font-Awesome>`_
