@@ -28,8 +28,12 @@ Starring
 =======
 >>>>>>> feature/wip-1.6.0
 * `jQuery UI (1.11.1) <https://github.com/jquery/jquery-ui>`_
+<<<<<<< HEAD
+* `jQuery DataTables (1.10.5) <https://github.com/DataTables/DataTables>`_
+=======
 >>>>>>> feature/wip-1.6.0
 * `jQuery DataTables (1.10.2) <https://github.com/DataTables/DataTables>`_
+>>>>>>> feature/wip-1.6.0
 * `jQuery Dynamic Formset (1.2) <https://github.com/elo80ka/django-dynamic-formset>`_
 * `jQuery ScrollTo (1.4.13) <https://github.com/flesler/jquery.scrollTo>`_
 * `jQuery Smooth Scroll (1.5.0) <https://github.com/kswedberg/jquery-smooth-scroll>`_
