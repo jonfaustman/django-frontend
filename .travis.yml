@@ -20,15 +20,15 @@ env:
 matrix:
     exclude:
         - python: "2.6"
-        env: DJANGO=1.7.7
+          env: DJANGO=1.7.7
         - python: "2.6"
-        env: DJANGO=1.7.6
+          env: DJANGO=1.7.6
         - python: "2.6"
-        env: DJANGO=1.7.5
+          env: DJANGO=1.7.5
         - python: "2.6"
-        env: DJANGO=1.7.4
+          env: DJANGO=1.7.4
         - python: "2.6"
-        env: DJANGO=1.7.3
+          env: DJANGO=1.7.3
 
 install:
     - pip install Django==$DJANGO
