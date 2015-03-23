@@ -34,7 +34,7 @@ If you use an optional value other than the ones listed, you will have to add th
 +-----------------------------------+---------------------------------------+---------------+-------------------+
 |djfrontend_jquery_scrollto         |DJFRONTEND_JQUERY_SCROLLTO             |1.4.14         |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_jquery_smoothscroll     |DJFRONTEND_JQUERY_SMOOTHSCROLL         |1.5.0          |                   |
+|djfrontend_jquery_smoothscroll     |DJFRONTEND_JQUERY_SMOOTHSCROLL         |1.5.5          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
 |                                   |DJFRONTEND_TWBS_VERSION                |               |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
