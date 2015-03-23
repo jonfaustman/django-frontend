@@ -15,10 +15,23 @@ Starring
 ---------
 * `HTML5 Boilerplate (based on 4.3.0/master) <https://github.com/h5bp/html5-boilerplate>`_
 * `Modernizr (2.8.3) <https://github.com/Modernizr/Modernizr>`_
+<<<<<<< HEAD
 * `normalize.css (3.0.1) <https://github.com/necolas/normalize.css>`_
+* `jQuery (1.11.2) and (2.1.3) <https://github.com/jquery/jquery>`_
+=======
+* `normalize.css (3.0.2) <https://github.com/necolas/normalize.css>`_
 * `jQuery (1.11.1) and (2.1.1) <https://github.com/jquery/jquery>`_
+<<<<<<< HEAD
+* `jQuery UI (1.11.4) <https://github.com/jquery/jquery-ui>`_
+=======
+>>>>>>> feature/wip-1.6.0
 * `jQuery UI (1.11.1) <https://github.com/jquery/jquery-ui>`_
+<<<<<<< HEAD
+* `jQuery DataTables (1.10.5) <https://github.com/DataTables/DataTables>`_
+=======
+>>>>>>> feature/wip-1.6.0
 * `jQuery DataTables (1.10.2) <https://github.com/DataTables/DataTables>`_
+>>>>>>> feature/wip-1.6.0
 * `jQuery Dynamic Formset (1.2) <https://github.com/elo80ka/django-dynamic-formset>`_
 * `jQuery ScrollTo (1.4.14) <https://github.com/flesler/jquery.scrollTo>`_
 * `jQuery Smooth Scroll (1.5.0) <https://github.com/kswedberg/jquery-smooth-scroll>`_

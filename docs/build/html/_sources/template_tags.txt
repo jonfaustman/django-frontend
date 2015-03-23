@@ -39,7 +39,7 @@ renders:
 
 djfrontend_normalize
 ---------------------
-Returns Normalize CSS file according to version number. The default version is the included '3.0.1'.
+Returns Normalize CSS file according to version number. The default version is the included '3.0.2'.
 ::
 
     {% djfrontend_normalize %}
@@ -48,7 +48,7 @@ renders:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/normalize/3.0.1/normalize.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/normalize/3.0.2/normalize.css">
 
 djfrontend_fontawesome
 ------------------------
@@ -91,7 +91,7 @@ Or without TEMPLATE_DEBUG:
 
 djfrontend_jquery
 ------------------
-Returns jQuery JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included '1.11.1'.
+Returns jQuery JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included '1.11.2'.
 ::
 
     {% djfrontend_jquery %}
@@ -100,18 +100,18 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/1.11.1/jquery.js"></script>
+    <script src="/static/djfrontend/js/jquery/1.11.2/jquery.js"></script>
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/static/djfrontend/js/jquery/1.11.1/jquery.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/static/djfrontend/js/jquery/1.11.2/jquery.min.js"><\/script>')</script>
 
 djfrontend_jqueryui
 ---------------------
-Returns jQuery UI plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included '1.10.4'.
+Returns jQuery UI plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included '1.11.4'.
 ::
 
     {% djfrontend_jqueryui %}
@@ -120,7 +120,7 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/jqueryui/1.11.1/jquery-ui.js"></script>
+    <script src="/static/djfrontend/js/jquery/jqueryui/1.11.4/jquery-ui.js"></script>
 
 Or without TEMPLATE_DEBUG:
 
@@ -131,7 +131,7 @@ Or without TEMPLATE_DEBUG:
 
 djfrontend_jquery_datatables
 -----------------------------
-Returns the jQuery DataTables plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included '1.10.2'.
+Returns the jQuery DataTables plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included '1.10.5'.
 ::
 
     {% djfrontend_jquery_datatables %}
@@ -140,18 +140,18 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.2/jquery.dataTables.js"></script>
+    <script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.5/jquery.dataTables.js"></script>
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.2/jquery.dataTables.min.js"></script>
-    <script>window.jQuery.fn.DataTable || document.write('<script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.2/jquery.dataTables.min.js"><\/script>')</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.5/jquery.dataTables.min.js"></script>
+    <script>window.jQuery.fn.DataTable || document.write('<script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.5/jquery.dataTables.min.js"><\/script>')</script>
 
 djfrontend_jquery_datatables_css
 ----------------------------------
-Returns the jQuery DataTables CSS file according to version number. The default version is the included '1.10.2'.
+Returns the jQuery DataTables CSS file according to version number. The default version is the included '1.10.5'.
 ::
 
     {% djfrontend_jquery_datatables_css %}
@@ -160,13 +160,13 @@ renders:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.2/jquery.dataTables.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.5/jquery.dataTables.css">
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.2/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.5/jquery.dataTables.min.css">
 
 djfrontend_jquery_formset
 ---------------------------
