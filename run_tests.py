@@ -1,6 +1,7 @@
 import os, sys
 from django.conf import settings
 import django
+django.setup()
 
 DIRNAME = os.path.dirname(__file__)
 
