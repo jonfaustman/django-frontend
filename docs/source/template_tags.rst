@@ -52,7 +52,7 @@ renders:
 
 djfrontend_fontawesome
 ------------------------
-Returns Font Awesome CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file. The default version is the included '4.2.0'.
+Returns Font Awesome CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file. The default version is the included '4.3.0'.
 ::
 
     {% djfrontend_fontawesome %}
@@ -61,13 +61,13 @@ renders:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/4.2.0/font-awesome.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/4.3.0/font-awesome.css">
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/4.2.0/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/4.3.0/font-awesome.min.css">
 
 djfrontend_modernizr
 ---------------------
