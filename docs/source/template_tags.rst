@@ -26,7 +26,7 @@ renders:
 
 djfrontend_h5bp_css
 ---------------------
-Returns HTML5 Boilerplate CSS file according to version number. The default version is the included '4.3.0'.
+Returns HTML5 Boilerplate CSS file according to version number. The default version is the included '5.0.0'.
 ::
 
     {% djfrontend_h5bp_css %}
@@ -35,11 +35,11 @@ renders:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/h5bp/4.3.0/h5bp.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/h5bp/5.0.0/h5bp.css">
 
 djfrontend_normalize
 ---------------------
-Returns Normalize CSS file according to version number. The default version is the included '3.0.1'.
+Returns Normalize CSS file according to version number. The default version is the included '3.0.2'.
 ::
 
     {% djfrontend_normalize %}
@@ -48,11 +48,11 @@ renders:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/normalize/3.0.1/normalize.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/normalize/3.0.2/normalize.css">
 
 djfrontend_fontawesome
 ------------------------
-Returns Font Awesome CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file. The default version is the included '4.2.0'.
+Returns Font Awesome CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file. The default version is the included '4.3.0'.
 ::
 
     {% djfrontend_fontawesome %}
@@ -61,13 +61,13 @@ renders:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/4.2.0/font-awesome.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/4.3.0/font-awesome.css">
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/4.2.0/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/fontawesome/4.3.0/font-awesome.min.css">
 
 djfrontend_modernizr
 ---------------------
@@ -86,12 +86,12 @@ Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>' % v,
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script>window.Modernizr || document.write(\'<script src="static/djfrontend/js/modernizr/2.8.3/modernizr.min.js"><\/script>\')</script>
 
 djfrontend_jquery
 ------------------
-Returns jQuery JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included '1.11.1'.
+Returns jQuery JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included '1.11.2'.
 ::
 
     {% djfrontend_jquery %}
@@ -100,18 +100,18 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/1.11.1/jquery.js"></script>
+    <script src="/static/djfrontend/js/jquery/1.11.2/jquery.js"></script>
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/static/djfrontend/js/jquery/1.11.1/jquery.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/static/djfrontend/js/jquery/1.11.2/jquery.min.js"><\/script>')</script>
 
 djfrontend_jqueryui
 ---------------------
-Returns jQuery UI plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included '1.10.4'.
+Returns jQuery UI plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included '1.11.4'.
 ::
 
     {% djfrontend_jqueryui %}
@@ -120,18 +120,18 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/jqueryui/1.11.1/jquery-ui.js"></script>
+    <script src="/static/djfrontend/js/jquery/jqueryui/1.11.4/jquery-ui.js"></script>
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>' % v,
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
     <script>window.jQuery.ui || document.write(\'<script src="/static/djfrontend/js/jquery/jqueryui/1.11.1/jquery-ui.min.js"><\/script>\')</script>
 
 djfrontend_jquery_datatables
 -----------------------------
-Returns the jQuery DataTables plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included '1.10.2'.
+Returns the jQuery DataTables plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included '1.10.5'.
 ::
 
     {% djfrontend_jquery_datatables %}
@@ -140,18 +140,18 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.2/jquery.dataTables.js"></script>
+    <script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.5/jquery.dataTables.js"></script>
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.2/jquery.dataTables.min.js"></script>
-    <script>window.jQuery.fn.DataTable || document.write('<script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.2/jquery.dataTables.min.js"><\/script>')</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.5/jquery.dataTables.min.js"></script>
+    <script>window.jQuery.fn.DataTable || document.write('<script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.5/jquery.dataTables.min.js"><\/script>')</script>
 
 djfrontend_jquery_datatables_css
 ----------------------------------
-Returns the jQuery DataTables CSS file according to version number. The default version is the included '1.10.2'.
+Returns the jQuery DataTables CSS file according to version number. The default version is the included '1.10.5'.
 ::
 
     {% djfrontend_jquery_datatables_css %}
@@ -160,13 +160,13 @@ renders:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.2/jquery.dataTables.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.5/jquery.dataTables.css">
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.2/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.5/jquery.dataTables.min.css">
 
 djfrontend_jquery_formset
 ---------------------------
@@ -190,7 +190,7 @@ Or without TEMPLATE_DEBUG:
 
 djfrontend_jquery_scrollto
 --------------------------------
-Returns the jQuery ScrollTo plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included '1.4.13'.
+Returns the jQuery ScrollTo plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included '2.1.0'.
 ::
 
     {% djfrontend_jquery_scrollto %}
@@ -199,18 +199,18 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.13/jquery.scrollTo.js"></script>
+    <script src="/static/djfrontend/js/jquery/jquery.scrollTo/2.1.0/jquery.scrollTo.js"></script>
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.13/jquery.scrollTo.min.js"></script>
-    <script>window.jQuery.fn.scrollTo || document.write('<script src="/static/djfrontend/js/jquery/jquery.scrollTo/1.4.13/jquery.scrollTo.min.js"><\/script>')</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
+    <script>window.jQuery.fn.scrollTo || document.write('<script src="/static/djfrontend/js/jquery/jquery.scrollTo/2.1.0/jquery.scrollTo.min.js"><\/script>')</script>
 
 djfrontend_jquery_smoothscroll
 --------------------------------
-Returns the jQuery Smooth Scroll plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included '1.4.13'.
+Returns the jQuery Smooth Scroll plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included '1.5.5'.
 ::
 
     {% djfrontend_jquery_smoothscroll %}
@@ -219,18 +219,18 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.5.0/jquery.smooth-scroll.js"></script>
+    <script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.5.5/jquery.smooth-scroll.js"></script>
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.5.0/jquery.smooth-scroll.min.js"></script>
-    <script>window.jQuery.fn.smoothScroll || document.write('<script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.5.0/jquery.smooth-scroll.min.js"><\/script>')</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.5.5/jquery.smooth-scroll.min.js"></script>
+    <script>window.jQuery.fn.smoothScroll || document.write('<script src="/static/djfrontend/js/jquery/jquery.smooth-scroll/1.5.5/jquery.smooth-scroll.min.js"><\/script>')</script>
 
 djfrontend_twbs_css
 --------------------
-Returns Twitter Bootstrap CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file. The default version is the included '3.1.1'.
+Returns Twitter Bootstrap CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file. The default version is the included '3.3.4'.
 ::
 
     {% djfrontend_twbs_css %}
@@ -239,17 +239,17 @@ renders:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.1.1/bootstrap.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.3.4/bootstrap.css">
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.1.1/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.3.4/bootstrap.min.css">
 
 djfrontend_twbs_theme_css
 --------------------------------
-Returns Twitter Bootstrap Theme CSS file according to version number. The default version is the included '3.2.0'.
+Returns Twitter Bootstrap Theme CSS file according to version number. The default version is the included '3.3.4'.
 ::
 
     {% djfrontend_twbs_theme_css %}
@@ -258,17 +258,17 @@ renders:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.2.0/bootstrap-theme.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.3.4/bootstrap-theme.css">
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.2.0/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.3.4/bootstrap-theme.min.css">
 
 djfrontend_twbs_js
 --------------------
-Returns Twitter Bootstrap JavaScript file(s) according to version number and file name(s). The default 'all' returns a concatenated file; full file for TEMPLATE_DEBUG, otherwise returns minified file from cdnjs with local fallback. The default version is the included '3.2.0'.
+Returns Twitter Bootstrap JavaScript file(s) according to version number and file name(s). The default 'all' returns a concatenated file; full file for TEMPLATE_DEBUG, otherwise returns minified file from cdnjs with local fallback. The default version is the included '3.3.4'.
 
 
 * affix
@@ -293,14 +293,14 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/twbs/3.2.0/bootstrap.js"></script>
+    <script src="/static/djfrontend/js/twbs/3.3.4/bootstrap.js"></script>
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script>window.jQuery.fn.scrollspy || document.write('<script src="/static/djfrontend/js/twbs/3.2.0/bootstrap.min.js"><\/script>')</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script>window.jQuery.fn.scrollspy || document.write('<script src="/static/djfrontend/js/twbs/3.3.4/bootstrap.min.js"><\/script>')</script>
 
 ::
 
@@ -310,8 +310,8 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/twbs/3.2.0/bootstrap-affix.js"></script>
-    <script src="/static/djfrontend/js/twbs/3.2.0/bootstrap-alert.js"></script>
+    <script src="/static/djfrontend/js/twbs/3.3.4/bootstrap-affix.js"></script>
+    <script src="/static/djfrontend/js/twbs/3.3.4/bootstrap-alert.js"></script>
 
 Shout out to Ryan Brady and his `Django Bootstrapped <https://github.com/rbrady/django-bootstrapped>`_ for inspiration and initial code.
 

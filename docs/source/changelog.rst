@@ -1,6 +1,20 @@
 Changelog
 ==============
 
+1.6.0
+------
+* Updated HTML5 Boiler Plate CSS to v5.0.0.
+* Lower-case doctype per H5BP v5.0.0.
+* Updated normalize.css to v3.0.2.
+* Updated Font Awesome to v4.3.0.
+* Updated jQuery to v1.11.2 and v2.1.3.
+* Updated jQuery UI to v1.11.4.
+* Updated jQuery DataTables to v1.10.5.
+* Updated jQuery ScrollTo to v2.1.0.
+* Updated jQuery Smooth Scroll to v1.5.5.
+* Updated Twitter Bootstrap to v3.3.4.
+* Updated tests to latest 10 stable Django releases.
+
 1.5.0
 ------
 * Updated jQuery UI to v1.11.1.
