@@ -86,7 +86,7 @@ Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>' % v,
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script>window.Modernizr || document.write(\'<script src="static/djfrontend/js/modernizr/2.8.3/modernizr.min.js"><\/script>\')</script>
 
 djfrontend_jquery
@@ -126,7 +126,7 @@ Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>' % v,
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
     <script>window.jQuery.ui || document.write(\'<script src="/static/djfrontend/js/jquery/jqueryui/1.11.1/jquery-ui.min.js"><\/script>\')</script>
 
 djfrontend_jquery_datatables
