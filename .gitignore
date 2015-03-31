@@ -1,5 +1,6 @@
 # System files
 .DS_Store
+build/
 dist/
 django_frontend.egg-info/
 
