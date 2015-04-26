@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '1.6.0'
+version = '1.6.1'
 
 setup(name='django-frontend',
       version=version,
@@ -13,6 +13,12 @@ setup(name='django-frontend',
           "Natural Language :: English",
           "Operating System :: OS Independent",
           "Framework :: Django",
+          "Framework :: Django :: 1.4",
+          "Framework :: Django :: 1.5",
+          "Framework :: Django :: 1.6",
+          "Framework :: Django :: 1.7",
+          "Programming Language :: Python :: 2",
+          "Programming Language :: Python :: 3",
           "Programming Language :: Python",
           "Topic :: Internet :: WWW/HTTP :: Dynamic Content :: CGI Tools/Libraries",
           "Topic :: Utilities",
