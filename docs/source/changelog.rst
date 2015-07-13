@@ -3,6 +3,7 @@ Changelog
 
 1.7.0
 ------
+* Updated Twitter Bootstrap to v3.3.5.
 * Updated jQuery ScrollTo to v2.1.1.
 * Updated jQuery DataTables to v.1.10.7.
 * Updated jQuery to v.1.11.3 and v2.1.4.
