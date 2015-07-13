@@ -1,13 +1,23 @@
 Changelog
 ==============
 
+1.7.0
+------
+* Updated HTML5 Boilerplate CSS to v5.2.0.
+* Removed iOS-Orientationchange-Fix.
+* Updated Twitter Bootstrap to v3.3.5.
+* Updated jQuery ScrollTo to v2.1.1.
+* Updated jQuery DataTables to v.1.10.7.
+* Updated jQuery to v.1.11.3 and v2.1.4.
+* Updated normalize.css to v3.0.3
+
 1.6.1
 ------
 * Updated classifiers to include Python 3 - thanks `dstegelman <https://github.com/dstegelman>`_.
 
 1.6.0
 ------
-* Updated HTML5 Boiler Plate CSS to v5.0.0.
+* Updated HTML5 Boilerplate CSS to v5.0.0.
 * Lower-case doctype per H5BP v5.0.0.
 * Updated normalize.css to v3.0.2.
 * Updated Font Awesome to v4.3.0.
