@@ -26,7 +26,7 @@ renders:
 
 djfrontend_h5bp_css
 ---------------------
-Returns HTML5 Boilerplate CSS file according to version number. The default version is the included '5.0.0'.
+Returns HTML5 Boilerplate CSS file according to version number. The default version is the included '5.2.0'.
 ::
 
     {% djfrontend_h5bp_css %}
@@ -35,7 +35,7 @@ renders:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/h5bp/5.0.0/h5bp.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/h5bp/5.2.0/h5bp.css">
 
 djfrontend_normalize
 ---------------------
