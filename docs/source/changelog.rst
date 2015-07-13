@@ -3,6 +3,7 @@ Changelog
 
 1.7.0
 ------
+* Removed iOS-Orientationchange-Fix.
 * Updated Twitter Bootstrap to v3.3.5.
 * Updated jQuery ScrollTo to v2.1.1.
 * Updated jQuery DataTables to v.1.10.7.
