@@ -11,6 +11,10 @@ Changelog
 * Updated jQuery to v.1.11.3 and v2.1.4.
 * Updated normalize.css to v3.0.3
 
+1.6.1
+------
+* Updated classifiers to include Python 3 - thanks `dstegelman <https://github.com/dstegelman>`_.
+
 1.6.0
 ------
 * Updated HTML5 Boilerplate CSS to v5.0.0.
