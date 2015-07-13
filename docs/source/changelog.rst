@@ -3,6 +3,7 @@ Changelog
 
 1.7.0
 ------
+* Updated jQuery ScrollTo to v2.1.1.
 * Updated jQuery DataTables to v.1.10.7.
 * Updated jQuery to v.1.11.3 and v2.1.4.
 * Updated normalize.css to v3.0.3
