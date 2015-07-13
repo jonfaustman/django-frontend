@@ -1,6 +1,10 @@
 Changelog
 ==============
 
+1.7.0
+------
+* Updated normalize.css to v3.0.3
+
 1.6.0
 ------
 * Updated HTML5 Boiler Plate CSS to v5.0.0.

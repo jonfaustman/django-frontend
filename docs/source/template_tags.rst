@@ -39,7 +39,7 @@ renders:
 
 djfrontend_normalize
 ---------------------
-Returns Normalize CSS file according to version number. The default version is the included '3.0.2'.
+Returns Normalize CSS file according to version number. The default version is the included '3.0.3'.
 ::
 
     {% djfrontend_normalize %}
@@ -48,7 +48,7 @@ renders:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/normalize/3.0.2/normalize.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/normalize/3.0.3/normalize.css">
 
 djfrontend_fontawesome
 ------------------------
