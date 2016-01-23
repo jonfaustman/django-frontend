@@ -2,6 +2,7 @@ from .settings import *
 
 from django import template
 from django.conf import settings
+from django.utils.html import mark_safe, format_html
 
 register = template.Library()
 
@@ -15,7 +16,16 @@ def djfrontend_h5bp_html(language=None):
     if language is None:
         language = getattr(settings, 'DJFRONTEND_H5BP_HTML', DJFRONTEND_H5BP_HTML_DEFAULT)
 
-    return '<html class="no-js" lang="%s">' % language
+    return format_html('<html class="no-js" lang="{}">', language)
+
+
+_static_url = settings.STATIC_URL
+if getattr(settings, 'TEMPLATE_DEBUG', False):
+    _min = ''
+else:
+    _min = '.min'
+    if getattr(settings, 'DJFRONTEND_STATIC_URL', None):
+        _static_url = settings.DJFRONTEND_STATIC_URL
 
 
 @register.simple_tag
@@ -27,9 +37,9 @@ def djfrontend_h5bp_css(version=None):
     if version is None:
         version = getattr(settings, 'DJFRONTEND_H5BP_CSS', DJFRONTEND_H5BP_CSS_DEFAULT)
 
-    if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.DJFRONTEND_STATIC_URL, version)
-    return '<link rel="stylesheet" href="%sdjfrontend/css/h5bp/%s/h5bp.css">' % (settings.STATIC_URL, version)
+    return format_html(
+        '<link rel="stylesheet" href="{}djfrontend/css/h5bp/{}/h5bp.css">',
+        _static_url, version)
 
 
 @register.simple_tag
@@ -41,9 +51,9 @@ def djfrontend_normalize(version=None):
     if version is None:
         version = getattr(settings, 'DJFRONTEND_NORMALIZE', DJFRONTEND_NORMALIZE_DEFAULT)
 
-    if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.DJFRONTEND_STATIC_URL, version)
-    return '<link rel="stylesheet" href="%sdjfrontend/css/normalize/%s/normalize.css">' % (settings.STATIC_URL, version)
+    return format_html(
+        '<link rel="stylesheet" href="{}djfrontend/css/normalize/{}/normalize.css">',
+        _static_url, version)
 
 
 @register.simple_tag
@@ -55,13 +65,9 @@ def djfrontend_fontawesome(version=None):
     if version is None:
         version = getattr(settings, 'DJFRONTEND_FONTAWESOME', DJFRONTEND_FONTAWESOME_DEFAULT)
 
-    if getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.css">' % (settings.STATIC_URL, version)
-    else:
-        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-            return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.min.css">' % (settings.DJFRONTEND_STATIC_URL, version)
-        else:
-            return '<link rel="stylesheet" href="%sdjfrontend/css/fontawesome/%s/font-awesome.min.css">' % (settings.STATIC_URL, version)
+    return format_html(
+        '<link rel="stylesheet" href="{}djfrontend/css/fontawesome/{}/font-awesome{}.css">',
+        _static_url, version, _min)
 
 
 @register.simple_tag
@@ -75,19 +81,12 @@ def djfrontend_modernizr(version=None):
         version = getattr(settings, 'DJFRONTEND_MODERNIZR', DJFRONTEND_MODERNIZR_DEFAULT)
 
     if getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<script src="%sdjfrontend/js/modernizr/%s/modernizr.js"></script>' % (settings.STATIC_URL, version)
+        template = '<script src="{static}djfrontend/js/modernizr/{v}/modernizr.js"></script>'
     else:
-        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-            output=[
-                '<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/%s/modernizr.min.js"></script>' % version,
-                '<script>window.Modernizr || document.write(\'<script src="%sdjfrontend/js/modernizr/%s/modernizr.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
-            ]
-        else:
-            output=[
-                '<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/%s/modernizr.min.js"></script>' % version,
-                '<script>window.Modernizr || document.write(\'<script src="%sdjfrontend/js/modernizr/%s/modernizr.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
-            ]
-        return '\n'.join(output)
+        template = (
+            '<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/{v}/modernizr.min.js"></script>\n'
+            '<script>window.Modernizr || document.write(\'<script src="{static}djfrontend/js/modernizr/{v}/modernizr.min.js"><\/script>\')</script>')
+    return format_html(template, static=_static_url, v=version)
 
 
 @register.simple_tag
@@ -101,19 +100,12 @@ def djfrontend_jquery(version=None):
         version = getattr(settings, 'DJFRONTEND_JQUERY', DJFRONTEND_JQUERY_DEFAULT)
 
     if getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<script src="%sdjfrontend/js/jquery/%s/jquery.js"></script>' % (settings.STATIC_URL, version)
+        template = '<script src="{static}djfrontend/js/jquery/{v}/jquery.js"></script>'
     else:
-        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-            output=[
-                '<script src="//ajax.googleapis.com/ajax/libs/jquery/%s/jquery.min.js"></script>' % version,
-                '<script>window.jQuery || document.write(\'<script src="%sdjfrontend/js/jquery/%s/jquery.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
-            ]
-        else:
-            output=[
-                '<script src="//ajax.googleapis.com/ajax/libs/jquery/%s/jquery.min.js"></script>' % version,
-                '<script>window.jQuery || document.write(\'<script src="%sdjfrontend/js/jquery/%s/jquery.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
-            ]
-        return '\n'.join(output)
+        template = (
+            '<script src="//ajax.googleapis.com/ajax/libs/jquery/{v}/jquery.min.js"></script>'
+            '<script>window.jQuery || document.write(\'<script src="{static}djfrontend/js/jquery/{v}/jquery.min.js"><\/script>\')</script>')
+    return format_html(template, static=_static_url, v=version)
 
 
 @register.simple_tag
@@ -126,19 +118,14 @@ def djfrontend_jqueryui(version=None):
         version = getattr(settings, 'DJFRONTEND_JQUERYUI', DJFRONTEND_JQUERYUI_DEFAULT)
 
     if getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<script src="%sdjfrontend/js/jquery/jqueryui/%s/jquery-ui.js"></script>' % (settings.STATIC_URL, version)
+        return format_html(
+            '<script src="{}djfrontend/js/jquery/jqueryui/{}/jquery-ui.js"></script>',
+            settings.STATIC_URL, version)
     else:
-        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-            output=[
-                '<script src="//ajax.googleapis.com/ajax/libs/jqueryui/%s/jquery-ui.min.js"></script>' % version,
-                '<script>window.jQuery.ui || document.write(\'<script src="%sdjfrontend/js/jquery/jqueryui/%s/jquery-ui.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
-            ]
-        else:
-            output=[
-                '<script src="//ajax.googleapis.com/ajax/libs/jqueryui/%s/jquery-ui.min.js"></script>' % version,
-                '<script>window.jQuery.ui || document.write(\'<script src="%sdjfrontend/js/jquery/jqueryui/%s/jquery-ui.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
-            ]
-        return '\n'.join(output)
+        return format_html(
+            '<script src="//ajax.googleapis.com/ajax/libs/jqueryui/{v}/jquery-ui.min.js"></script>'
+            '<script>window.jQuery.ui || document.write(\'<script src="{static}djfrontend/js/jquery/jqueryui/{v}/jquery-ui.min.js"><\/script>\')</script>',
+            static=_static_url, v=version)
 
 
 @register.simple_tag
@@ -154,19 +141,12 @@ def djfrontend_jquery_datatables(version=None):
             version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES', DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
 
     if getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<script src="%sdjfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.js"></script>' % (settings.STATIC_URL, version)
+        template = '<script src="{static}djfrontend/js/jquery/jquery.dataTables/{v}/jquery.dataTables.js"></script>'
     else:
-        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-            output=[
-                '<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/%s/jquery.dataTables.min.js"></script>' % version,
-                '<script>window.jQuery.fn.DataTable || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
-            ]
-        else:
-            output=[
-                '<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/%s/jquery.dataTables.min.js"></script>' % version,
-                '<script>window.jQuery.fn.DataTable || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.dataTables/%s/jquery.dataTables.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
-            ]
-        return '\n'.join(output)
+        template = (
+            '<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/{v}/jquery.dataTables.min.js"></script>'
+            '<script>window.jQuery.fn.DataTable || document.write(\'<script src="{static}djfrontend/js/jquery/jquery.dataTables/{v}/jquery.dataTables.min.js"><\/script>\')</script>')
+    return format_html(template, static=_static_url, v=version)
 
 
 @register.simple_tag
@@ -181,12 +161,9 @@ def djfrontend_jquery_datatables_css(version=None):
             version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES_CSS', DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
 
 
-    if getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.css">' % (settings.STATIC_URL, version)
-    else:
-        if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
-            return '<link rel="stylesheet" href="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.min.css">' % (settings.DJFRONTEND_STATIC_URL, version)
-        return '<link rel="stylesheet" href="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables.min.css">' % (settings.STATIC_URL, version)
+    return format_html(
+        '<link rel="stylesheet" href="{static}djfrontend/css/jquery/jquery.dataTables/{v}/jquery.dataTables{min}.css">',
+        static=_static_url, v=version, min=_min)
 
 
 @register.simple_tag
@@ -200,9 +177,9 @@ def djfrontend_jquery_datatables_themeroller(version=None):
         else:
             version = getattr(settings, 'DJFRONTEND_JQUERY_DATATABLES_THEMEROLLER', DJFRONTEND_JQUERY_DATATABLES_VERSION_DEFAULT)
 
-    if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables_themeroller.min.css">' % (settings.DJFRONTEND_STATIC_URL, version)
-    return '<link rel="stylesheet" href="href="%sdjfrontend/css/jquery/jquery.dataTables/%s/jquery.dataTables_themeroller.min.css">' % (settings.STATIC_URL, version)
+    return format_html(
+        '<link rel="stylesheet" href="href="{static}djfrontend/css/jquery/jquery.dataTables/{v}/jquery.dataTables_themeroller.min.css">',
+        static=_static_url, v=version)
 
 
 @register.simple_tag
@@ -215,19 +192,12 @@ def djfrontend_jquery_formset(version=None):
         version = getattr(settings, 'DJFRONTEND_JQUERY_FORMSET', DJFRONTEND_JQUERY_FORMSET_DEFAULT)
 
     if getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.js"></script>' % (settings.STATIC_URL, version)
+        template = '<script src="{static}djfrontend/js/jquery/jquery.formset/{v}/jquery.formset.js"></script>'
     else:
-        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-            output=[
-                '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.formset/%s/jquery.formset.min.js"></script>' % version,
-                '<script>window.jQuery.fn.formset || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
-                ]
-        else:
-            output=[
-                '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.formset/%s/jquery.formset.min.js"></script>' % version,
-                '<script>window.jQuery.fn.formset || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.formset/%s/jquery.formset.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
-                ]
-        return '\n'.join(output)
+        template = (
+            '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.formset/{v}/jquery.formset.min.js"></script>\n'
+            '<script>window.jQuery.fn.formset || document.write(\'<script src="{static}djfrontend/js/jquery/jquery.formset/{v}/jquery.formset.min.js"><\/script>\')</script>')
+    return format_html(template, static=_static_url, v=version)
 
 
 @register.simple_tag
@@ -240,19 +210,12 @@ def djfrontend_jquery_scrollto(version=None):
         version = getattr(settings, 'DJFRONTEND_JQUERY_SCROLLTO', DJFRONTEND_JQUERY_SCROLLTO_DEFAULT)
 
     if getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.js"></script>' % (settings.STATIC_URL, version)
+        template = '<script src="{static}djfrontend/js/jquery/jquery.scrollTo/{v}/jquery.scrollTo.js"></script>' % (settings.STATIC_URL, version)
     else:
-        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-            output=[
-                '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/%s/jquery.scrollTo.min.js"></script>' % version,
-                '<script>window.jQuery.fn.scrollTo || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
-                ]
-        else:
-            output=[
-                '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/%s/jquery.scrollTo.min.js"></script>' % version,
-                '<script>window.jQuery.fn.scrollTo || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.scrollTo/%s/jquery.scrollTo.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
-                ]
-        return '\n'.join(output)
+        template = (
+            '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/{v}/jquery.scrollTo.min.js"></script>'
+            '<script>window.jQuery.fn.scrollTo || document.write(\'<script src="{static}djfrontend/js/jquery/jquery.scrollTo/{v}/jquery.scrollTo.min.js"><\/script>\')</script>')
+    return format_html(template, static=_static_url, v=version)
 
 
 @register.simple_tag
@@ -265,19 +228,12 @@ def djfrontend_jquery_smoothscroll(version=None):
         version = getattr(settings, 'DJFRONTEND_JQUERY_SMOOTHSCROLL', DJFRONTEND_JQUERY_SMOOTHSCROLL_DEFAULT)
 
     if getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.js"></script>' % (settings.STATIC_URL, version)
+        template = '<script src="{static}djfrontend/js/jquery/jquery.smooth-scroll/{v}/jquery.smooth-scroll.js"></script>'
     else:
-        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-            output=[
-                '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % version,
-                '<script>window.jQuery.fn.smoothScroll || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
-            ]
-        else:
-            output=[
-                '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/%s/jquery.smooth-scroll.min.js"></script>' % version,
-                '<script>window.jQuery.fn.smoothScroll || document.write(\'<script src="%sdjfrontend/js/jquery/jquery.smooth-scroll/%s/jquery.smooth-scroll.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
-                ]
-        return '\n'.join(output)
+        template = (
+            '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/{v}/jquery.smooth-scroll.min.js"></script>'
+            '<script>window.jQuery.fn.smoothScroll || document.write(\'<script src="{static}djfrontend/js/jquery/jquery.smooth-scroll/{v}/jquery.smooth-scroll.min.js"><\/script>\')</script>')
+    return format_html(template, static=_static_url, v=version)
 
 
 @register.simple_tag
@@ -292,13 +248,9 @@ def djfrontend_twbs_css(version=None):
         else:
              version = getattr(settings, 'DJFRONTEND_TWBS_CSS', DJFRONTEND_TWBS_VERSION_DEFAULT)
 
-    if getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap.css">' % (settings.STATIC_URL, version)
-    else:
-        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-            return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap.min.css">' % (settings.DJFRONTEND_STATIC_URL, version)
-        else:
-            return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap.min.css">' % (settings.STATIC_URL, version)
+    return format_html(
+        '<link rel="stylesheet" href="{static}djfrontend/css/twbs/{v}/bootstrap{min}.css">',
+        static=_static_url, v=version, min=_min)
 
 
 @register.simple_tag
@@ -312,13 +264,9 @@ def djfrontend_twbs_theme_css(version=None):
         else:
              version = getattr(settings, 'DJFRONTEND_TWBS_THEME_CSS', DJFRONTEND_TWBS_VERSION_DEFAULT)
 
-    if getattr(settings, 'TEMPLATE_DEBUG', False):
-        return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.css">' % (settings.STATIC_URL, version)
-    else:
-        if getattr(settings, 'DJFRONTEND_STATIC_URL', False):
-            return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.min.css">' % (settings.DJFRONTEND_STATIC_URL, version)
-        else:
-            return '<link rel="stylesheet" href="%sdjfrontend/css/twbs/%s/bootstrap-theme.min.css">' % (settings.STATIC_URL, version)
+    return format_html(
+        '<link rel="stylesheet" href="{static}djfrontend/css/twbs/{v}/bootstrap-theme{min}.css">',
+        static=_static_url, v=version, min=_min)
 
 
 @register.simple_tag
@@ -358,26 +306,17 @@ def djfrontend_twbs_js(version=None, files=None):
         files = 'all'
 
     if files == 'all':
-        if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
-            output=[
-                '<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/%s/js/bootstrap.min.js"></script>' % version,
-                '<script>window.jQuery.fn.scrollspy || document.write(\'<script src="%sdjfrontend/js/twbs/%s/bootstrap.min.js"><\/script>\')</script>' % (settings.DJFRONTEND_STATIC_URL, version)
-            ]
-        else:
-            output=[
-                '<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/%s/js/bootstrap.min.js"></script>' % version,
-                '<script>window.jQuery.fn.scrollspy || document.write(\'<script src="%sdjfrontend/js/twbs/%s/bootstrap.min.js"><\/script>\')</script>' % (settings.STATIC_URL, version)
-            ]
-        return '\n'.join(output)
+        return format_html(
+            '<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/{v}/js/bootstrap.min.js"></script>\n'
+            '<script>window.jQuery.fn.scrollspy || document.write(\'<script src="{static}djfrontend/js/twbs/{v}/bootstrap.min.js"><\/script>\')</script>',
+            v=version, static=_static_url)
     else:
         if 'popover' in files and 'tooltip' not in files:
             files.append('tooltip')
         for file in files:
-            if getattr(settings, 'DJFRONTEND_STATIC_URL', False) and not getattr(settings, 'TEMPLATE_DEBUG', False):
-                file = ['<script src="%sdjfrontend/js/twbs/%s/%s.js"></script>' % (settings.DJFRONTEND_STATIC_URL, version, file) for file in files]
-            else:
-                file = ['<script src="%sdjfrontend/js/twbs/%s/%s.js"></script>' % (settings.STATIC_URL, version, file) for file in files]
-        return '\n'.join(file)
+            file = ['<script src="%sdjfrontend/js/twbs/%s/%s.js"></script>' %
+                    (_static_url, version, file) for file in files]
+        return mark_safe('\n'.join(file))
 
 
 @register.simple_tag
@@ -397,10 +336,15 @@ def djfrontend_ga(account=None):
         else:
             if getattr(settings, 'DJFRONTEND_GA_SETDOMAINNAME', False):
                 if getattr(settings, 'DJFRONTEND_GA_SETALLOWLINKER', False):
-                    return '<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("require", "linker");ga("linker:autoLink", ["%s"]);ga("create", "%s", "auto", {"allowLinker": true});ga("send", "pageview");</script>' % (settings.DJFRONTEND_GA_SETDOMAINNAME, account)
+                    return mark_safe(
+                        '<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("require", "linker");ga("linker:autoLink", ["%s"]);ga("create", "%s", "auto", {"allowLinker": true});ga("send", "pageview");</script>' %
+                        (settings.DJFRONTEND_GA_SETDOMAINNAME, account))
                 else:
-                    return '<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "%s", "%s");ga("send", "pageview");</script>' % (account, settings.DJFRONTEND_GA_SETDOMAINNAME)
+                    return mark_safe(
+                        '<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "%s", "%s");ga("send", "pageview");</script>' %
+                        (account, settings.DJFRONTEND_GA_SETDOMAINNAME))
             else:
-                return '<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "%s", "auto");ga("send", "pageview");</script>' % account
+                return mark_safe(
+                    '<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "%s", "auto");ga("send", "pageview");</script>' % account)
     else:
         return ''
