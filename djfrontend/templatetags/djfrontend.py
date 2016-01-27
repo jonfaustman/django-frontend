@@ -16,7 +16,7 @@ def djfrontend_h5bp_html(language=None):
     if language is None:
         language = getattr(settings, 'DJFRONTEND_H5BP_HTML', DJFRONTEND_H5BP_HTML_DEFAULT)
 
-    return format_html('<html class="no-js" lang="{}">', language)
+    return format_html('<html class="no-js" lang="{0}">', language)
 
 
 _static_url = settings.STATIC_URL
@@ -38,7 +38,7 @@ def djfrontend_h5bp_css(version=None):
         version = getattr(settings, 'DJFRONTEND_H5BP_CSS', DJFRONTEND_H5BP_CSS_DEFAULT)
 
     return format_html(
-        '<link rel="stylesheet" href="{}djfrontend/css/h5bp/{}/h5bp.css">',
+        '<link rel="stylesheet" href="{0}djfrontend/css/h5bp/{1}/h5bp.css">',
         _static_url, version)
 
 
@@ -52,7 +52,7 @@ def djfrontend_normalize(version=None):
         version = getattr(settings, 'DJFRONTEND_NORMALIZE', DJFRONTEND_NORMALIZE_DEFAULT)
 
     return format_html(
-        '<link rel="stylesheet" href="{}djfrontend/css/normalize/{}/normalize.css">',
+        '<link rel="stylesheet" href="{0}djfrontend/css/normalize/{1}/normalize.css">',
         _static_url, version)
 
 
@@ -66,7 +66,7 @@ def djfrontend_fontawesome(version=None):
         version = getattr(settings, 'DJFRONTEND_FONTAWESOME', DJFRONTEND_FONTAWESOME_DEFAULT)
 
     return format_html(
-        '<link rel="stylesheet" href="{}djfrontend/css/fontawesome/{}/font-awesome{}.css">',
+        '<link rel="stylesheet" href="{0}djfrontend/css/fontawesome/{1}/font-awesome{2}.css">',
         _static_url, version, _min)
 
 
@@ -119,7 +119,7 @@ def djfrontend_jqueryui(version=None):
 
     if getattr(settings, 'TEMPLATE_DEBUG', False):
         return format_html(
-            '<script src="{}djfrontend/js/jquery/jqueryui/{}/jquery-ui.js"></script>',
+            '<script src="{0}djfrontend/js/jquery/jqueryui/{1}/jquery-ui.js"></script>',
             settings.STATIC_URL, version)
     else:
         return format_html(
