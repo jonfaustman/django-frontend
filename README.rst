@@ -20,7 +20,7 @@ Starring
 * `normalize.css (4.2.0) <https://github.com/necolas/normalize.css>`_
 * `jQuery (1.12.4), (2.2.4) and (3.1.0) <https://github.com/jquery/jquery>`_
 * `jQuery UI (1.11.4) <https://github.com/jquery/jquery-ui>`_
-* `jQuery DataTables (1.10.7) <https://github.com/DataTables/DataTables>`_
+* `jQuery DataTables (1.10.12) <https://github.com/DataTables/DataTables>`_
 * `jQuery Dynamic Formset (1.2) <https://github.com/elo80ka/django-dynamic-formset>`_
 * `jQuery ScrollTo (2.1.1) <https://github.com/flesler/jquery.scrollTo>`_
 * `jQuery Smooth Scroll (1.5.5) <https://github.com/kswedberg/jquery-smooth-scroll>`_

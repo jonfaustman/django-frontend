@@ -131,7 +131,7 @@ Or without TEMPLATE_DEBUG:
 
 djfrontend_jquery_datatables
 -----------------------------
-Returns the jQuery DataTables plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included '1.10.7'.
+Returns the jQuery DataTables plugin JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included '1.10.12'.
 ::
 
     {% djfrontend_jquery_datatables %}
@@ -140,18 +140,18 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.7/jquery.dataTables.js"></script>
+    <script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.12/jquery.dataTables.js"></script>
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.7/jquery.dataTables.min.js"></script>
-    <script>window.jQuery.fn.DataTable || document.write('<script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.7/jquery.dataTables.min.js"><\/script>')</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/jquery.dataTables.min.js"></script>
+    <script>window.jQuery.fn.DataTable || document.write('<script src="/static/djfrontend/js/jquery/jquery.dataTables/1.10.12/jquery.dataTables.min.js"><\/script>')</script>
 
 djfrontend_jquery_datatables_css
 ----------------------------------
-Returns the jQuery DataTables CSS file according to version number. The default version is the included '1.10.7'.
+Returns the jQuery DataTables CSS file according to version number. The default version is the included '1.10.12'.
 ::
 
     {% djfrontend_jquery_datatables_css %}
@@ -160,13 +160,13 @@ renders:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.7/jquery.dataTables.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.12/jquery.dataTables.css">
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.7/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/jquery/jquery.dataTables/1.10.12/jquery.dataTables.min.css">
 
 djfrontend_jquery_formset
 ---------------------------
