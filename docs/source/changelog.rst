@@ -1,6 +1,11 @@
 Changelog
 ==============
 
+1.8.0
+------
+* Templatetag updated for Django 1.9 - thanks `avm <https://github.com/avm>`_/
+* Updated normalize.css to v4.2.0.
+
 1.7.0
 ------
 * Updated HTML5 Boilerplate CSS to v5.2.0.
