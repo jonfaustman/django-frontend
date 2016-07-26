@@ -5,6 +5,8 @@ Changelog
 ------
 * Templatetag updated for Django 1.9 - thanks `avm <https://github.com/avm>`_/
 * Updated normalize.css to v4.2.0.
+* Updated jQuery to v1.12.4 and v2.2.4.
+* Added jQuery v3.1.0.
 
 1.7.0
 ------
@@ -13,7 +15,7 @@ Changelog
 * Updated Twitter Bootstrap to v3.3.5.
 * Updated jQuery ScrollTo to v2.1.1.
 * Updated jQuery DataTables to v.1.10.7.
-* Updated jQuery to v.1.11.3 and v2.1.4.
+* Updated jQuery to v1.11.3 and v2.1.4.
 * Updated normalize.css to v3.0.3
 
 1.6.1

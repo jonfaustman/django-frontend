@@ -91,7 +91,7 @@ Or without TEMPLATE_DEBUG:
 
 djfrontend_jquery
 ------------------
-Returns jQuery JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included '1.11.3'.
+Returns jQuery JavaScript file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file from Google CDN with local fallback. The default version is the included '1.12.4'.
 ::
 
     {% djfrontend_jquery %}
@@ -100,14 +100,14 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/1.11.3/jquery.js"></script>
+    <script src="/static/djfrontend/js/jquery/1.12.4/jquery.js"></script>
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/static/djfrontend/js/jquery/1.11.3/jquery.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/static/djfrontend/js/jquery/1.12.4/jquery.min.js"><\/script>')</script>
 
 djfrontend_jqueryui
 ---------------------
