@@ -9,6 +9,7 @@ Changelog
 * Added jQuery v3.1.0.
 * Updated jQuery DataTables to v1.10.12.
 * Updated jQuery Dynamic Formset to v1.2.2.
+* Updated jQuery ScrollTo to v2.1.2.
 
 1.7.0
 ------
