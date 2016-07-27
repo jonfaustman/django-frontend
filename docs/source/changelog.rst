@@ -12,6 +12,7 @@ Changelog
 * Updated jQuery ScrollTo to v2.1.2.
 * Updated Twitter Bootstrap to v3.3.7.
 * Updated jQuery Smooth Scroll to v1.7.2.
+* Updated Font Awesome to v4.6.3.
 
 1.7.0
 ------

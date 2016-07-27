@@ -16,7 +16,7 @@ If you use an optional value other than the ones listed, you will have to add th
 +-----------------------------------+---------------------------------------+---------------+-------------------+
 |djfrontend_normalize               |DJFRONTEND_NORMALIZE                   |4.2.0          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_fontawesome             |DJFRONTEND_FONTAWESOME                 |4.3.0          |                   |
+|djfrontend_fontawesome             |DJFRONTEND_FONTAWESOME                 |4.6.3          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
 |djfrontend_modernizr               |DJFRONTEND_MODERNIZR                   |2.8.3          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+

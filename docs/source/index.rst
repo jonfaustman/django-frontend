@@ -23,7 +23,7 @@ Starring
 * `jQuery ScrollTo (2.1.2) <https://github.com/flesler/jquery.scrollTo>`_
 * `jQuery Smooth Scroll (1.7.2) <https://github.com/kswedberg/jquery-smooth-scroll>`_
 * `Twitter Bootstrap (3.3.7) <https://github.com/twbs/bootstrap>`_
-* `Font Awesome (4.3.0) <https://github.com/FortAwesome/Font-Awesome>`_
+* `Font Awesome (4.6.3) <https://github.com/FortAwesome/Font-Awesome>`_
 
 Contents
 ---------
