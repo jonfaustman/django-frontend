@@ -13,6 +13,7 @@ Changelog
 * Updated Twitter Bootstrap to v3.3.7.
 * Updated jQuery Smooth Scroll to v1.7.2.
 * Updated Font Awesome to v4.6.3.
+* Updated HTML5 Boilerplate CSS to v5.3.0.
 
 1.7.0
 ------

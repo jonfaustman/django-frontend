@@ -13,7 +13,7 @@ With the convenience of an installable Django application, easily add some of th
 
 Starring
 ---------
-* `HTML5 Boilerplate (5.2.0) <https://github.com/h5bp/html5-boilerplate>`_
+* `HTML5 Boilerplate (5.3.0) <https://github.com/h5bp/html5-boilerplate>`_
 * `Modernizr (2.8.3) <https://github.com/Modernizr/Modernizr>`_
 * `normalize.css (4.2.0) <https://github.com/necolas/normalize.css>`_
 * `jQuery (1.12.4), (2.2.4) and (3.1.0) <https://github.com/jquery/jquery>`_
