@@ -170,7 +170,7 @@ Or without TEMPLATE_DEBUG:
 
 djfrontend_jquery_formset
 ---------------------------
-Returns the jQuery Dynamic Formset plugin JavaScript file according to version number. TTEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included '1.2'.
+Returns the jQuery Dynamic Formset plugin JavaScript file according to version number. TTEMPLATE_DEBUG returns full file, otherwise returns minified file from cdnjs with local fallback. The default version is the included '1.2.2'.
 ::
 
     {% djfrontend_jquery_formset %}
@@ -179,14 +179,14 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/jquery/jquery.formset/1.2/jquery.formset.js"></script>
+    <script src="/static/djfrontend/js/jquery/jquery.formset/1.2.2/jquery.formset.js"></script>
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2/jquery.formset.min.js"></script>
-    <script>window.jQuery.fn.formset || document.write('<script src="/static/djfrontend/js/jquery/jquery.formset/1.2/jquery.formset.min.js"><\/script>')</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"></script>
+    <script>window.jQuery.fn.formset || document.write('<script src="/static/djfrontend/js/jquery/jquery.formset/1.2.2/jquery.formset.min.js"><\/script>')</script>
 
 djfrontend_jquery_scrollto
 --------------------------------

@@ -8,6 +8,7 @@ Changelog
 * Updated jQuery to v1.12.4 and v2.2.4.
 * Added jQuery v3.1.0.
 * Updated jQuery DataTables to v1.10.12.
+* Updated jQuery Dynamic Formset to v1.2.2.
 
 1.7.0
 ------

@@ -1,5 +1,5 @@
 /**
- * jQuery Formset 1.2
+ * jQuery Formset 1.1
  * @author Stanislaus Madueke (stan DOT madueke AT gmail DOT com)
  * @requires jQuery 1.2.6 or later
  *
