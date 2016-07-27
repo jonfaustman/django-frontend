@@ -12,37 +12,37 @@ If you use an optional value other than the ones listed, you will have to add th
 +-----------------------------------+---------------------------------------+---------------+-------------------+
 |djfrontend_h5bp_html               |DJFRONTEND_H5BP_HTML                   |en             |ISO 639-1 codes    |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_h5bp_css                |DJFRONTEND_H5BP_CSS                    |5.2.0          |                   |
+|djfrontend_h5bp_css                |DJFRONTEND_H5BP_CSS                    |5.3.0          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_normalize               |DJFRONTEND_NORMALIZE                   |3.0.3          |                   |
+|djfrontend_normalize               |DJFRONTEND_NORMALIZE                   |4.2.0          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_fontawesome             |DJFRONTEND_FONTAWESOME                 |4.3.0          |                   |
+|djfrontend_fontawesome             |DJFRONTEND_FONTAWESOME                 |4.6.3          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
 |djfrontend_modernizr               |DJFRONTEND_MODERNIZR                   |2.8.3          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_jquery                  |DJFRONTEND_JQUERY                      |1.11.3         |2.1.4              |
+|djfrontend_jquery                  |DJFRONTEND_JQUERY                      |1.12.4         |2.2.4, 3.1.0       |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
 |djfrontend_jqueryui                |DJFRONTEND_JQUERYUI                    |1.11.4         |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
 |                                   |DJFRONTEND_JQUERY_DATATABLES_VERSION   |               |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_jquery_datatables       |DJFRONTEND_JQUERY_DATATABLES           |1.10.7         |                   |
+|djfrontend_jquery_datatables       |DJFRONTEND_JQUERY_DATATABLES           |1.10.12        |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_jquery_datatables_css   |DJFRONTEND_JQUERY_DATATABLES_CSS       |1.10.7         |                   |
+|djfrontend_jquery_datatables_css   |DJFRONTEND_JQUERY_DATATABLES_CSS       |1.10.12        |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_jquery_formset          |DJFRONTEND_JQUERY_FORMSET              |1.2            |                   |
+|djfrontend_jquery_formset          |DJFRONTEND_JQUERY_FORMSET              |1.2.2          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_jquery_scrollto         |DJFRONTEND_JQUERY_SCROLLTO             |2.1.1          |                   |
+|djfrontend_jquery_scrollto         |DJFRONTEND_JQUERY_SCROLLTO             |2.1.2          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_jquery_smoothscroll     |DJFRONTEND_JQUERY_SMOOTHSCROLL         |1.5.5          |                   |
+|djfrontend_jquery_smoothscroll     |DJFRONTEND_JQUERY_SMOOTHSCROLL         |1.7.2          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
 |                                   |DJFRONTEND_TWBS_VERSION                |               |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_twbs_css                |DJFRONTEND_TWBS_CSS                    |3.3.5          |                   |
+|djfrontend_twbs_css                |DJFRONTEND_TWBS_CSS                    |3.3.7          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_twbs_theme_css          |DJFRONTEND_TWBS_THEME_CSS              |3.3.5          |                   |
+|djfrontend_twbs_theme_css          |DJFRONTEND_TWBS_THEME_CSS              |3.3.7          |                   |
 +-----------------------------------+---------------------------------------+---------------+-------------------+
-|djfrontend_twbs_js                 |DJFRONTEND_TWBS_JS_VERSION             |3.3.5          |                   |
+|djfrontend_twbs_js                 |DJFRONTEND_TWBS_JS_VERSION             |3.3.7          |                   |
 |                                   |DJFRONTEND_TWBS_JS_FILES               |all            |* affix            |
 |                                   |                                       |               |* alert            |
 |                                   |                                       |               |* button           |
