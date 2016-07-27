@@ -23,7 +23,7 @@ Starring
 * `jQuery DataTables (1.10.12) <https://github.com/DataTables/DataTables>`_
 * `jQuery Dynamic Formset (1.2.2) <https://github.com/elo80ka/django-dynamic-formset>`_
 * `jQuery ScrollTo (2.1.2) <https://github.com/flesler/jquery.scrollTo>`_
-* `jQuery Smooth Scroll (1.5.5) <https://github.com/kswedberg/jquery-smooth-scroll>`_
+* `jQuery Smooth Scroll (1.7.2) <https://github.com/kswedberg/jquery-smooth-scroll>`_
 * `Twitter Bootstrap (3.3.7) <https://github.com/twbs/bootstrap>`_
 * `Font Awesome (4.3.0) <https://github.com/FortAwesome/Font-Awesome>`_
 

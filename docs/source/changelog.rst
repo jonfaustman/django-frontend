@@ -11,6 +11,7 @@ Changelog
 * Updated jQuery Dynamic Formset to v1.2.2.
 * Updated jQuery ScrollTo to v2.1.2.
 * Updated Twitter Bootstrap to v3.3.7.
+* Updated jQuery Smooth Scroll to v1.7.2.
 
 1.7.0
 ------
