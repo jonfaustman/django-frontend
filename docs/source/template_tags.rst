@@ -230,7 +230,7 @@ Or without TEMPLATE_DEBUG:
 
 djfrontend_twbs_css
 --------------------
-Returns Twitter Bootstrap CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file. The default version is the included '3.3.5'.
+Returns Twitter Bootstrap CSS file according to version number. TEMPLATE_DEBUG returns full file, otherwise returns minified file. The default version is the included '3.3.7'.
 ::
 
     {% djfrontend_twbs_css %}
@@ -239,17 +239,17 @@ renders:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.3.5/bootstrap.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.3.7/bootstrap.css">
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.3.5/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.3.7/bootstrap.min.css">
 
 djfrontend_twbs_theme_css
 --------------------------------
-Returns Twitter Bootstrap Theme CSS file according to version number. The default version is the included '3.3.5'.
+Returns Twitter Bootstrap Theme CSS file according to version number. The default version is the included '3.3.7'.
 ::
 
     {% djfrontend_twbs_theme_css %}
@@ -258,17 +258,17 @@ renders:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.3.5/bootstrap-theme.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.3.7/bootstrap-theme.css">
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.3.5/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/static/djfrontend/css/twbs/3.3.7/bootstrap-theme.min.css">
 
 djfrontend_twbs_js
 --------------------
-Returns Twitter Bootstrap JavaScript file(s) according to version number and file name(s). The default 'all' returns a concatenated file; full file for TEMPLATE_DEBUG, otherwise returns minified file from cdnjs with local fallback. The default version is the included '3.3.5'.
+Returns Twitter Bootstrap JavaScript file(s) according to version number and file name(s). The default 'all' returns a concatenated file; full file for TEMPLATE_DEBUG, otherwise returns minified file from cdnjs with local fallback. The default version is the included '3.3.7'.
 
 
 * affix
@@ -293,14 +293,14 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/twbs/3.3.5/bootstrap.js"></script>
+    <script src="/static/djfrontend/js/twbs/3.3.7/bootstrap.js"></script>
 
 Or without TEMPLATE_DEBUG:
 
 ::
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script>window.jQuery.fn.scrollspy || document.write('<script src="/static/djfrontend/js/twbs/3.3.5/bootstrap.min.js"><\/script>')</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>window.jQuery.fn.scrollspy || document.write('<script src="/static/djfrontend/js/twbs/3.3.7/bootstrap.min.js"><\/script>')</script>
 
 ::
 
@@ -310,8 +310,8 @@ renders:
 
 ::
 
-    <script src="/static/djfrontend/js/twbs/3.3.5/bootstrap-affix.js"></script>
-    <script src="/static/djfrontend/js/twbs/3.3.5/bootstrap-alert.js"></script>
+    <script src="/static/djfrontend/js/twbs/3.3.7/bootstrap-affix.js"></script>
+    <script src="/static/djfrontend/js/twbs/3.3.7/bootstrap-alert.js"></script>
 
 Shout out to Ryan Brady and his `Django Bootstrapped <https://github.com/rbrady/django-bootstrapped>`_ for inspiration and initial code.
 
