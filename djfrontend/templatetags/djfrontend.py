@@ -210,7 +210,7 @@ def djfrontend_jquery_scrollto(version=None):
         version = getattr(settings, 'DJFRONTEND_JQUERY_SCROLLTO', DJFRONTEND_JQUERY_SCROLLTO_DEFAULT)
 
     if getattr(settings, 'TEMPLATE_DEBUG', False):
-        template = '<script src="{static}djfrontend/js/jquery/jquery.scrollTo/{v}/jquery.scrollTo.js"></script>' % (settings.STATIC_URL, version)
+        template = '<script src="{static}djfrontend/js/jquery/jquery.scrollTo/{v}/jquery.scrollTo.js"></script>'
     else:
         template = (
             '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/{v}/jquery.scrollTo.min.js"></script>'

@@ -1,14 +1,28 @@
 Changelog
 ==============
 
+1.8.0
+------
+* Templatetag updated for Django 1.9 - thanks `avm <https://github.com/avm>`_/
+* Updated normalize.css to v4.2.0.
+* Updated jQuery to v1.12.4 and v2.2.4.
+* Added jQuery v3.1.0.
+* Updated jQuery DataTables to v1.10.12.
+* Updated jQuery Dynamic Formset to v1.2.2.
+* Updated jQuery ScrollTo to v2.1.2.
+* Updated Twitter Bootstrap to v3.3.7.
+* Updated jQuery Smooth Scroll to v1.7.2.
+* Updated Font Awesome to v4.6.3.
+* Updated HTML5 Boilerplate CSS to v5.3.0.
+
 1.7.0
 ------
 * Updated HTML5 Boilerplate CSS to v5.2.0.
 * Removed iOS-Orientationchange-Fix.
 * Updated Twitter Bootstrap to v3.3.5.
 * Updated jQuery ScrollTo to v2.1.1.
-* Updated jQuery DataTables to v.1.10.7.
-* Updated jQuery to v.1.11.3 and v2.1.4.
+* Updated jQuery DataTables to v1.10.7.
+* Updated jQuery to v1.11.3 and v2.1.4.
 * Updated normalize.css to v3.0.3
 
 1.6.1
