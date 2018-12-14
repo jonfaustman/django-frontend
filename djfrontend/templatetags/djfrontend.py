@@ -144,7 +144,7 @@ def djfrontend_jquery_datatables(version=None):
         template = '<script src="{static}djfrontend/js/jquery/jquery.dataTables/{v}/jquery.dataTables.js"></script>'
     else:
         template = (
-            '<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/{v}/jquery.dataTables.min.js"></script>'
+            '<script src="//cdnjs.cloudflare.com/ajax/libs/datatables/{v}/js/jquery.dataTables.min.js"></script>'
             '<script>window.jQuery.fn.DataTable || document.write(\'<script src="{static}djfrontend/js/jquery/jquery.dataTables/{v}/jquery.dataTables.min.js"><\/script>\')</script>')
     return format_html(template, static=_static_url, v=version)
 
